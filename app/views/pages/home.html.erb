@@ -2,11 +2,24 @@
 <p>Find me in app/views/pages/home.html.erb</p>
 <div class="card-product">
   <div class="card-product-infos">
+    <h2><i class="far fa-heart"></i></h2>
     <h2>Job title</h2>
     <h2>Company</h2>
-    <h2>Status</h2>
     <h2>Applied</h2>
+    <h2>
+        <div class="dropdown">
+           <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Pending</button>
+           <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+             <a class="dropdown-item" href="#">Rejected</a>
+             <a class="dropdown-item" href="#">In process</a>
+             <a class="dropdown-item" href="#">Unanswered</a>
+           </div>
+        </div>
+    </h2>
 
   </div>
 </div>
+
+
 

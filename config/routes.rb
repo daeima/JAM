@@ -7,4 +7,8 @@ Rails.application.routes.draw do
       resources :contacts, only: %i[new create]
     end
   end
+
+  if Rails.env.development?
+    get 'kitchensink', to: 'pages#kitchensink' 
+  end
 end

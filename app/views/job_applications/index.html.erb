@@ -1,5 +1,7 @@
 <ul>
   <% @job_applications.each do |job_application| %>
-    <li><%= job_application.company %></li>
+    <li><%= job_application.title %></li>
+    <li><%= job_application.description %></li>
+    <li><%= job_application.company_name %></li>
   <% end %>
 </ul>

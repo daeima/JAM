@@ -5,6 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'faker'
+
 puts "Cleaning database"
 
 User.destroy_all
@@ -26,30 +28,261 @@ puts "Creating Job"
 job = JobApplication.create!(
   user: user,
   title: "Frontend Engineer",
+  level: "Entry level",
   company_name: "Backbase",
   description: "As a Frontend Engineer you'll be using Angular and TypeScript to create the best web interfaces, administration panels, and omni-channel user experiences.
 
   We love clean, testable, and maintainable code that is cross-browser compatible. You will be part of a multidisciplinary team that is end-to-end responsible for analysis, design, implementation and delivery of production-ready software.
 
-  We like to keep work interesting and we encourage our developers to develop their personal strengths."
+  We like to keep work interesting and we encourage our developers to develop their personal strengths.",
+  status: "Pending",
+  link: "https://www.linkedin.com/jobs/view/2669328636/?alternateChannel=search&refId=k5h%2BOrkeVFjfnJp8T%2B4elA%3D%3D&trackingId=3RX0E5imcslCLVAQ0v8BGw%3D%3D",
+  address: "Jacob Bontiusplaats 9, Amsterdam, NH 1018LL, NL"
 )
 
+job2 = JobApplication.create!(
+  user: user,
+  title: "Full Stack Engineer",
+  level: "Senior",
+  company_name: "CVmaker",
+  description: "We’re looking for an Senior JavaScript (ReactJS) front-/backend developer to turn visual designs into beautiful and well performing applications. You'll work in a small team of passionated developers and will be co-responsible for good performing and well- documented code. Knowledge about making applications compatible with all common browsers for different devices and resolutions. You're fluent in understanding and writing HTML, CSS and JavaScript in the best performing way.",
+  status: "Pending",
+  link: "https://www.linkedin.com/jobs/view/2791724535/?alternateChannel=smljob&eBP=CwEAAAF9TOBpRQkjVp8E7zpi3VMnAsa0giprRAnTWhGepwy8__MxlFNL6xdxf5haUe69FgEH6VZ5DWkpbq0aRIdf6xQNxETjnb4SpC5FWQESCxRzjpi3UDZerh5hXFZikLb5vEcyp-7F9EXNSbN02Gg-oPVt7WxRj_YSEek-pTfSvus3XhcbWG_jrS5xMOC2Xb4wyr0CScFYhcktLjBGh-UsJSshScX6xrI8CIzt1jy1_WcGf09xhGO8MC52cx9YmAC7l_NCnM7K--a0Rdtxm5F05lTUAHk4mJdIEkYiNNnXN9FSgo3a0lrnfgmVvMnKJAVmNiXThw-qtqgD-vVcpU7eSIqj_71-j83IBNwHs2M1wGy6gDK-Cozz0oGQI8h0efrorRbSeHg1vKp35KPvPS49&refId=2prPSJZ7K4%2FWoAwqBgriCw%3D%3D&trackingId=RqyAA4X%2BTuR0RhVLCiZChQ%3D%3D",
+  address:"Herengracht 458, Amsterdam, North Holland 1017 CA, NL"
+)
+
+job3 = JobApplication.create!(
+  user: user,
+  title: "Frontend Developer",
+  company_name: "Hadrian",
+  description: "We don't have any hard requirements, as we welcome talented people from all walks of life. We’re looking for fast-learners who are excited about our mission and keen to get stuck in.",
+  status: "In process",
+  link: "https://www.linkedin.com/jobs/view/2791524467/?alternateChannel=search&refId=k5h%2BOrkeVFjfnJp8T%2B4elA%3D%3D&trackingId=2biBtOdR3Olr3olKxkBJ4Q%3D%3D",
+  address: "Singel 5421017 AZ Amsterdam",
+  remote: true,
+  favorite: true
+)
+
+job4 = JobApplication.create!(
+  user: user,
+  title: "Web Developer",
+  company_name: "Avanade",
+  level: "Entry",
+  description: "As a Web-Developer, with a hands-on mentality, you are responsible for the continuity and the future of our web applications at our enterprise clients. These applications must be linked to the current IT-landscape within the organizations and built through TypeScript, Angular and/or React. With your current experience you know that proper structuring of code and data management are just as important.",
+  link: "https://www.linkedin.com/jobs/view/2798853476/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=OznA2Q9dkNaFuAendoAhtw%3D%3D",
+  status: "Unanswerd",
+  address: "Seattle, Washington",
+  remote: true
+)
+
+job5 = JobApplication.create!(
+  user: user,
+  title: "Frontend  Developer",
+  company_name: "Media.Monks",
+  level: "Entry",
+  description: "In the Frontend Developer position, you’ll be responsible for crafting all our high end digital work ranging from the latest campaigns to the biggest platforms. This is a role where you’ll partner with our lovely clients and project managers, a big team of other frontend developers and our creative, animation and WebGL team to make sure we get the best out of you and the projects. Additionally, our ideal candidate is a fast and flexible go-getter who jumps on new opportunities.",
+  link: "https://www.linkedin.com/jobs/view/2727471435/?alternateChannel=search&refId=k5h%2BOrkeVFjfnJp8T%2B4elA%3D%3D&trackingId=58V7IrsxC3DPeoU9i8hMww%3D%3D",
+  status: "In process",
+  address: "Hilversum, North Holland, Netherlands"
+)
+
+job6 = JobApplication.create!(
+  user: user,
+  title: "Front End Developer - Accommodations Tech",
+  company_name: "Booking.com",
+  level: "Entry",
+  description: "The Accommodations Technology team is responsible for the design, delivery and reliability of services used by millions of customers and partners on the Web, via mobile and through our extensive APIs. With 28 million places to stay listed on our platform, we work hard to develop products that make it easier for travellers to find the best place to stay in destinations across the globe – in 42 languages and across dozens of currencies.",
+  link: "https://www.linkedin.com/jobs/view/2779383363/?alternateChannel=search&refId=k5h%2BOrkeVFjfnJp8T%2B4elA%3D%3D&trackingId=bC8Wco9R2466Ba06DHnVZA%3D%3D&trk=d_flagship3_search_srp_jobs",
+  status: "Pending",
+  address: "Amsterdam, North Holland, Netherlands"
+)
+
+job7 = JobApplication.create!(
+  user: user,
+  title: "Backend Developer - Messaging",
+  company_name: "Booking.com",
+  level: "Entry",
+  description: "The Marketing Messaging team is looking for an experienced backend developer to help us on a mission to increase value for our customers via personalized communication via a right channel, e.g. email, push notifications, etc., at the right time with the right message. This is an opportunity to make a large impact on millions of our subscribers on a daily basis as well as innovate our infrastructure while working with great people in our team. B.responsible",
+  link: "https://www.linkedin.com/jobs/view/2773845008/?alternateChannel=search&eBP=CwEAAAF9TS04ug9_p6mP-lfnrAzYfulNPpAB02ifSC5r-oSnCBMH9iiuwyRitmsBlZJ3wvS-AVq31ZfHjzSDQnRk7hr6z4eW1eWrNRCh5OUEtZGGvIsNTsR5IMr7HzaQnr_12v5yQCdHH3srgeTBF7TPx5CsKxno2syizf-_sAVjg10WeDAeZ0NErsDt-UIAcFhMpAtAYtfep6MUKg7G3_FmH23Ch5S2k05CGE5kfSlMRQp-uRZTWwNs_gHeSPLElir6wwKaDmQAmjqUSi90Is1t0s8InrABb5cEwoJhqMCoC2299sMZU8hku9qrQoe0LVHovLKj8m1R4hHeA4jd2_FG5HzWNxbCTOwGak8Uh0QpGNueKXrB03ERIyWY15WYI-8&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=kLsSjoq%2FMHBqezlpR6dIiA%3D%3D&trackingId=OOTXJSF9YbzOAnLMp11RyA%3D%3D&trk=flagship3_search_srp_jobs",
+  status: "Rejected",
+  address: "Amsterdam, North Holland, Netherlands"
+)
+
+job8 = JobApplication.create!(
+  user: user,
+  title: "Backend Developer focused on Go",
+  company_name: "Bloomreach",
+  level: "Entry",
+  description: "You will code and operate our next generation platform, Bloomreach Cloud (BRC). BRC is written in Go on top of Kubernetes and AWS. Your days will be filled working with concepts such as: Kubernetes, Go, AWS, agile, scalability, real-time monitoring, open source, automation, gitops, CI/CD. You will be part of a small, dedicated and cross-functional team where you will have a large and diverse set of responsibilities to support Bloomreach, its customers and its partners.",
+  link: "https://www.linkedin.com/jobs/view/2771409107/?alternateChannel=search&refId=kLsSjoq%2FMHBqezlpR6dIiA%3D%3D&trackingId=IL9G9Bg9O33ct9qptneDYQ%3D%3D",
+  status: "Rejected",
+  address: "Amsterdam, Netherlands",
+  remote: true
+)
+
+job9 = JobApplication.create!(
+  user: user,
+  title: "Frontend Developer",
+  company_name: "SimpledCard",
+  description: "We are looking for someone for whom software development is a passion, not just a job. You not only write code, but you also craft and run a product. You are open to change and have the ability to learn and cooperate with others. You are pragmatic and proactive, and you do what needs to be done: building and running the system. Last but not least, you understand the importance of automation in testing, tooling, and operations.",
+  link: "https://www.linkedin.com/jobs/view/2735127563/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=OccagE%2BqAXo7CpLA9Uv6AQ%3D%3D&trk=d_flagship3_search_srp_jobs",
+  status: "In process",
+  address: "Amsterdam, North Holland, Netherlands",
+  favorite: true
+)
+
+job10 = JobApplication.create!(
+  user: user,
+  title: "Frontend Developer",
+  company_name: "Capte",
+  description: "Work in a software development team creating new features and improvements for our cloud-based platform. Our platform is 5 years in development, throughout this time we collected a lot of input from the customers which we are looking to implement to make it more customer friendly.",
+  link: "https://www.linkedin.com/jobs/view/2608219067/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=lz9TBanCZlmsRPQb3seOYQ%3D%3D",
+  status: "In process",
+  address: "Amsterdam, North Holland, Netherlands",
+  favorite: true
+)
+
+job11 = JobApplication.create!(
+  user: user,
+  title: "Frontend Developer",
+  company_name: "Poki",
+  description: "As our Front-End Developer, you have an excellent feel for design and are able to implement this yourself using the latest front-end web technologies. Your implementations work on all browser types and are fully responsive. You will be joining our agile development team.",
+  link: "https://www.linkedin.com/jobs/view/2791752989/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=1ivUQssQXojjzhUPUvKzuw%3D%3D",
+  status: "In process",
+  address: "Amsterdam, North Holland, Netherlands",
+)
+
+job12 = JobApplication.create!(
+  user: user,
+  title: "UX Research Intern",
+  level: "Internship",
+  company_name: "Picnic Technologies",
+  description: "As our UX Research intern, you are part of a diverse team. You will be working collaboratively with Data Analysts, Product Owners, and Designers to develop the full user experience. With empathy and an open personality, you guide our users through weekly research activities.",
+  link: "https://www.linkedin.com/jobs/view/2802934486/?alternateChannel=search&eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=JOB_SEEKER_QUALIFIED&refId=PfsqTqnWGXEaM%2B%2FZt80oLw%3D%3D&trackingId=%2BiNW1CkCWLHqSfModqXGig%3D%3D&trk=flagship3_search_srp_jobs",
+  status: "Pending",
+  address: "Amsterdam, North Holland, Netherlands"
+)
+
+job13 = JobApplication.create!(
+  user: user,
+  title: "Internship Recruitment",
+  company_name: "Dept Agency",
+  level: "Internship",
+  description: "As a recruitment intern, you support the recruitment team in recruiting the best and best new colleagues, you are responsible for the organisation of campus recruitment events, and you have the opportunity to gain recruitment experience within the digital industry. We are looking for a creative, social student who is very strong in communication and a little result-oriented. You will support our campus recruiter in finding the best interns for different roles, ranging from designers to developers and data scientists to account managers. Next to that, you will also take on the more administrative tasks in the team. Scheduling interviews, managing the career inbox and replying to WhatsApp applications. All in all, there is loads to learn during this internship.",
+  link: "https://www.linkedin.com/jobs/view/2800791829/?alternateChannel=search&refId=PfsqTqnWGXEaM%2B%2FZt80oLw%3D%3D&trackingId=E1dymHwPyhlXgNw%2BvSJeag%3D%3D&trk=d_flagship3_search_srp_jobs",
+  status: "Pending",
+  address: "Amsterdam, North Holland, Netherlands"
+)
+
+job14 = JobApplication.create!(
+  user: user,
+  title: "Frontend Engineer",
+  level: "Entry",
+  company_name: "Search X Recruitment",
+  description: "As a Full Stack Ruby Developer, you’ll develop, build and maintain reusable and scalable Ruby on Rails and Javascript code. In order to expand and improve the platform, this code is a vital part of the quality of this platform. The mobile and the web-portal systems have to be adjusted and expanded, and you will do that together with your colleagues in the Development department. Signalizing bottlenecks and bugs is also one of your responsibilities, as well as solving them. Thanks to you, this code works like a Swiss watch.",
+  link: "https://www.linkedin.com/jobs/view/2810502459/?alternateChannel=search&refId=V%2BuVG99K7CpCCAYbA2RyQQ%3D%3D&trackingId=%2FFYe5LzdWQ4iQ7SmE1R7uQ%3D%3D",
+  status: "Pending",
+  address: "Amsterdam, North Holland, Netherlands"
+)
+
+job15 = JobApplication.create!(
+  user: user,
+  title: "Front-End Developer",
+  company_name: "Starred",
+  level: "Entry",
+  description: "About the job As Front-End Developer at Starred, you'll be responsible for building and maintaining web applications. You'll work with the development team, as well as UX/UI designers and graphic designers. You'll work closely with our back-end and full-stack developers to deliver consistent and reliable web experience. You'll work with our designers to improve usability for our customers. You'll optimize web design for mobile and other platforms for maximum speed. You'll work with designers to ensure high-quality graphic standards and brand consistency. Ultimately, your work will have a direct impact on the user experience of our customers. ",
+  link: "https://www.linkedin.com/jobs/view/2807825899/?alternateChannel=search&refId=8tfbepi9FFKYPcUXrCLDQA%3D%3D&trackingId=EumvD%2FLeGqPSpV0i99lZrw%3D%3D",
+  status: "Pending",
+  address: "Amsterdam, North Holland, Netherlands"
+)
 puts "Creating interview"
 
-interview = Interview.create!(
-  job_application: job,
+interview1 = Interview.create!(
+  job_application: job3,
   start_date: "2021-11-24 14:00:00",
   end_time: "2021-11-24 15:00:00"
 )
 
+interview2 = Interview.create!(
+  job_application: job3,
+  start_date: "2021-12-01 13:00:00",
+  end_time: "2021-12-01 15:00:00"
+)
+
+interview3 = Interview.create!(
+  job_application: job9,
+  start_date: "2021-11-30 14:00:00",
+  end_time: "2021-11-30 15:00:00"
+)
+
+interview4 = Interview.create!(
+  job_application: job10,
+  start_date: "2021-11-26 09:00:00",
+  end_time: "2021-11-26 10:00:00"
+)
+
+interview5 = Interview.create!(
+  job_application: job11,
+  start_date: "2021-11-29 14:00:00",
+  end_time: "2021-11-29 15:00:00"
+)
+
+interview6 = Interview.create!(
+  job_application: job9,
+  start_date: "2021-12-02 11:00:00",
+  end_time: "2021-12-02 12:00:00"
+)
+
 puts "Creating contact"
 
-Contact.create!(
-  interview: interview,
-  first_name: "Viggo",
-  last_name: "Tarasov",
-  position: "Mob Boss",
-  email: "viggoTheBoss@hotmail.com"
+contact1 = Contact.create!(
+  interview: interview6,
+  first_name: "Erik",
+  last_name: "Seveke",
+  position: "CEO at SimpledCard",
+  contact_url: "linkedin.com/in/seveke"
 )
+
+contact2 = Contact.create!(
+  interview: interview5,
+  first_name: "Anne-Marije",
+  last_name: "Huijboom",
+  position: "Culture&Talent",
+  email: "https://www.linkedin.com/in/anne-marije-huijboom-a29b32b6/"
+)
+
+conatct3 = Contact.create!(
+  interview: interview4,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  position: Faker::Job.position,
+  email: Faker::Internet.email
+)
+
+conatct4 = Contact.create!(
+  interview: interview3,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  position: Faker::Job.position,
+  email: Faker::Internet.email
+)
+
+conatct5 = Contact.create!(
+  interview: interview2,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  position: Faker::Job.position,
+  email: Faker::Internet.email
+)
+
+conatct6 = Contact.create!(
+  interview: interview1,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  position: Faker::Job.position,
+  email: Faker::Internet.email
+)
+
+
 
 puts "Database ready"

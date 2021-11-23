@@ -3,5 +3,6 @@
     <li><%= job_application.title %></li>
     <li><%= job_application.description %></li>
     <li><%= job_application.company_name %></li>
+    <%= link_to "See Details", job_application_path(job_application), class:"primary-btn" %>
   <% end %>
 </ul>

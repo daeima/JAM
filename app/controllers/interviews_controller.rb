@@ -3,4 +3,21 @@ class InterviewsController < ApplicationController
     @interview = Interview.find(params[:id])
     @contact = Contact.find(params[:id])
   end
+
+  def new
+    @interview = Interview.new
+    @job_application = JobApplication.find(params[:job_application_id])
+  end
+
+   def create
+    @interview = Interview.new(interview_params)
+    @interview.save
+    # redirect_to job_application_path(@job_application_id)
+  end
+
+  private
+
+  def interview_params
+    params.require(:interview).permit()
+  end
 end

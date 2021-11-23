@@ -1,1 +1,8 @@
 Show Page
+<ul>
+  <li><%= @job_applications.title %></li>
+  <li><%= @job_applications.company_name %></li>
+  <li><%= @job_applications.description %></li>
+  <li><%= link_to "See Interview Details", job_application_interview_path(@job_applications),class:"primary-btn" %></li>
+  <li><%= link_to "Add Interview Details", new_job_application_interview_path(@job_applications), class:"primary-btn" %></li>
+</ul>

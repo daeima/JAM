@@ -283,6 +283,4 @@ conatct6 = Contact.create!(
   email: Faker::Internet.email
 )
 
-
-
 puts "Database ready"

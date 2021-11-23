@@ -1,0 +1,6 @@
+<h1>Create new Interview Details</h1>
+
+<%= simple_form_for [ @job_application, @interview ] do |f| %>
+  <%= f.input :notes %>
+  <%= f.submit "Submit review", class: "primary-btn" %>
+<% end %>

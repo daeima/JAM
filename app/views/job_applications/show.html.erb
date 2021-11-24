@@ -30,10 +30,32 @@
         <p><%= interview.end_time %></p>
         <p><%= interview.notes %></p>
         <p><%= interview.interview_type %></p>
-
       <% end %>
-   <% end %> 
+
+      <!--  add contact-->
+
+      <%= render 'contact_modal', interview: interview %>
+
+      <!-- end add contact-->
+
+      <!--  displaying conatct-->
+      <h3>Interview contact/s</h3>
+
+      <% interview.contacts.each do  |contact| %>
+        <p><%= contact.first_name %> <%= contact.last_name %></p>
+        <% case contact %>
+          <p><%=  contact.position %></p>
+          <p><%= contact.email%></p>
+          <p><%= contact.phone%></p>
+          <%= link_to "Linkedin profile", contact.contact_url %>
+        <% end %>
+      <% end %>
+      <!-- end displaying conatct-->
+
+   <% end %>
       <!-- end displaying interview-->
+
+
+
 <%= link_to "Create a new interview", new_job_application_interview_path(@job_application), class: "btn btn-secondary mt-5 visible"%>
 <%= link_to "Go back", job_applications_path %>
-

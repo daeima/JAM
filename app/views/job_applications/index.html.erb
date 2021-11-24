@@ -1,4 +1,19 @@
 <h1>This is your Dashboard</h1>
+
+<!--- Implementing Statistics (styling needed) --->
+
+<p>Statistics Following:</p>
+<%= @job_applications.where(status: "Pending").length %>
+<%= @job_applications.where(status: "In process").length %>
+<%= @job_applications.where(status: "Offer").length %>
+<%= @job_applications.where(status: "Rejected").length %>
+<p>End of Statistics</p>
+
+<!--- End of Statistics --->
+
+
+<!--- Search Bar (styling needed)--->
+
   <div data-controller="refresh-list">
     <%= form_with url: job_applications_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
       <%= f.text_field :query,
@@ -13,6 +28,11 @@
     <%= render "list" %>
   </div>
 
+<!--- End of Search Bar --->
+
+
+<!--- Some Cards Independent from Search (styling needed) --->
+
 <%= link_to "New Job Application", new_job_application_path, class:"primary-btn" %>
 <div class="tableDashboard">
   <% @job_applications.each do |job_application| %>
@@ -26,3 +46,4 @@
   <% end %>
 </div>
 
+<!--- End of Cards --->

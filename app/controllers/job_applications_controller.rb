@@ -20,6 +20,10 @@ class JobApplicationsController < ApplicationController
     end
   end
 
+  def statistics
+    @job_application = JobApplication.where(status: "Pending").length
+  end
+
   def show
     @job_application = JobApplication.find(params[:id])
     @interview = Interview.new(id: @job_application)

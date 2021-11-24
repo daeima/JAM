@@ -1,5 +1,4 @@
 <h1>This is your Dashboard</h1>
-
   <div data-controller="refresh-list">
     <%= form_with url: job_applications_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
       <%= f.text_field :query,
@@ -13,3 +12,17 @@
     <% end %>
     <%= render "list" %>
   </div>
+
+<%= link_to "New Job Application", new_job_application_path, class:"primary-btn" %>
+<div class="tableDashboard">
+  <% @job_applications.each do |job_application| %>
+    <div class="tableContainer tableCard">
+      <li><%= job_application.title %></li>
+      <li><%= job_application.company_name %></li>
+      <li><%= job_application.level %></li>
+      <li><%= job_application.status %></li>
+      <%= link_to "See Details", job_application_path(job_application), class:"primary-btn" %>
+    </div>
+  <% end %>
+</div>
+

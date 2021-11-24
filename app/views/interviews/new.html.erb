@@ -1,6 +1,18 @@
-<h1>Create new Interview Details</h1>
 
-<%= simple_form_for [ @job_application, @interview ] do |f| %>
-  <%= f.input :notes %>
-  <%= f.submit "Submit review", class: "primary-btn" %>
-<% end %>
+<!--  form to create an interview-->
+ <div class="containerCalendar">
+    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
+      <h2>Create an interview</h2>
+      <%= simple_form_for [@job_application, @interview] do |f| %>
+        <%= f.input :interview_type %>
+        <%= f.input :notes %>
+        <%= f.input :link %>
+        <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
+        <%= f.submit "Create interview",class: "btn btn-primary" %>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!--  End form to create an interview-->

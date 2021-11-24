@@ -13,7 +13,7 @@ class InterviewsController < ApplicationController
     @interview = Interview.new(interview_params)
     @interview.job_application = JobApplication.find(params[:job_application_id])
     if @interview.save!
-        redirect_to interview_path(@interview)
+        redirect_to job_application_path(@interview.job_application)
       else
         render :new
     end
@@ -35,7 +35,7 @@ class InterviewsController < ApplicationController
   private
 
   def interview_params
-    params.require(:interview).permit(:notes, :start_date, :end_date, :link, :interview_type, :id, :job_application)
+    params.require(:interview).permit(:notes, :start_date, :end_time, :link, :interview_type, :job_application)
   end
  
 end

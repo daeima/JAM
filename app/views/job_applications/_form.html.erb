@@ -1,0 +1,12 @@
+<%= simple_form_for(@job_application) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :level %>
+  <%= f.input :company_name %>
+  <%= f.input :description %>
+  <%= f.input :status, as: :select, collection: ["Pending", "In process", "Offer", "Rejected"]%>
+  <%= f.input :notes %>
+  <%= f.input :remote %>
+  <%= f.input :favorite %>
+  <%= f.input :archive %>
+  <%= f.submit %>
+<% end %>

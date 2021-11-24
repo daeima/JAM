@@ -3,8 +3,7 @@ Show Page
   <li><%= @job_application.title %></li>
   <li><%= @job_application.company_name %></li>
   <li><%= @job_application.description %></li>
-  <li><%= link_to "See Interview Details", job_application_interview_path(@job_applications),class:"primary-btn" %></li>
-  <li><%= link_to "Add Interview Details", new_job_application_interview_path(@job_applications), class:"primary-btn" %></li>
+  
 </ul>
 
 
@@ -12,39 +11,18 @@ Show Page
 <!--  displaying interviews-->
 
    <h3>Interviews</h3>
-   <% @interviews.each do |interview| %>
+   <% @job_application.interviews.each do |interview| %>
       <%= link_to job_application_path(interview.job_application), class:'text-decoration-none' do %>
         <h2><%= interview.job_application.company_name %></h2>
         <h2><%= interview.job_application.title %></h2>
-        <p><%= interview.start_time %></p>
+        <p><%= interview.start_date %></p>
         <p><%= interview.end_time %></p>
         <p><%= interview.notes %></p>
         <p><%= interview.interview_type %></p>
 
       <% end %>
    <% end %> 
-
-                              
-
-
       <!-- end displaying interview-->
+<%= link_to "Create a new interview", new_job_application_interview_path(@job_application), class: "btn btn-secondary mt-5 visible"%>
+<%= link_to "Go back", job_applications_path %>
 
-
-
-<!--  form to create an interview-->
- <div class="containerCalendar">
-    <div class="form-wrapper" style="width: 400px; margin: 0 auto;">
-      <h2>Create an interview</h2>
-      <%= simple_form_for [@job_application, @interview] do |f| %>
-        <%= f.input :interview_type %>
-        <%= f.input :notes %>
-        <%= f.input :link %>
-        <%= f.input :start_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :end_time, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.submit "Create interview", class: "btn btn-primary" %>
-      <% end %>
-    </div>
-  </div>
-</div>
-
-<!--  End form to create an interview-->

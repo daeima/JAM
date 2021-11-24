@@ -31,7 +31,6 @@ class InterviewsController < ApplicationController
     redirect_to job_application_path(@job_application)
   end
 
-
   private
 
   def interview_params

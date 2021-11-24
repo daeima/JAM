@@ -8,7 +8,9 @@ Rails.application.routes.draw do
     end
   end
 
+  put 'job_applications/:id/archive', to: "job_applications#archive", as: "archive"
+
   if Rails.env.development?
-    get 'kitchensink', to: 'pages#kitchensink' 
+    get 'kitchensink', to: 'pages#kitchensink'
   end
 end

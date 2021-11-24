@@ -54,6 +54,10 @@ class JobApplicationsController < ApplicationController
     redirect_to job_application_path(@job_application)
   end
 
+  def archive
+    @archive = true
+  end
+
   private
 
   def job_application_params

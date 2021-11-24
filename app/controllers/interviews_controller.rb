@@ -1,7 +1,7 @@
 class InterviewsController < ApplicationController
-  def show
-    @interview = Interview.find(params[:id])
-    @contact = Contact.find(params[:id])
+
+  def index
+    @interviews = Interview.all
   end
 
   def new
@@ -12,11 +12,20 @@ class InterviewsController < ApplicationController
   def create
     @interview = Interview.new(interview_params)
     @interview.save
+    
+      @interview.job_application = Venue.find(params[:venue_id])
+      if @review.save!
+        redirect_to review_path(@review)
+      else
+        render 'job_application/show'
+      end
+    end
+  
   end
 
   private
 
   def interview_params
-    params.require(:interview).permit()
+    params.require(:interview).permit(:notes, :start_date, :end_date, :link, :interview_type, :job_application)
   end
 end

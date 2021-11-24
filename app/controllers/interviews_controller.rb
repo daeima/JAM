@@ -9,10 +9,9 @@ class InterviewsController < ApplicationController
     @job_application = JobApplication.find(params[:job_application_id])
   end
 
-   def create
+  def create
     @interview = Interview.new(interview_params)
     @interview.save
-    # redirect_to job_application_path(@job_application_id)
   end
 
   private

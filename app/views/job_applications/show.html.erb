@@ -28,11 +28,11 @@
         <p><%= interview.end_time %></p>
         <p><%= interview.notes %></p>
         <p><%= interview.interview_type %></p>
-
+        
       <% end %>
+      <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview) %>
    <% end %> 
       <!-- end displaying interview-->
 <%= link_to "Create a new interview", new_job_application_interview_path(@job_application), class: "btn btn-secondary mt-5 visible"%>
 <%= link_to "Go back", job_applications_path %>
-<%= link_to "Edit", edit_job_application_interview_path(@job_application, @interview) %>
 

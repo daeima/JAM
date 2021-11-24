@@ -1,17 +1,22 @@
 class JobApplicationsController < ApplicationController
 
   def index
-    def index
     @job_applications = JobApplication.order(title: :desc)
 
     if params[:query].present?
-      @job_applications = @job_applications.where('title ILIKE ?', "%#{params[:query]}%")
+      sql_query = " \
+        job_applications.title ILIKE :query \
+        OR job_applications.company_name ILIKE :query \
+        OR job_applications.level ILIKE :query \
+      "
+      @job_applications = @job_applications.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @job_applications = JobApplication.all
     end
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
       format.text { render partial: 'list.html', locals: { JobApplications: @job_applications } }
-    end
     end
   end
 

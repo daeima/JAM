@@ -1,0 +1,7 @@
+<div data-refresh-list-target="list">
+  <% @job_applications.each do |job_application| %>
+      <h4><%= job_application.title %></h4>
+      <p><%= job_application.company_name %></p>
+      <p><%= job_application.level %></p>
+  <% end %>
+</div>

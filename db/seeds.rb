@@ -70,7 +70,7 @@ job4 = JobApplication.create!(
   level: "Entry",
   description: "As a Web-Developer, with a hands-on mentality, you are responsible for the continuity and the future of our web applications at our enterprise clients. These applications must be linked to the current IT-landscape within the organizations and built through TypeScript, Angular and/or React. With your current experience you know that proper structuring of code and data management are just as important.",
   link: "https://www.linkedin.com/jobs/view/2798853476/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=OznA2Q9dkNaFuAendoAhtw%3D%3D",
-  status: "Unanswerd",
+  status: "Pending",
   address: "Seattle, Washington",
   remote: true
 )
@@ -159,7 +159,7 @@ job12 = JobApplication.create!(
   company_name: "Picnic Technologies",
   description: "As our UX Research intern, you are part of a diverse team. You will be working collaboratively with Data Analysts, Product Owners, and Designers to develop the full user experience. With empathy and an open personality, you guide our users through weekly research activities.",
   link: "https://www.linkedin.com/jobs/view/2802934486/?alternateChannel=search&eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=JOB_SEEKER_QUALIFIED&refId=PfsqTqnWGXEaM%2B%2FZt80oLw%3D%3D&trackingId=%2BiNW1CkCWLHqSfModqXGig%3D%3D&trk=flagship3_search_srp_jobs",
-  status: "Pending",
+  status: "Offer",
   address: "Amsterdam, North Holland, Netherlands"
 )
 

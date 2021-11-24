@@ -1,4 +1,5 @@
 <h1>This is your Dashboard</h1>
+<%= link_to "New Job Application", new_job_application_path, class:"primary-btn" %>
 <div class="tableDashboard">
   <% @job_applications.each do |job_application| %>
     <div class="tableContainer tableCard">

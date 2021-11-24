@@ -1,8 +1,12 @@
-<ul>
+<h1>This is your Dashboard</h1>
+<div class="tableDashboard">
   <% @job_applications.each do |job_application| %>
-    <li><%= job_application.title %></li>
-    <li><%= job_application.description %></li>
-    <li><%= job_application.company_name %></li>
-    <%= link_to "See Details", job_application_path(job_application), class:"primary-btn" %>
+    <div class="tableContainer tableCard">
+      <li><%= job_application.title %></li>
+      <li><%= job_application.company_name %></li>
+      <li><%= job_application.level %></li>
+      <li><%= job_application.status %></li>
+      <%= link_to "See Details", job_application_path(job_application), class:"primary-btn" %>
+    </div>
   <% end %>
-</ul>
+</div>

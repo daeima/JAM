@@ -31,6 +31,14 @@ class InterviewsController < ApplicationController
     redirect_to job_application_path(@job_application)
   end
 
+  
+  def destroy
+    @job_application = JobApplication.find(params[:job_application_id])
+    @interview = Interview.find(params[:id])
+    @interview.destroy
+    redirect_to job_application_path(@job_application)
+  end
+
   private
 
   def interview_params

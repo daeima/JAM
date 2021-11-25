@@ -1,72 +1,102 @@
 <h1>Show Page</h1>
-<%= link_to "Edit", edit_job_application_path(@job_application), class:"primary-btn" %>
-<ul>
-  <li><%= @job_application.title %></li>
-  <li><%= @job_application.level %></li>
-  <li><%= @job_application.company_name %></li>
-  <li><%= @job_application.status %></li>
-  <li><%= link_to "Job link", @job_application.link %></li>
-  <li><%= @job_application.address %></li>
-  <li><%= @job_application.remote %></li>
-  <li><%= @job_application.favorite %></li>
-  <li><%= @job_application.notes %></li>
-  <li><%= @job_application.description %></li>
-  <li><%= @job_application.created_at %></li>
-  <li><%= @job_application.updated_at %></li>
-  <li><%= link_to "See Interview Details", job_application_interview_path(@job_application),class:"primary-btn" %></li>
-  <li><%= link_to "Add Interview Details", new_job_application_interview_path(@job_application), class:"primary-btn" %></li>
-</ul>
+<!-- Job application display -->
 
+<div class="container">
+  <%= link_to "Edit", edit_job_application_path(@job_application), class:"primary-btn" %>
+  <br>
+
+    <h2><%= @job_application.title %></h2>
+    <h3><%= @job_application.level %> level</h3>
+    <h3><%= @job_application.company_name %></h3>
+    <p>Job description: <%= @job_application.description %></p>
+    <p><%= @job_application.status %></li>
+    <%= link_to "Job link", @job_application.link %>
+    <p>Address: <%= @job_application.address %></p>
+    <p><%= @job_application.remote ? "Remote" : "On site" %></p>
+    <p><%= @job_application.favorite ? "🖤" : "-" %></p>
+    <p>Notes<%= @job_application.notes %></p>
+    <p>Applierd on:<%= @job_application.created_at %></p>
+    <p>Updated on:<%= @job_application.updated_at %></p>
+    <br>
+
+
+
+
+<!-- Job application display -->
 
 
 <!--  displaying interviews-->
 
-   <h3>Interviews</h3>
-   <% @job_application.interviews.each do |interview| %>
-      <%= link_to job_application_path(interview.job_application), class:'text-decoration-none' do %>
-        <p><%= interview.start_date %></p>
-        <p><%= interview.end_time %></p>
-        <p><%= interview.notes %></p>
-        <p><%= interview.interview_type %></p>
-<<<<<<< HEAD
-      <% end %>
+<h3>Interviews</h3>
+<% @job_application.interviews.each do |interview| %>
+  <%= link_to job_application_path(interview.job_application), class:'text-decoration-none' do %>
+    <p><%= interview.start_date %></p>
+    <p><%= interview.end_time %></p>
+    <p><%= interview.notes %></p>
+    <p><%= interview.interview_type %></p>
+  <% end %>
 
-      <!--  add contact-->
+  <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
+  <!--  add contact-->
 
-      <%= render 'contact_modal', interview: interview %>
+  <%= render 'contact_modal', interview: interview %>
 
-      <!-- end add contact-->
+  <!-- end add contact-->
 
-      <!--  displaying conatct-->
-      <h3>Interview contact/s</h3>
+  <!--  displaying conatct-->
+  <h3>Interview contact/s</h3>
 
-      <% interview.contacts.each do  |contact| %>
-        <p><%= contact.first_name %> <%= contact.last_name %></p>
-        <p><%=  contact.position %></p>
-        <p><%= contact.email%></p>
-        <p><%= contact.phone%></p>
-        <%= link_to "Linkedin profile", contact.contact_url %>
-      <% end %>
-      <!-- end displaying conatct-->
+  <% interview.contacts.each do  |contact| %>
+    <p><%= contact.first_name %> <%= contact.last_name %></p>
+    <p><%=  contact.position %></p>
+    <p><%= contact.email%></p>
+    <p><%= contact.phone%></p>
+    <%= link_to "Linkedin profile", contact.contact_url %>
+    <br>
+    <!--  Edit  contact-->
 
+    <button type="button" class="btn primary-btn" data-toggle="modal" data-target="#contactModel-<%= contact.id %>">
+      Edit contact
+    </button>
+    <br>
+    <!-- Modal -->
+     <div class="modal fade" id="contactModel-<%= contact.id %>" tabindex="-1" aria-labelledby="contactMode-<%= contact.id %>Label" aria-hidden="true">
+    <%= raise %>
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="contactModel-<%= contact.id %>Label">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <%= simple_form_for [interview, contact], method: :patch do |f| %>
+                  <%= f.input :first_name %>
+                  <%= f.input :last_name %>
+                  <%= f.input :position %>
+                  <%= f.input :email %>
+                  <%= f.input :phone %>
+                  <%= f.input :contact_url %>
+                  <%= f.submit %>
+                <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Modal -->
 
+    <!--  Edit  contact-->
+  <br>
+    <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" } %>
+  <% end %>
+  <!-- end displaying conatct-->
 
-   <% end %>
-=======
-      <% end %>
-      <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
-   <% end %> 
->>>>>>> master
-      <!-- end displaying interview-->
+<% end %>
 
+<!-- end displaying interview-->
 
+<br>
 
 <%= link_to "Create a new interview", new_job_application_interview_path(@job_application), class: "btn btn-secondary mt-5 visible"%>
-<<<<<<< HEAD
-<%= link_to "Go back", job_applications_path %>
-=======
 <%= link_to "Go back", job_applications_path, class:'primary-btn' %>
-
-
-
->>>>>>> master

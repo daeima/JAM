@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :interviews, except: %i[index]
   end
   resources :interviews, only: [] do
-    resources :contacts, except: %i[index show new]
+    resources :contacts, except: %i[index show]
   end
 
   if Rails.env.development?

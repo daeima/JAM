@@ -12,6 +12,18 @@ class ContactsController < ApplicationController
     end
   end
 
+  def edit
+    @contact = Contact.find(params[:id])
+  end
+
+  def update
+    @interview = Interview.find(params[:interview_id])
+    @contact = JobApplication.find(params[:id])
+    @contact.update(contact_params)
+
+    redirect_to job_application_path(@interview.job_application)
+  end
+
   private
 
   def conatct_params

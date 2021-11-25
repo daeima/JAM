@@ -43,14 +43,14 @@
 
       <% interview.contacts.each do  |contact| %>
         <p><%= contact.first_name %> <%= contact.last_name %></p>
-        <% case contact %>
-          <p><%=  contact.position %></p>
-          <p><%= contact.email%></p>
-          <p><%= contact.phone%></p>
-          <%= link_to "Linkedin profile", contact.contact_url %>
-        <% end %>
+        <p><%=  contact.position %></p>
+        <p><%= contact.email%></p>
+        <p><%= contact.phone%></p>
+        <%= link_to "Linkedin profile", contact.contact_url %>
       <% end %>
       <!-- end displaying conatct-->
+
+
 
    <% end %>
       <!-- end displaying interview-->

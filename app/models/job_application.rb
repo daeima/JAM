@@ -10,5 +10,4 @@ class JobApplication < ApplicationRecord
       using: {
         tsearch: { prefix: true }
       }
-
 end

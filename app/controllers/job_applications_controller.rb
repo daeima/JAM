@@ -10,8 +10,6 @@ class JobApplicationsController < ApplicationController
         OR job_applications.level ILIKE :query \
       "
       @job_applications = @job_applications.where(sql_query, query: "%#{params[:query]}%")
-    else
-      @job_applications = JobApplication.all
     end
 
     respond_to do |format|
@@ -55,9 +53,15 @@ class JobApplicationsController < ApplicationController
   end
 
   def archive
-    @archive = true
+    @job_application = JobApplication.find(params[:id])
+    @job_application.archive = true
+    @job_application.save
+    redirect_to job_applications_path
   end
 
+  def displayArchived
+    @job_applications = JobApplications.where(archived: true)
+  end
   private
 
   def job_application_params

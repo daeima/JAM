@@ -33,18 +33,6 @@
 
 <!--- Some Cards Independent from Search (styling needed) --->
 
-<%= link_to "New Job Application", new_job_application_path, class:"primary-btn" %>
-<div class="tableDashboard">
-  <% @job_applications.each do |job_application| %>
-    <div class="tableContainer tableCard">
-      <li><%= job_application.title %></li>
-      <li><%= job_application.company_name %></li>
-      <li><%= job_application.level %></li>
-      <li><%= job_application.status %></li>
-      <%= button_to "Archive Application", archive_path(job_application), data: { confirm: "Sure to archive?" } %>
-      <%= link_to "See Details", job_application_path(job_application), class:"primary-btn" %>
-    </div>
-  <% end %>
-</div>
+
 
 <!--- End of Cards --->

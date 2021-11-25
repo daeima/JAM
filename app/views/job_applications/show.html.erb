@@ -25,24 +25,27 @@
 <!-- Job application display -->
 
 
-<!--  displaying interviews-->
 
-<h3>Interviews</h3>
-<% @job_application.interviews.each do |interview| %>
-  <%= link_to job_application_path(interview.job_application), class:'text-decoration-none' do %>
-    <p><%= interview.start_date %></p>
-    <p><%= interview.end_time %></p>
-    <p><%= interview.notes %></p>
-    <p><%= interview.interview_type %></p>
-  <% end %>
 
-  <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
-  <!--  add contact-->
+<div class="card-header" style="width: 18rem;">
+   <h2 class="text-center">Interviews</h2>
+    <% @job_application.interviews.each do |interview| %>
+        <%= link_to job_application_path(interview.job_application), class:'text-decoration-none' do %>
+           <div class="card-body border border-primary">
+               <p class="card-text">Start date: <%= interview.start_date %></p>
+               <p class="card-text">End date: <%= interview.end_time %></p>
+               <p class="card-text">Notes: <%= interview.notes %></p>
+               <p class="card-text mb-3">Interview type:  <%= interview.interview_type %></p>
+            <% end %>
+               <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
+               <%= link_to "Delete", job_application_interview_path(@job_application, interview), class:'primary-btn', method: :delete, data: { confirm: "Are you sure?" } %>
+          </div>
+
+          <!--  add contact-->
 
   <%= render 'contact_modal', interview: interview %>
 
   <!-- end add contact-->
-
   <!--  displaying conatct-->
   <h3>Interview contact/s</h3>
 
@@ -95,8 +98,7 @@
 <% end %>
 
 <!-- end displaying interview-->
-
-<br>
-
-<%= link_to "Create a new interview", new_job_application_interview_path(@job_application), class: "btn btn-secondary mt-5 visible"%>
+   <% end %>
+</div><br>
+<%= link_to "Create a new interview", new_job_application_interview_path(@job_application), class: "primary-btn"%>
 <%= link_to "Go back", job_applications_path, class:'primary-btn' %>

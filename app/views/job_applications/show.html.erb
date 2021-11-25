@@ -57,10 +57,7 @@
         <%= link_to "Linkedin profile", contact.contact_url %>
         <br>
 
-        <button type="button" class="btn primary-btn" data-toggle="modal" data-target="#contactModel-<%= contact.id %>" data-remote="<%= edit_interview_contact_path(interview, contact)%>">
-          Edit contact
-        </button>
-
+        <%= render 'edit_contact_modal', interview: interview, contact: contact %>
 
       <br>
         <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" } %>

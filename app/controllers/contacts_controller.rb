@@ -7,7 +7,7 @@ class ContactsController < ApplicationController
 
   def create
     @interview = Interview.find(params[:interview_id])
-    @contact = Contact.new(conatct_params)
+    @contact = Contact.new(contact_params)
     @contact.interview = @interview
 
     if @contact.save
@@ -20,7 +20,6 @@ class ContactsController < ApplicationController
   def edit
     @interview = Interview.find(params[:interview_id])
     @contact = Contact.find(params[:id])
-    raise
   end
 
   def update
@@ -42,7 +41,7 @@ class ContactsController < ApplicationController
 
   private
 
-  def conatct_params
+  def contact_params
     params.require(:contact).permit(:first_name, :last_name, :position, :email, :phone, :contact_url, :interview)
   end
 end

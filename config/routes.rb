@@ -5,12 +5,13 @@ Rails.application.routes.draw do
   resources :job_applications, except: %i[destroy] do
     member do
       patch :archive
+      patch :favorite
     end
     member do
       patch :unarchive
     end
     resources :interviews, except: %i[index] do
-      resources :contacts, only: %i[new create]
+    resources :contacts, only: %i[new create]
     end
   end
 

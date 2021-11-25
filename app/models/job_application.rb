@@ -1,7 +1,7 @@
 class JobApplication < ApplicationRecord
   belongs_to :user
   has_many :interviews, dependent: :destroy
-
+  scope :filter_by_status, -> (status) { where(status: status) }
   validates :title, :company_name, presence: true
 
     include PgSearch::Model

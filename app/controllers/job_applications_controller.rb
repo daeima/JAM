@@ -65,6 +65,13 @@ class JobApplicationsController < ApplicationController
     @job_application.save
     redirect_to job_applications_path
   end
+  
+  def favorite
+    @job_application = JobApplication.find(params[:id])
+    @job_application.favorite = !@job_application.favorite
+    @job_application.save
+    redirect_to job_application_path(@job_application)
+  end
 
   private
 
@@ -72,10 +79,8 @@ class JobApplicationsController < ApplicationController
     params.require(:job_application).permit(:title, :level, :company_name, :description, :status, :link, :notes, :address, :remote, :archive,:favorite, :user, :created_at, :updated_at)
   end
 
-  def favorite
-    current_user.job_application.favorite = true
-    current_user.save
-    redirect_to job_application_path
-  end
+
+
   
+
 end

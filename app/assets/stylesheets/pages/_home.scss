@@ -1,1 +1,35 @@
-// Specific CSS for your home-page
+.backgroundImagePast {
+  display: flex;
+  background-image: url("withoutJam.jpg");
+  height: 93.5vh;
+  background-position: center;
+  background-size: cover;
+}
+
+.backgroundImageFuture {
+  display: flex;
+  background-image: url("withJam.jpg");
+  height:93.5vh;
+  background-size: cover;
+  background-position: center;
+}
+
+.textFuture {
+  display: flex;
+  align-items: center;
+  text-shadow: 0.5px 0.5px black;
+}
+
+.textPast {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  text-shadow: 0.5px 0.5px black;
+  justify-content: right;
+}
+
+.row-m0 {
+  margin: 0px;
+}
+
+// filter: blur(1px);

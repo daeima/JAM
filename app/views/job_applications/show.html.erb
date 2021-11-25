@@ -24,12 +24,11 @@
    <h3>Interviews</h3>
    <% @job_application.interviews.each do |interview| %>
       <%= link_to job_application_path(interview.job_application), class:'text-decoration-none' do %>
-        <h2><%= interview.job_application.company_name %></h2>
-        <h2><%= interview.job_application.title %></h2>
         <p><%= interview.start_date %></p>
         <p><%= interview.end_time %></p>
         <p><%= interview.notes %></p>
         <p><%= interview.interview_type %></p>
+<<<<<<< HEAD
       <% end %>
 
       <!--  add contact-->
@@ -53,9 +52,21 @@
 
 
    <% end %>
+=======
+      <% end %>
+      <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
+   <% end %> 
+>>>>>>> master
       <!-- end displaying interview-->
 
 
 
 <%= link_to "Create a new interview", new_job_application_interview_path(@job_application), class: "btn btn-secondary mt-5 visible"%>
+<<<<<<< HEAD
 <%= link_to "Go back", job_applications_path %>
+=======
+<%= link_to "Go back", job_applications_path, class:'primary-btn' %>
+
+
+
+>>>>>>> master

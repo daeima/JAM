@@ -3,7 +3,7 @@ class JobApplication < ApplicationRecord
   has_many :interviews, dependent: :destroy
 
   geocoded_by :address
-  after_validation geocode, if: :will_save_change_to_location?
+  after_validation :geocode, if: :will_save_change_to_address?
 
   validates :title, :company_name, presence: true
 

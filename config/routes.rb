@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   resources :job_applications, except: %i[destroy] do
+    resources :interviews, except: %i[index]
     member do
       patch :archive
       patch :favorite
@@ -10,9 +11,10 @@ Rails.application.routes.draw do
     member do
       patch :unarchive
     end
-    resources :interviews, except: %i[index] do
-    resources :contacts, only: %i[new create]
-    end
+  end
+
+  resources :interviews, only: [] do
+    resources :contacts, except: %i[index show]
   end
 
   if Rails.env.development?

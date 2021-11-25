@@ -1,22 +1,27 @@
 <h1>Show Page</h1>
-<%= link_to "Edit", edit_job_application_path(@job_application), class:"primary-btn" %>
-<ul>
-  <li><%= @job_application.title %></li>
-  <li><%= @job_application.level %></li>
-  <li><%= @job_application.company_name %></li>
-  <li><%= @job_application.status %></li>
-  <li><%= link_to "Job link", @job_application.link %></li>
-  <li><%= @job_application.address %></li>
-  <li><%= @job_application.remote %></li>
-  <li><%= @job_application.favorite %></li>
-  <li><%= @job_application.notes %></li>
-  <li><%= @job_application.description %></li>
-  <li><%= @job_application.created_at %></li>
-  <li><%= @job_application.updated_at %></li>
-  <li><%= link_to "See Interview Details", job_application_interview_path(@job_application),class:"primary-btn" %></li>
-  <li><%= link_to "Add Interview Details", new_job_application_interview_path(@job_application), class:"primary-btn" %></li>
-</ul>
+<!-- Job application display -->
 
+<div class="container">
+  <%= link_to "Edit", edit_job_application_path(@job_application), class:"primary-btn" %>
+  <br>
+
+    <h2><%= @job_application.title %></h2>
+    <h3><%= @job_application.level %> level</h3>
+    <h3><%= @job_application.company_name %></h3>
+    <p>Job description: <%= @job_application.description %></p>
+    <p><%= @job_application.status %></li>
+    <%= link_to "Job link", @job_application.link %>
+    <p>Address: <%= @job_application.address %></p>
+    <p><%= @job_application.remote ? "Remote" : "On site" %></p>
+    <p><%= @job_application.favorite ? "🖤" : "-" %></p>
+    <p>Notes<%= @job_application.notes %></p>
+    <p>Applierd on:<%= @job_application.created_at %></p>
+    <p>Updated on:<%= @job_application.updated_at %></p>
+    <br>
+
+<!-- Job application display -->
+
+<!--  Favorite -->
 <div>
     <% if @job_application.favorite %>
      <div class="text-center"><%= link_to "favorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
@@ -25,6 +30,7 @@
    <% end %>
 </div>
 
+<!-- Favorite -->
 
 
 <div class="card-header" style="width: 18rem;">
@@ -39,9 +45,34 @@
             <% end %>
                <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
                <%= link_to "Delete", job_application_interview_path(@job_application, interview), class:'primary-btn', method: :delete, data: { confirm: "Are you sure?" } %>
-          </div> 
-   <% end %> 
+          </div>
+
+          <!--  add contact-->
+
+      <%= render 'contact_modal', interview: interview %>
+
+      <!-- end add contact-->
+  
+      <!--  displaying conatct-->
+      <h3>Interview contact/s</h3>
+
+      <% interview.contacts.each do  |contact| %>
+        <p><%= contact.first_name %> <%= contact.last_name %></p>
+        <p><%=  contact.position %></p>
+        <p><%= contact.email%></p>
+        <p><%= contact.phone%></p>
+        <%= link_to "Linkedin profile", contact.contact_url %>
+        <br>
+
+        <%= render 'edit_contact_modal', interview: interview, contact: contact %>
+
+      <br>
+        <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
+      <!-- end displaying conatct-->
+
+    <% end %>
+<!-- end displaying interview-->
 </div><br>
 <%= link_to "Create a new interview", new_job_application_interview_path(@job_application), class: "primary-btn"%>
 <%= link_to "Go back", job_applications_path, class:'primary-btn' %>
-

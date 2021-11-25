@@ -19,12 +19,18 @@
     <p>Updated on:<%= @job_application.updated_at %></p>
     <br>
 
-
-
-
 <!-- Job application display -->
 
+<!--  Favorite -->
+<div>
+    <% if @job_application.favorite %>
+     <div class="text-center"><%= link_to "favorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
+    <% else %>
+    <div class="text-center"><%= link_to "unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
+   <% end %>
+</div>
 
+<!-- Favorite -->
 
 
 <div class="card-header" style="width: 18rem;">
@@ -46,6 +52,7 @@
       <%= render 'contact_modal', interview: interview %>
 
       <!-- end add contact-->
+  
       <!--  displaying conatct-->
       <h3>Interview contact/s</h3>
 
@@ -62,7 +69,7 @@
       <br>
         <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" } %>
       <% end %>
-  <!-- end displaying conatct-->
+      <!-- end displaying conatct-->
 
     <% end %>
 <!-- end displaying interview-->

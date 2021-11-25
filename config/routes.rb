@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :interviews, except: %i[index]
     member do
       patch :archive
+      patch :favorite
     end
     member do
       patch :unarchive

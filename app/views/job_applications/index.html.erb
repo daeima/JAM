@@ -2,12 +2,11 @@
 
 <!--- Implementing Statistics (styling needed) --->
 
-<p>Statistics Following:</p>
-<%= @job_applications.where(status: "Pending").length %>
-<%= @job_applications.where(status: "In process").length %>
-<%= @job_applications.where(status: "Offer").length %>
-<%= @job_applications.where(status: "Rejected").length %>
-<p>End of Statistics</p>
+<p>Total Applications: <%= @job_applications.length%></p>
+<p>Pending Applications: <%= @job_applications.where(status: "Pending").length %></p>
+<p>Applications in Process: <%= @job_applications.where(status: "In process").length %></p>
+<p>Successfull Applications: <%= @job_applications.where(status: "Offer").length %></p>
+<p>Rejected Applications: <%= @job_applications.where(status: "Rejected").length %></p>
 
 <!--- End of Statistics --->
 

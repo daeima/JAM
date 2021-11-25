@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     member do
       patch :archive
     end
+    member do
+      patch :unarchive
+    end
     resources :interviews, except: %i[index] do
       resources :contacts, only: %i[new create]
     end

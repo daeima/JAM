@@ -59,9 +59,13 @@ class JobApplicationsController < ApplicationController
     redirect_to job_applications_path
   end
 
-  def displayArchived
-    @job_applications = JobApplications.where(archived: true)
+  def unarchive
+    @job_application = JobApplication.find(params[:id])
+    @job_application.archive = false
+    @job_application.save
+    redirect_to job_applications_path
   end
+
   private
 
   def job_application_params

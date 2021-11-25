@@ -59,4 +59,11 @@ class JobApplicationsController < ApplicationController
   def job_application_params
     params.require(:job_application).permit(:title, :level, :company_name, :description, :status, :link, :notes, :address, :remote, :archive,:favorite, :user, :created_at, :updated_at)
   end
+
+  def favorite
+    current_user.job_application.favorite = true
+    current_user.save
+    redirect_to job_application_path
+  end
+  
 end

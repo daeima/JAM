@@ -9,7 +9,12 @@ class JobApplicationsController < ApplicationController
         OR job_applications.company_name ILIKE :query \
         OR job_applications.level ILIKE :query \
       "
-      @job_applications = @job_applications.where(sql_query, query: "%#{params[:query]}%")
+      
+    @job_applications = @job_applications.where(sql_query, query: "%#{params[:query]}%")
+      
+    elsif params[:filter].present?
+      @job_applications = current_user.job_applications.filter_by_status(params[:filter])
+      
     end
 
     respond_to do |format|

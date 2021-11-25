@@ -11,6 +11,21 @@
 <!--- End of Statistics --->
 
 
+<!--- Start of  of filter buttons --->
+<div class="text-center">
+   <%= link_to "pending", job_applications_path( params: {filter: "Pending"}), class: "primary-btn"  %>
+   <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "primary-btn"  %>
+   <%= link_to "Unanswerd", job_applications_path( params: {filter: "Unanswerd"}), class: "primary-btn"  %>
+   <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "primary-btn"  %>
+   <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "primary-btn"  %>  
+</div>
+
+
+
+<!--- end of  of filter buttons --->
+   
+
+
 <!--- Search Bar (styling needed)--->
 
   <div data-controller="refresh-list">
@@ -23,6 +38,7 @@
                         refresh_list_target: 'searchInput',
                         action: "keyup->refresh-list#update"
                       } %>
+
     <% end %>
     <%= render "list" %>
   </div>

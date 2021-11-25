@@ -30,6 +30,11 @@ class JobApplicationsController < ApplicationController
   def show
     @job_application = JobApplication.find(params[:id])
     @interview = Interview.new(id: @job_application)
+
+    @markers = [{
+      lat: @job_application.latitude,
+      lng: @job_application.longitude
+    }]
   end
 
   def new
@@ -70,7 +75,7 @@ class JobApplicationsController < ApplicationController
     @job_application.save
     redirect_to job_applications_path
   end
-  
+
   def favorite
     @job_application = JobApplication.find(params[:id])
     @job_application.favorite = !@job_application.favorite
@@ -86,6 +91,6 @@ class JobApplicationsController < ApplicationController
 
 
 
-  
+
 
 end

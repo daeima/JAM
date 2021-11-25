@@ -43,62 +43,32 @@
 
           <!--  add contact-->
 
-  <%= render 'contact_modal', interview: interview %>
+      <%= render 'contact_modal', interview: interview %>
 
-  <!-- end add contact-->
-  <!--  displaying conatct-->
-  <h3>Interview contact/s</h3>
+      <!-- end add contact-->
+      <!--  displaying conatct-->
+      <h3>Interview contact/s</h3>
 
-  <% interview.contacts.each do  |contact| %>
-    <p><%= contact.first_name %> <%= contact.last_name %></p>
-    <p><%=  contact.position %></p>
-    <p><%= contact.email%></p>
-    <p><%= contact.phone%></p>
-    <%= link_to "Linkedin profile", contact.contact_url %>
-    <br>
-    <!--  Edit  contact-->
+      <% interview.contacts.each do  |contact| %>
+        <p><%= contact.first_name %> <%= contact.last_name %></p>
+        <p><%=  contact.position %></p>
+        <p><%= contact.email%></p>
+        <p><%= contact.phone%></p>
+        <%= link_to "Linkedin profile", contact.contact_url %>
+        <br>
 
-    <button type="button" class="btn primary-btn" data-toggle="modal" data-target="#contactModel-<%= contact.id %>">
-      Edit contact
-    </button>
-    <br>
-    <!-- Modal -->
-     <div class="modal fade" id="contactModel-<%= contact.id %>" tabindex="-1" aria-labelledby="contactMode-<%= contact.id %>Label" aria-hidden="true">
-    <%= raise %>
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="contactModel-<%= contact.id %>Label">Modal title</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <%= simple_form_for [interview, contact], method: :patch do |f| %>
-                  <%= f.input :first_name %>
-                  <%= f.input :last_name %>
-                  <%= f.input :position %>
-                  <%= f.input :email %>
-                  <%= f.input :phone %>
-                  <%= f.input :contact_url %>
-                  <%= f.submit %>
-                <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Modal -->
+        <button type="button" class="btn primary-btn" data-toggle="modal" data-target="#contactModel-<%= contact.id %>" data-remote="<%= edit_interview_contact_path(interview, contact)%>">
+          Edit contact
+        </button>
 
-    <!--  Edit  contact-->
-  <br>
-    <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" } %>
-  <% end %>
+
+      <br>
+        <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" } %>
+      <% end %>
   <!-- end displaying conatct-->
 
-<% end %>
-
+    <% end %>
 <!-- end displaying interview-->
-   <% end %>
 </div><br>
 <%= link_to "Create a new interview", new_job_application_interview_path(@job_application), class: "primary-btn"%>
 <%= link_to "Go back", job_applications_path, class:'primary-btn' %>

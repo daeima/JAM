@@ -21,7 +21,7 @@
     <p>Address: <%= @job_application.address %></p>
     <p><%= @job_application.remote ? "Remote" : "On site" %></p>
     <p>Notes<%= @job_application.notes %></p>
-    <p>Applierd on:<%= @job_application.created_at %></p>
+    <p>Applied on:<%= @job_application.created_at %></p>
     <p>Updated on:<%= @job_application.updated_at %></p>
   </div>
 
@@ -37,6 +37,8 @@
 
 
 <%= link_to "Add interview", new_job_application_interview_path(@job_application), class: "primary-btn"%>
+<br>
+<br>
 <div class="container card-deck">
 <% @job_application.interviews.each do |interview| %>
   <div class="card bg-light mb-3" style="max-width: 18rem;">
@@ -52,6 +54,8 @@
       <p class="card-text"><%= interview.notes %></p>
       <br>
 
+      <%= render 'contact_modal', interview: interview %>
+
       <% interview.contacts.each do  |contact| %>
         <p> <strong>Interview contact</strong></p>
         <p><%= contact.first_name %> <%= contact.last_name %></p>
@@ -61,8 +65,9 @@
         <%= link_to "Linkedin profile", contact.contact_url %>
         <br>
 
-        <%= render 'contact_modal', interview: interview %>
         <%= render 'edit_contact_modal', interview: interview, contact: contact %>
+        <br>
+        <br>
         <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" },class:'btn primary-btn' %>
       <% end %>
     </div>
@@ -73,3 +78,5 @@
 <br>
 
 <%= link_to "Go back", job_applications_path, class:'primary-btn' %>
+
+<br><br>

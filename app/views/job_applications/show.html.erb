@@ -1,13 +1,15 @@
-<h1>Show Page</h1>
+<div class="container">
+
+<h1 class="text-center">Show Page</h1>
 <!-- Job application display -->
 
-  <%= link_to "Edit", edit_job_application_path(@job_application), class:"btn primary-btn" %>
+  <%= link_to "Edit", edit_job_application_path(@job_application), class:"btn primary-btn mb-3" %>
 
   <!--  Favorite -->
     <% if @job_application.favorite %>
-     <%= link_to "Unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn"%>
+     <%= link_to "Unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn mb-3"%>
     <% else %>
-    <%= link_to "Favorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn"%>
+    <%= link_to "Favorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn mb-3"%>
    <% end %>
 
 <div class="row">
@@ -15,14 +17,14 @@
     <h2><%= @job_application.title %> <%= @job_application.favorite ? "⭐" : "" %></h2>
     <h3><%= @job_application.company_name %></h3>
     <p><strong><%= @job_application.level %></strong></p>
-    <p>Job description: <%= @job_application.description %></p>
-    <p><%= @job_application.status %></p>
-    <%= link_to "Job link", @job_application.link %>
+    <p> <strong>Job description:</strong>  <%= @job_application.description %></p>
+    <p>Status: <%= @job_application.status %></p>
+    <%= link_to "Job link", @job_application.link, class:"mb-4"%>
     <p>Address: <%= @job_application.address %></p>
     <p><%= @job_application.remote ? "Remote" : "On site" %></p>
-    <p>Notes<%= @job_application.notes %></p>
-    <p>Applied on:<%= @job_application.created_at %></p>
-    <p>Updated on:<%= @job_application.updated_at %></p>
+    <p>Notes: <%= @job_application.notes %></p>
+    <p>Applied on: <%= @job_application.created_at %></p>
+    <p>Updated on: <%= @job_application.updated_at %></p>
   </div>
 
 
@@ -80,3 +82,4 @@
 <%= link_to "Go back", job_applications_path, class:'primary-btn' %>
 
 <br><br>
+</div>

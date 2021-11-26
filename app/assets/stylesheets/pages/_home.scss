@@ -33,6 +33,12 @@
 }
 
 .lessOpacity {
-  opacity: 0.6;
+  opacity: 0.3;
+  transition: visibility 0s linear 600ms, opacity 600ms;
+}
+
+.fullOpacity {
+  opacity: 1 !important;
+  transition: visibility 0s linear 600ms, opacity 600ms;
 }
 // filter: blur(1px);

@@ -24,9 +24,9 @@
 <!--  Favorite -->
 <div>
     <% if @job_application.favorite %>
-     <div class="text-center"><%= link_to "favorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
+     <div class="text-center"><%= link_to "unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
     <% else %>
-    <div class="text-center"><%= link_to "unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
+    <div class="text-center"><%= link_to "favorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
    <% end %>
 </div>
 
@@ -77,14 +77,9 @@
 <%= link_to "Create a new interview", new_job_application_interview_path(@job_application), class: "primary-btn"%>
 <%= link_to "Go back", job_applications_path, class:'primary-btn' %>
 
-<<<<<<< HEAD
-
-
-=======
 <!-- MAP -->
 
 <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
->>>>>>> master

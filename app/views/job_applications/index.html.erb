@@ -1,4 +1,4 @@
-<h1>This is your Dashboard</h1>
+<h1 class="text-center">This is your Dashboard</h1>
 
 <!--- Implementing Statistics (styling needed) --->
 
@@ -13,11 +13,11 @@
 
 <!--- Start of  of filter buttons --->
 <div class="text-center">
+   <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "primary-btn"  %>
    <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "primary-btn"  %>
-   <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "primary-btn"  %>
    <%#= link_to "Unanswerd", job_applications_path( params: {filter: "Unanswerd"}), class: "primary-btn"  %>
    <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "primary-btn"  %>
-   <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "primary-btn"  %>
+   <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "primary-btn"  %>
 </div>
 <br>
 

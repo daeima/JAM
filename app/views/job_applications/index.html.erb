@@ -1,12 +1,53 @@
 <h1>This is your Dashboard</h1>
-<div class="tableDashboard">
-  <% @job_applications.each do |job_application| %>
-    <div class="tableContainer tableCard">
-      <li><%= job_application.title %></li>
-      <li><%= job_application.company_name %></li>
-      <li><%= job_application.level %></li>
-      <li><%= job_application.status %></li>
-      <%= link_to "See Details", job_application_path(job_application), class:"primary-btn" %>
-    </div>
-  <% end %>
+
+<!--- Implementing Statistics (styling needed) --->
+
+<p>Total Applications: <%= @job_applications.length%></p>
+<p>Pending Applications: <%= @job_applications.where(status: "Pending").length %></p>
+<p>Applications in Process: <%= @job_applications.where(status: "In process").length %></p>
+<p>Successfull Applications: <%= @job_applications.where(status: "Offer").length %></p>
+<p>Rejected Applications: <%= @job_applications.where(status: "Rejected").length %></p>
+
+<!--- End of Statistics --->
+
+
+<!--- Start of  of filter buttons --->
+<div class="text-center">
+   <%= link_to "pending", job_applications_path( params: {filter: "Pending"}), class: "primary-btn"  %>
+   <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "primary-btn"  %>
+   <%#= link_to "Unanswerd", job_applications_path( params: {filter: "Unanswerd"}), class: "primary-btn"  %>
+   <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "primary-btn"  %>
+   <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "primary-btn"  %>  
 </div>
+
+
+
+<!--- end of  of filter buttons --->
+   
+
+
+<!--- Search Bar (styling needed)--->
+
+  <div data-controller="refresh-list">
+    <%= form_with url: job_applications_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
+      <%= f.text_field :query,
+                      class: "form-control",
+                      placeholder: 'Search for an Application',
+                      value: params[:query],
+                      data: {
+                        refresh_list_target: 'searchInput',
+                        action: "keyup->refresh-list#update"
+                      } %>
+
+    <% end %>
+    <%= render "list" %>
+  </div>
+
+<!--- End of Search Bar --->
+
+
+<!--- Some Cards Independent from Search (styling needed) --->
+
+
+
+<!--- End of Cards --->

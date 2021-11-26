@@ -5,9 +5,9 @@
 
   <!--  Favorite -->
     <% if @job_application.favorite %>
-     <%= link_to "unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn"%>
+     <%= link_to "Unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn"%>
     <% else %>
-    <%= link_to "favorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn"%>
+    <%= link_to "Favorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn"%>
    <% end %>
 
 <div class="row">
@@ -36,13 +36,12 @@
 </div>
 
 
-
+<%= link_to "Add interview", new_job_application_interview_path(@job_application), class: "primary-btn"%>
 <div class="container card-deck">
 <% @job_application.interviews.each do |interview| %>
   <div class="card bg-light mb-3" style="max-width: 18rem;">
     <div class="card-header">
       <h3>Interview</h3>
-      <%= link_to "Add interview", new_job_application_interview_path(@job_application), class: "primary-btn"%>
       <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
       <%= link_to "Delete", job_application_interview_path(@job_application, interview), class:'primary-btn', method: :delete, data: { confirm: "Are you sure?" } %>
     </div>

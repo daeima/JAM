@@ -24,9 +24,9 @@
 <!--  Favorite -->
 <div>
     <% if @job_application.favorite %>
-     <div class="text-center"><%= link_to "favorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
+     <div class="text-center"><%= link_to "unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
     <% else %>
-    <div class="text-center"><%= link_to "unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
+    <div class="text-center"><%= link_to "favorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
    <% end %>
 </div>
 

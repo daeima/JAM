@@ -21,7 +21,9 @@
             <li><%= job_application.company_name %></li>
             <li><%= job_application.level %></li>
             <li><%= job_application.status %></li>
-            <%= link_to "Archive Application", archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } %>
+            <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
+              <i class="fas fa-archive"> Archive application</i>
+            <% end %>
             <%= link_to "See Details", job_application_path(job_application), class:"primary-btn" %>
           </div>
         <% end %>

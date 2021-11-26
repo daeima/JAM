@@ -5,9 +5,9 @@
 
   <!--  Favorite -->
     <% if @job_application.favorite %>
-     <%= link_to "favorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn"%>
+     <%= link_to "unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn"%>
     <% else %>
-    <%= link_to "unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn"%>
+    <%= link_to "favorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn"%>
    <% end %>
 
 <div class="row">

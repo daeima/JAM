@@ -1,8 +1,46 @@
 <div class="row row-m0" data-controller="row">
   <div class="backgroundImagePast col-6 fullOpacity" id="pastBackground">
-    <h1 data-action="click->job-applications#revealContent" class="textPast" id="past">past</h1>
+    <h1 data-action="click->job-applications#revealContent" class="textPast" id="past">Right Now</h1>
   </div>
   <div class="backgroundImageFuture col-6 lessOpacity" id="futureBackground">
-    <h1 class="textFuture" id="future">future</h1>
+    <h1 class="textFuture" id="future">With JAM</h1>
+  </div>
+</div>
+
+<div class="containerAllBelow">
+  <div class="centerHome col-12">
+    <li class="listHomeHead">
+      <h1 class="headHome">JAM - Your Job Application Manager</h1>
+      <p>Keep track of all of your applications. Easy. Clear. Effective.</p>
+      <%= link_to "Explore", job_applications_path, class:"primary-btn exploreButtonHome"%>
+    </li>
+  </div>
+
+  <div class="containerAbout">
+    <li class="listHomeHead">
+      <div class="displayInline">
+          <%= image_tag "withJam.jpg", class:"circleHome"  %>
+        <div>
+          <p><strong>EASY</strong></p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+      </div>
+      <div class="displayInline">
+        <%= image_tag "withJam.jpg", class:"circleHome"  %>
+          <div>
+            <p><strong>CLEAR</strong></p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+          </div>
+        </div>
+      <div class="displayInline">
+          <%= image_tag "withJam.jpg", class:"circleHome"  %>
+            <div>
+              <p><strong>EFFECTIVE</strong></p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            </div>
+          </div>
+          </li>
+      </div>
+    </div>
   </div>
 </div>

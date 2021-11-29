@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2021_11_23_102106) do
     t.boolean "archive", default: false
     t.boolean "favorite", default: false
     t.bigint "user_id", null: false
+    t.datetime "applied", precision: 6, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_job_applications_on_user_id"

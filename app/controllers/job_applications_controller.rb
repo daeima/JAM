@@ -2,7 +2,7 @@ class JobApplicationsController < ApplicationController
 
   def index
     @job_applications = JobApplication.order(title: :desc)
-    @job_application_count = JobApplication.group_by_month(:created_at, format: "%b").count
+    @job_application_count = JobApplication.group_by_month(:applied, format: "%b").count
 
     @data_keys = [
       'January',
@@ -14,12 +14,14 @@ class JobApplicationsController < ApplicationController
       'July',
       'August',
       'September',
-      'october',
+      'October',
       'November',
       'December'
 
     ]
+
     @data_values = @job_application_count.values
+    
     if params[:query].present?
       sql_query = " \
         job_applications.title ILIKE :query \

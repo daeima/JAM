@@ -8,5 +8,6 @@
   <%= f.input :remote %>
   <%= f.input :favorite %>
   <%= f.input :archive %>
+  <%= f.input :applied, as: :string, required: false, input_html: {class: "datepicker"} %>
   <%= f.submit %>
 <% end %>

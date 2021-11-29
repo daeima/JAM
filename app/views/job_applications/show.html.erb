@@ -81,5 +81,13 @@
 
 <%= link_to "Go back", job_applications_path, class:'primary-btn' %>
 
+
+<div id="map"
+     style="width: 100%; height: 600px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
+
 <br><br>
 </div>
+

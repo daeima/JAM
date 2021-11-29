@@ -1,26 +1,13 @@
 import Chart from 'chart.js/auto';
 
 const initChart = () =>{
-    // document.addEventListener('turbolinks:load', () => {
-    //     var ctx = document.getElementById('myChart').getContext('2d');
-    //      new Chart(ctx, {
-    //     type: 'line',
-    //     data: {
-    //       labels: JSON.parse(ctx.canvas.dataset.labels),
-    //       datasets: [{
-    //         data: JSON.parse(ctx.canvas.dataset.data),
-    //       }]
-    //     },
-    //     });
-    //   })
-
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'bar',
+  const ctx = document.getElementById('myChart').getContext('2d');
+  const myChart = new Chart(ctx, {
+    type: 'line',
     data: {
         labels: JSON.parse(ctx.canvas.dataset.labels),
         datasets: [{
-            label: '# of Job applications',
+            label: 'Job applications',
             data: JSON.parse(ctx.canvas.dataset.data),
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

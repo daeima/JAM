@@ -20,7 +20,7 @@ const myChart = new Chart(ctx, {
     data: {
         labels: JSON.parse(ctx.canvas.dataset.labels),
         datasets: [{
-            label: '# of Votes',
+            label: '# of Job applications',
             data: JSON.parse(ctx.canvas.dataset.data),
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',

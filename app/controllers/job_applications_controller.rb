@@ -2,7 +2,24 @@ class JobApplicationsController < ApplicationController
 
   def index
     @job_applications = JobApplication.order(title: :desc)
+    @job_application_count = JobApplication.group_by_month(:created_at, format: "%b").count
 
+    @data_keys = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'october',
+      'November',
+      'December'
+
+    ]
+    @data_values = @job_application_count.values
     if params[:query].present?
       sql_query = " \
         job_applications.title ILIKE :query \
@@ -30,6 +47,7 @@ class JobApplicationsController < ApplicationController
   def show
     @job_application = JobApplication.find(params[:id])
     @interview = Interview.new(id: @job_application)
+
 
     @markers = [{
       lat: @job_application.latitude,

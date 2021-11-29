@@ -28,12 +28,12 @@ class JobApplicationsController < ApplicationController
         OR job_applications.company_name ILIKE :query \
         OR job_applications.level ILIKE :query \
       "
-      
+
     @job_applications = @job_applications.where(sql_query, query: "%#{params[:query]}%")
-      
+
     elsif params[:filter].present?
       @job_applications = current_user.job_applications.filter_by_status(params[:filter])
-      
+
     end
 
     respond_to do |format|
@@ -63,8 +63,9 @@ class JobApplicationsController < ApplicationController
 
   def create
     @job_application = JobApplication.new(job_application_params)
+    @job_application.user = current_user
 
-    if @job_application.save
+    if @job_application.save!
       redirect_to job_application_path(@job_application)
     else
       render :new

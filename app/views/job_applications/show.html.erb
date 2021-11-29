@@ -1,62 +1,65 @@
-<h1>Show Page</h1>
+<div class="container">
+
+<h1 class="text-center">Show Page</h1>
 <!-- Job application display -->
 
-<div class="container">
-  <%= link_to "Edit", edit_job_application_path(@job_application), class:"primary-btn" %>
-  <br>
+  <%= link_to "Edit", edit_job_application_path(@job_application), class:"btn primary-btn mb-3" %>
 
-    <h2><%= @job_application.title %></h2>
-    <h3><%= @job_application.level %> level</h3>
+  <!--  Favorite -->
+    <% if @job_application.favorite %>
+     <%= link_to "Unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn mb-3"%>
+    <% else %>
+    <%= link_to "Favorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn mb-3"%>
+   <% end %>
+
+<div class="row">
+  <div class="col-8">
+    <h2><%= @job_application.title %> <%= @job_application.favorite ? "⭐" : "" %></h2>
     <h3><%= @job_application.company_name %></h3>
-    <p>Job description: <%= @job_application.description %></p>
-    <p><%= @job_application.status %></li>
-    <%= link_to "Job link", @job_application.link %>
+    <p><strong><%= @job_application.level %></strong></p>
+    <p> <strong>Job description:</strong>  <%= @job_application.description %></p>
+    <p>Status: <%= @job_application.status %></p>
+    <%= link_to "Job link", @job_application.link, class:"mb-4"%>
     <p>Address: <%= @job_application.address %></p>
     <p><%= @job_application.remote ? "Remote" : "On site" %></p>
-    <p><%= @job_application.favorite ? "🖤" : "-" %></p>
-    <p>Notes<%= @job_application.notes %></p>
-    <p>Applierd on:<%= @job_application.created_at %></p>
-    <p>Updated on:<%= @job_application.updated_at %></p>
-    <br>
+    <p>Notes: <%= @job_application.notes %></p>
+    <p>Applied on: <%= @job_application.created_at %></p>
+    <p>Updated on: <%= @job_application.updated_at %></p>
+  </div>
 
-<!-- Job application display -->
 
-<!--  Favorite -->
-<div>
-    <% if @job_application.favorite %>
-     <div class="text-center"><%= link_to "unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
-    <% else %>
-    <div class="text-center"><%= link_to "favorite",  favorite_job_application_path(@job_application), method: :patch, class: "primary-btn"%></div>
-   <% end %>
+  <!-- MAP -->
+    <div id="map"
+        class="col-4"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 </div>
 
-<!-- Favorite -->
 
-
-<div class="card-header" style="width: 18rem;">
-   <h2 class="text-center">Interviews</h2>
-    <% @job_application.interviews.each do |interview| %>
-        <%= link_to job_application_path(interview.job_application), class:'text-decoration-none' do %>
-           <div class="card-body border border-primary">
-               <p class="card-text">Start date: <%= interview.start_date %></p>
-               <p class="card-text">End date: <%= interview.end_time %></p>
-               <p class="card-text">Notes: <%= interview.notes %></p>
-               <p class="card-text mb-3">Interview type:  <%= interview.interview_type %></p>
-            <% end %>
-               <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
-               <%= link_to "Delete", job_application_interview_path(@job_application, interview), class:'primary-btn', method: :delete, data: { confirm: "Are you sure?" } %>
-          </div>
-
-          <!--  add contact-->
+<%= link_to "Add interview", new_job_application_interview_path(@job_application), class: "primary-btn"%>
+<br>
+<br>
+<div class="container card-deck">
+<% @job_application.interviews.each do |interview| %>
+  <div class="card bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header">
+      <h3>Interview</h3>
+      <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
+      <%= link_to "Delete", job_application_interview_path(@job_application, interview), class:'primary-btn', method: :delete, data: { confirm: "Are you sure?" } %>
+    </div>
+    <div class="card-body">
+      <p class="card-text">Start date: <%= interview.start_date %></p>
+      <p class="card-text">End date: <%= interview.end_time %></p>
+      <p class="card-text">Interview type:  <%= interview.interview_type %></p>
+      <p class="card-text"><%= interview.notes %></p>
+      <br>
 
       <%= render 'contact_modal', interview: interview %>
 
-      <!-- end add contact-->
-
-      <!--  displaying conatct-->
-      <h3>Interview contact/s</h3>
-
       <% interview.contacts.each do  |contact| %>
+        <p> <strong>Interview contact</strong></p>
         <p><%= contact.first_name %> <%= contact.last_name %></p>
         <p><%=  contact.position %></p>
         <p><%= contact.email%></p>
@@ -65,19 +68,19 @@
         <br>
 
         <%= render 'edit_contact_modal', interview: interview, contact: contact %>
-
-      <br>
-        <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" } %>
+        <br>
+        <br>
+        <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" },class:'btn primary-btn' %>
       <% end %>
-      <!-- end displaying conatct-->
+    </div>
+  </div>
+<% end %>
+</div>
 
-    <% end %>
-<!-- end displaying interview-->
-</div><br>
-<%= link_to "Create a new interview", new_job_application_interview_path(@job_application), class: "primary-btn"%>
+<br>
+
 <%= link_to "Go back", job_applications_path, class:'primary-btn' %>
 
-<!-- MAP -->
 
 <div id="map"
      style="width: 100%; height: 600px;"
@@ -85,15 +88,6 @@
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 
 
-
-
-
-
-
-
-
-
-
-
-
+<br><br>
+</div>
 

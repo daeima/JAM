@@ -1,6 +1,7 @@
-<div class="container">
-  <h1>This is your Dashboard</h1>
 
+<h1 class="text-center">This is your Dashboard</h1>
+
+<div class="container">
 <!--- Implementing Statistics (styling needed) --->
 
 <p>Total Applications: <%= @job_applications.length%></p>
@@ -13,28 +14,20 @@
 
 
 <!--- Start of  of filter buttons --->
-<div class="d-flex text-center">
-  <div>
-      <%= link_to "pending", job_applications_path( params: {filter: "Pending"}), class: "primary-btn"  %>
-  </div>
 
-  <div>
-      <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "primary-btn"  %>
-  </div>
-  <div>
-      <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "primary-btn"  %>
-  </div>
-  <div>
-      <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "primary-btn"  %>  
-  </div>
-
+<div class="text-center">
+   <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "primary-btn"  %>
+   <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "primary-btn"  %>
    <%#= link_to "Unanswerd", job_applications_path( params: {filter: "Unanswerd"}), class: "primary-btn"  %>
-</div>
+   <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "primary-btn"  %>
+   <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "primary-btn"  %>
 
+</div>
+<br>
 
 
 <!--- end of  of filter buttons --->
-   
+
 
 
 <!--- Search Bar (styling needed)--->
@@ -65,6 +58,7 @@
 
 
 
+
 </div>
 
 
@@ -72,3 +66,4 @@
 <div class="container">
 <canvas id="myChart" width="200px" height="100px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas></div>
 
+</div>

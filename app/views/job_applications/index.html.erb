@@ -62,23 +62,6 @@
 <!--- End of Statistics --->
 
 
-<!--- Start of  of filter buttons --->
-
-<div class="text-center">
-   <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "primary-btn"  %>
-   <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "primary-btn"  %>
-   <%#= link_to "Unanswerd", job_applications_path( params: {filter: "Unanswerd"}), class: "primary-btn"  %>
-   <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "primary-btn"  %>
-   <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "primary-btn"  %>
-
-</div>
-<br>
-
-
-<!--- end of  of filter buttons --->
-
-
-
 <!--- Search Bar (styling needed)--->
 
   <div data-controller="refresh-list">
@@ -93,26 +76,34 @@
                       } %>
 
     <% end %>
-    <%= render "list" %>
+
+
+  <div class="text-center">
+  <%= link_to "See All", job_applications_path( params: {filter: ""}), class: "primary-btn"  %>
+   <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "primary-btn"  %>
+   <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "primary-btn"  %>
+   <%#= link_to "Unanswerd", job_applications_path( params: {filter: "Unanswerd"}), class: "primary-btn"  %>
+   <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "primary-btn"  %>
+   <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "primary-btn"  %>
+
+</div>
+<br>
+  <%= render "list" %>
   </div>
 
 <!--- End of Search Bar --->
 
-
-<!--- Some Cards Independent from Search (styling needed) --->
-
+<!--- Start of  of filter buttons --->
 
 
-<!--- End of Cards --->
-
-
+<!--- end of  of filter buttons --->
 
 
 </div>
 
 
-<!--- Charts1 --->
+<!--- Chart1 --->
 <div class="container">
-<canvas id="myChart" width="200px" height="100px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas></div>
-
+<canvas id="myChart" width="200px" height="100px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
+</div>
 </div>

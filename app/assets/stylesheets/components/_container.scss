@@ -5,3 +5,11 @@
   list-style-type: none;
   margin: 50px;
 }
+
+.containerStatisticCards {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}

@@ -10,3 +10,34 @@
     background-color: $button-orange;
     text-decoration: none;
 }
+
+.icon-text {
+  display:inline-block;
+  text-decoration:none;
+  color:$light-gray;
+  position:relative;
+  transition:all 0.5s;
+  // font-size:16px;
+  margin:20px;
+  height:100%;
+}
+.icon-text:hover {
+  color:$font-black;
+}
+.icon-text::before {
+  content:" ";
+  display:block;
+  position:absolute;
+  border-bottom:solid 3px $light-gray;
+  bottom:0px;
+  width:0%;
+  left:50%;
+  margin:0 auto;
+  transition:all 0.5s;
+  z-index:-1;
+}
+.icon-text:hover::before {
+  border-bottom:solid 3px $font-black;
+  width:100%;
+  left:0%;
+}

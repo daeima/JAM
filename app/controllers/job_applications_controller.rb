@@ -2,19 +2,38 @@ class JobApplicationsController < ApplicationController
 
   def index
     @job_applications = JobApplication.order(title: :desc)
+    @job_application_count = JobApplication.group_by_month(:applied, format: "%b").count
 
+    @data_keys = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+
+    ]
+
+    @data_values = @job_application_count.values
+    
     if params[:query].present?
       sql_query = " \
         job_applications.title ILIKE :query \
         OR job_applications.company_name ILIKE :query \
         OR job_applications.level ILIKE :query \
       "
-      
+
     @job_applications = @job_applications.where(sql_query, query: "%#{params[:query]}%")
-      
+
     elsif params[:filter].present?
       @job_applications = current_user.job_applications.filter_by_status(params[:filter])
-      
+
     end
 
     respond_to do |format|
@@ -31,6 +50,7 @@ class JobApplicationsController < ApplicationController
     @job_application = JobApplication.find(params[:id])
     @interview = Interview.new(id: @job_application)
 
+
     @markers = [{
       lat: @job_application.latitude,
       lng: @job_application.longitude
@@ -43,8 +63,9 @@ class JobApplicationsController < ApplicationController
 
   def create
     @job_application = JobApplication.new(job_application_params)
+    @job_application.user = current_user
 
-    if @job_application.save
+    if @job_application.save!
       redirect_to job_application_path(@job_application)
     else
       render :new
@@ -86,7 +107,7 @@ class JobApplicationsController < ApplicationController
   private
 
   def job_application_params
-    params.require(:job_application).permit(:title, :level, :company_name, :description, :status, :link, :notes, :address, :remote, :archive,:favorite, :user, :created_at, :updated_at)
+    params.require(:job_application).permit(:title, :level, :company_name, :description, :status, :link, :notes, :address, :remote, :archive,:favorite, :applied, :user, :created_at, :updated_at)
   end
 
 

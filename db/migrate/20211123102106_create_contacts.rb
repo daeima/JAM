@@ -8,7 +8,6 @@ class CreateContacts < ActiveRecord::Migration[6.0]
       t.string :phone
       t.string :contact_url
       t.references :interview, null: false, foreign_key: true
-
       t.timestamps
     end
   end

@@ -2,11 +2,13 @@
   <%= f.input :title %>
   <%= f.input :level %>
   <%= f.input :company_name %>
+  <%= f.input :address %>
   <%= f.input :description %>
   <%= f.input :status, as: :select, collection: ["Pending", "In process", "Offer", "Rejected"]%>
   <%= f.input :notes %>
   <%= f.input :remote %>
   <%= f.input :favorite %>
   <%= f.input :archive %>
-  <%= f.submit %>
+  <%= f.input :applied, as: :string, required: false, input_html: {class: "datepicker"} %>
+  <%= f.submit class: "btn btn-primary" %>
 <% end %>

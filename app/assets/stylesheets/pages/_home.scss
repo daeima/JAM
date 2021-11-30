@@ -1,97 +1,89 @@
-.backgroundImagePast {
-  display: flex;
-  background-image: url("withoutJam.jpg");
-  height: 94vh;
-  background-position: center;
+.backgroundImageHome {
+  background-image: url("backgroundHome.jpg");
+  height: 75vh;
+  width: 100vw;
   background-size: cover;
-}
-
-.backgroundImageFuture {
   display: flex;
-  background-image: url("withJam.jpg");
-  height:94vh;
-  background-size: cover;
-  background-position: center;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.textFuture {
-  display: flex;
-  align-items: center;
-  text-shadow: 0.5px 0.5px black;
-  text-decoration: underline;
+.centerFirstText {
+   display: flex;
+   align-content: center;
+   justify-content: left;
+   margin-left: 30px;
 }
 
-.textPast {
-  display: flex;
-  width: 100%;
-  align-items: center;
-  text-shadow: 0.5px 0.5px black;
-  justify-content: right;
-  text-decoration: underline;
-}
-
-.row-m0 {
-  margin: 0px;
-}
-
-.lessOpacity {
-  opacity: 0.3;
-  transition: visibility 0s linear 600ms, opacity 600ms;
-}
-
-.fullOpacity {
-  opacity: 1 !important;
-  transition: visibility 0s linear 600ms, opacity 600ms;
-}
-// filter: blur(1px);
-
-.centerHome {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-top: 75px;
-}
-
-.listHomeHead {
-  color: $font-black;
+.list {
   list-style-type: none;
 }
 
-.exploreButtonHome {
-  margin-top: 30px;
-  margin-bottom: 60px;
+
+  p {
+    margin: 0 0 20px;
+  }
+
+
+/* Arrow & Hover Animation */
+#more-arrows {
+	width: 75px;
+  height: 65px;
+
+  &:hover {
+
+    polygon {
+      fill: black;
+      transition: all .2s ease-out;
+
+      &.arrow-bottom {
+        transform: translateY(-18px);
+      }
+
+      &.arrow-top {
+        transform: translateY(18px);
+      }
+
+    }
+
+  }
+
 }
 
-.circleHome {
-  height: 150px;
-  width: 150px;
-  border-radius: 75px;
-  background-color: white;
-  object-fit: cover;
-  margin: 20px;
+polygon {
+  fill: black;
+  transition: all .2s ease-out;
+
+  &.arrow-middle {
+	  opacity: 0.75;
+	}
+
+	&.arrow-top {
+	  opacity: 0.5
+	}
+
 }
 
-.displayInline {
+.centerArrowWithText {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
-  padding: 10px;
-  border-radius: 50px;
-  background: #D5E1E5;
-  box-shadow:  20px 20px 60px #b5bfc3,
-             -20px -20px 60px #f5ffff;
+  align-content: center;
+  flex-direction: column;
+  margin-bottom: 20px;
 }
 
-.containerAllBelow {
-  height: 100vh;
+.mediaReference {
+  height: 50px;
+  border-radius: 20px;
 }
 
-.containerAbout {
+.cardReference {
+  background-color: white;
   display: flex;
-  justify-content: center;
-}
-
-.keywordList {
-  font-weight: bold !important;
+  justify-content: space-between;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 15px;
+  width: 400px;
 }

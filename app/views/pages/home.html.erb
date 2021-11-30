@@ -1,46 +1,36 @@
-<div class="row row-m0" data-controller="row">
-  <div class="backgroundImagePast col-6 fullOpacity" id="pastBackground">
-    <h1 data-action="click->job-applications#revealContent" class="textPast" id="past">Right Now</h1>
-  </div>
-  <div class="backgroundImageFuture col-6 lessOpacity" id="futureBackground">
-    <h1 class="textFuture" id="future">With JAM</h1>
-  </div>
-</div>
-
-<div class="containerAllBelow">
-  <div class="centerHome col-12">
-    <li class="listHomeHead">
-      <h1 class="headHome">JAM - Your Job Application Manager</h1>
-      <p>Keep track of all of your applications. Easy. Clear. Effective.</p>
-      <%= link_to "Explore", job_applications_path, class:"primary-btn exploreButtonHome"%>
-    </li>
-  </div>
-
-  <div class="containerAbout">
-    <li class="listHomeHead">
-      <div class="displayInline">
-          <%= image_tag "withJam.jpg", class:"circleHome"  %>
-        <div>
-          <p><strong>EASY</strong></p>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-        </div>
-      </div>
-      <div class="displayInline">
-        <%= image_tag "withJam.jpg", class:"circleHome"  %>
+<div class="backgroundImageHome">
+  <div></div>
+    <div class="centerFirstText">
+      <li class="list">
+        <h1>JAM - Your Job Application Manager</h1>
+        <p>With JAM you can easily keep track of all of your applications. Clear. Easy. Effective. </p>
+        <%= link_to "Explore", root_path, class:"btn btn-primary" %>
+      </li>
+    </div>
+  <div class="containerArrow">
+    <div class="contentArrow">
+      <div class="centerArrowWithText">
+        <p>Learn more about JAM</p>
           <div>
-            <p><strong>CLEAR</strong></p>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <svg id="more-arrows">
+              <polygon class="arrow-top" points="37.6,27.9 1.8,1.3 3.3,0 37.6,25.3 71.9,0 73.7,1.3 "/>
+              <polygon class="arrow-middle" points="37.6,45.8 0.8,18.7 4.4,16.4 37.6,41.2 71.2,16.4 74.5,18.7 "/>
+              <polygon class="arrow-bottom" points="37.6,64 0,36.1 5.1,32.8 37.6,56.8 70.4,32.8 75.5,36.1 "/>
+            </svg>
           </div>
-        </div>
-      <div class="displayInline">
-          <%= image_tag "withJam.jpg", class:"circleHome"  %>
-            <div>
-              <p><strong>EFFECTIVE</strong></p>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-            </div>
-          </div>
-          </li>
       </div>
     </div>
   </div>
 </div>
+
+<h1>What is JAM about?</h1>
+<p>JAM is your personal job application manager, with which you can easily and quickly keep track of all applications. Don't be overwhelmed by recruiters and HR: enter all kinds of information, from company name to notes about past interviews, into your personal JAM dashboard.</p>
+
+<h1>Clear</h1>
+<p>Sort your applications however you want, mark favourite jobs and archive jobs from which you didnt got a respond yet.</p>
+
+<h1>Easy</h1>
+<p>It is very easy to keep the overview over all of your applications with JAM. You can sort and filter them.</p>
+
+<h1>Effective</h1>
+<p>You are getting interview invites and don't know where to store all of the necessary information? Add interview details, contact information among other things.</p>

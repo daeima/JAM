@@ -3,7 +3,7 @@ import Chart from 'chart.js/auto';
 const initChart = () =>{
   const ctx = document.getElementById('myChart').getContext('2d');
   const myChart = new Chart(ctx, {
-    type: 'line',
+    type: 'bar',
     data: {
         labels: JSON.parse(ctx.canvas.dataset.labels),
         datasets: [{

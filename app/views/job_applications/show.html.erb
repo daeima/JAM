@@ -51,9 +51,7 @@
 
           <!-- Add contact -->
 
-          <a class="icon-link" data-toggle="modal" data-target="#contactModel-<%= interview.id %>">
-            <i class="fas fa-user-plus"></i>
-          </a>
+           <%= render 'contact_modal', interview: interview %>
 
           <!-- Edit interview -->
 
@@ -83,7 +81,7 @@
             <p class="card-text"><%= interview.notes %></p>
             <br>
 
-            <%= render 'contact_modal', interview: interview %>
+
 
 
               <p> <strong>Interview contact</strong></p>

@@ -1,7 +1,12 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn primary-btn" data-toggle="modal" data-target="#contactModel-<%= interview.id %>">
+<!-- <button type="button" class="btn primary-btn" data-toggle="modal" data-target="#contactModel-<%= interview.id %>">
   Add contact
-</button>
+</button> -->
+
+<a class="icon-link" data-toggle="modal" data-target="#contactModel-<%= interview.id %>">
+  <i class="fas fa-user-plus"></i>
+</a>
+
 
 <!-- Modal -->
 <div class="modal fade" id="contactModel-<%= interview.id %>" tabindex="-1" aria-labelledby="contactMode-<%= interview.id %>Label" aria-hidden="true">

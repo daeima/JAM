@@ -20,9 +20,9 @@
         <% unarchived_jobs.each do |job_application| %>
           <div class="tableContainer tableCard">
             <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
-            <li><%= job_application.title %></li>
-            <li><%= job_application.company_name %></li>
-            <li><%= job_application.level %></li>
+            <li class="applicationCardTitle"><%= job_application.title %></li>
+            <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
+            <li class="applicationCardLevel"><%= job_application.level %></li>
             <% if job_application.status == "Pending" %>
             <li class="circlePurple"><%= job_application.status %></li>
             <% elsif job_application.status == "In process"%>
@@ -51,12 +51,25 @@
     <% archived_jobs = @job_applications.where(archive: true)  %>
         <% archived_jobs.each do |job_application| %>
           <div class="tableContainer tableCard">
-            <li><%= job_application.title %></li>
-            <li><%= job_application.company_name %></li>
-            <li><%= job_application.level %></li>
-            <li><%= job_application.status %></li>
-            <%= link_to "Unarchive", unarchive_job_application_path(job_application), method: :patch, data: { confirm: "Unarchive?" } %>
-            <%= link_to "See Details", job_application_path(job_application), class:"primary-btn" %>
+            <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
+            <li class="applicationCardTitle"><%= job_application.title %></li>
+            <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
+            <li class="applicationCardLevel"><%= job_application.level %></li>
+            <% if job_application.status == "Pending" %>
+            <li class="circlePurple"><%= job_application.status %></li>
+            <% elsif job_application.status == "In process"%>
+            <li class="circleGreen"><%= job_application.status %></li>
+            <% elsif job_application.status == "Rejected"%>
+            <li class="circleRed"><%= job_application.status %></li>
+            <% elsif job_application.status == "Offer"%>
+            <li class="circleYellow"><%= job_application.status %></li>
+            <% end %>
+            <%= link_to unarchive_job_application_path(job_application), method: :patch, data: { confirm: "Unarchive?" } do %>
+            <i class="fas fa-undo"></i>
+            <% end %>
+            <%= link_to job_application_path(job_application) do %>
+             <i class="fas fa-info-circle"></i>
+            <% end %>
           </div>
         <% end %>
     </div>

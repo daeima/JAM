@@ -18,26 +18,59 @@
 }
 
 .circlePurple {
-  border: 1px solid $light-purple;
+  display: flex;
+  border: 2px solid $light-purple;
   border-radius: 20px;
-  padding: 7px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
 }
 
 
 .circleRed {
-  border: 1px solid $light-red;
+  display: flex;
+  border: 2px solid $light-red;
   border-radius: 20px;
-  padding: 7px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
 }
 
 .circleGreen {
-  border: 1px solid $light-aqua;
+  display: flex;
+  border: 2px solid $light-aqua;
   border-radius: 20px;
-  padding: 7px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
 }
 
 .circleYellow {
-  border: 1px solid $light-yellow;
+  display: flex;
+  border: 2px solid $light-yellow;
   border-radius: 20px;
-  padding: 7px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+}
+
+.applicationCardTitle {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.applicationCardCompanyName {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+}
+
+.applicationCardLevel {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
 }

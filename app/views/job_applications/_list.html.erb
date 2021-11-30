@@ -15,13 +15,25 @@
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     <div class="tableDashboard">
 
+<!--- Reference Application-Cards --->
+          <div class="tableContainer tableCardExample">
+            <li class="logoIndex logoExample"></li>
+            <li class="applicationCardCompanyNameExample"><%= "Company Name" %></li>
+            <li class="applicationCardTitleExample"><%= "Title" %></li>
+            <li class="applicationCardLevelExample"><%= "Level" %></li>
+            <li class="circleExample"><%= "Status" %></li>
+            <i class="fas fa-archive whiteout"></i>
+            <i class="fas fa-info-circle whiteout"></i>
+          </div>
+<!--- End of reference Application-Cards --->
+
 <!--- Active Application-Cards --->
     <% unarchived_jobs = @job_applications.where(archive: false) %>
         <% unarchived_jobs.each do |job_application| %>
           <div class="tableContainer tableCard">
             <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
-            <li class="applicationCardTitle"><%= job_application.title %></li>
             <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
+            <li class="applicationCardTitle"><%= job_application.title %></li>
             <li class="applicationCardLevel"><%= job_application.level %></li>
             <% if job_application.status == "Pending" %>
             <li class="circlePurple"><%= job_application.status %></li>
@@ -48,12 +60,25 @@
   <!--- Archived Application-Cards --->
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
    <div class="tableDashboard">
+
+<!--- Reference Application-Cards --->
+    <div class="tableContainer tableCardExample">
+            <li class="logoIndex logoExample">Company Logo</li>
+            <li class="applicationCardCompanyNameExample"><%= "Company Name" %></li>
+            <li class="applicationCardTitleExample"><%= "Title" %></li>
+            <li class="applicationCardLevelExample"><%= "Level" %></li>
+            <li class="circleExample"><%= "Status" %></li>
+            <i class="fas fa-archive"></i>
+            <i class="fas fa-info-circle"></i>
+    </div>
+<!--- End of Reference Application-Cards --->
+
     <% archived_jobs = @job_applications.where(archive: true)  %>
         <% archived_jobs.each do |job_application| %>
           <div class="tableContainer tableCard">
             <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
-            <li class="applicationCardTitle"><%= job_application.title %></li>
             <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
+            <li class="applicationCardTitle"><%= job_application.title %></li>
             <li class="applicationCardLevel"><%= job_application.level %></li>
             <% if job_application.status == "Pending" %>
             <li class="circlePurple"><%= job_application.status %></li>

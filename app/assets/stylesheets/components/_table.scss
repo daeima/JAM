@@ -9,12 +9,28 @@
              -20px -20px 60px #ffffff;
 }
 
+.tableCardExample {
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+  position: sticky;
+  top: 0;
+}
+
 .tableCard:hover {
   transform: scale(1.02);
 }
 
 .logoIndex {
   border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
 }
 
 .circlePurple {
@@ -24,6 +40,7 @@
   width: 120px;
   justify-content: center;
   align-items: center;
+  color: $light-purple;
 }
 
 
@@ -34,6 +51,7 @@
   width: 120px;
   justify-content: center;
   align-items: center;
+  color: $light-red;
 }
 
 .circleGreen {
@@ -43,6 +61,7 @@
   width: 120px;
   justify-content: center;
   align-items: center;
+  color: $light-aqua;
 }
 
 .circleYellow {
@@ -52,6 +71,7 @@
   width: 120px;
   justify-content: center;
   align-items: center;
+  color: $light-yellow;
 }
 
 .applicationCardTitle {
@@ -73,4 +93,62 @@
   width: 200px;
   justify-content: center;
   align-items: center;
+}
+
+.applicationCardTitleExample{
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+.applicationCardCompanyNameExample {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+.applicationCardLevelExample {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+.circleExample {
+  display: flex;
+  border: 2px solid black;
+  border-radius: 20px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+}
+
+.logoExample {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+}
+
+.whiteout {
+  color: white !important;
+  background-color: white !important;
 }

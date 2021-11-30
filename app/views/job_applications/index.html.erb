@@ -62,23 +62,6 @@
 <!--- End of Statistics --->
 
 
-<!--- Start of  of filter buttons --->
-
-<div class="text-center">
-   <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "primary-btn"  %>
-   <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "primary-btn"  %>
-   <%#= link_to "Unanswerd", job_applications_path( params: {filter: "Unanswerd"}), class: "primary-btn"  %>
-   <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "primary-btn"  %>
-   <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "primary-btn"  %>
-
-</div>
-<br>
-
-
-<!--- end of  of filter buttons --->
-
-
-
 <!--- Search Bar (styling needed)--->
 
   <div data-controller="refresh-list">
@@ -93,19 +76,27 @@
                       } %>
 
     <% end %>
-    <%= render "list" %>
+
+
+  <div class="text-center">
+  <%= link_to "See All", job_applications_path( params: {filter: ""}), class: "primary-btn"  %>
+   <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "primary-btn"  %>
+   <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "primary-btn"  %>
+   <%#= link_to "Unanswerd", job_applications_path( params: {filter: "Unanswerd"}), class: "primary-btn"  %>
+   <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "primary-btn"  %>
+   <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "primary-btn"  %>
+
+</div>
+<br>
+  <%= render "list" %>
   </div>
 
 <!--- End of Search Bar --->
 
-
-<!--- Some Cards Independent from Search (styling needed) --->
-
+<!--- Start of  of filter buttons --->
 
 
-<!--- End of Cards --->
-
-
+<!--- end of  of filter buttons --->
 
 
 </div>

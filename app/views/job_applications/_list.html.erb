@@ -6,40 +6,84 @@
 <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
    <div class="tableDashboard">
+    <%= link_to "New Job Application", new_job_application_path, class:"primary-btn" %>
+  <br>
+  <br>
+  <br>
+  <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Active</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Archived</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="pills-tabContent">
+    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+    <div class="tableDashboard">
 
+<!--- Active Application-Cards --->
     <% unarchived_jobs = @job_applications.where(archive: false) %>
         <% unarchived_jobs.each do |job_application| %>
           <div class="tableContainer tableCard">
-            <%= image_tag image_url(job_application.comp_logo) %>
-            <li><%= job_application.title %></li>
-            <li><%= job_application.company_name %></li>
-            <li><%= job_application.level %></li>
-            <li><%= job_application.status %></li>
-            <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
-              <i class="fas fa-archive"> Archive application</i>
+            <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
+            <li class="applicationCardTitle"><%= job_application.title %></li>
+            <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
+            <li class="applicationCardLevel"><%= job_application.level %></li>
+            <% if job_application.status == "Pending" %>
+            <li class="circlePurple"><%= job_application.status %></li>
+            <% elsif job_application.status == "In process"%>
+            <li class="circleGreen"><%= job_application.status %></li>
+            <% elsif job_application.status == "Rejected"%>
+            <li class="circleRed"><%= job_application.status %></li>
+            <% elsif job_application.status == "Offer"%>
+            <li class="circleYellow"><%= job_application.status %></li>
             <% end %>
-            <%= link_to "See Details", job_application_path(job_application), class:"primary-btn" %>
+            <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
+              <i class="fas fa-archive"></i>
+            <% end %>
+            <%= link_to job_application_path(job_application) do %>
+             <i class="fas fa-info-circle"></i>
+            <% end %>
           </div>
         <% end %>
+    </div>
   </div>
-  </div>
+
+  <!--- End of Active Application-Cards --->
+
+  <!--- Archived Application-Cards --->
   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
    <div class="tableDashboard">
     <% archived_jobs = @job_applications.where(archive: true)  %>
         <% archived_jobs.each do |job_application| %>
           <div class="tableContainer tableCard">
-            <li><%= job_application.title %></li>
-            <li><%= job_application.company_name %></li>
-            <li><%= job_application.level %></li>
-            <li><%= job_application.status %></li>
-            <%= link_to "Unarchive", unarchive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } %>
-            <%= link_to "See Details", job_application_path(job_application), class:"primary-btn" %>
+            <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
+            <li class="applicationCardTitle"><%= job_application.title %></li>
+            <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
+            <li class="applicationCardLevel"><%= job_application.level %></li>
+            <% if job_application.status == "Pending" %>
+            <li class="circlePurple"><%= job_application.status %></li>
+            <% elsif job_application.status == "In process"%>
+            <li class="circleGreen"><%= job_application.status %></li>
+            <% elsif job_application.status == "Rejected"%>
+            <li class="circleRed"><%= job_application.status %></li>
+            <% elsif job_application.status == "Offer"%>
+            <li class="circleYellow"><%= job_application.status %></li>
+            <% end %>
+            <%= link_to unarchive_job_application_path(job_application), method: :patch, data: { confirm: "Unarchive?" } do %>
+            <i class="fas fa-undo"></i>
+            <% end %>
+            <%= link_to job_application_path(job_application) do %>
+             <i class="fas fa-info-circle"></i>
+            <% end %>
           </div>
         <% end %>
     </div>
   </div>
 </div>
 
+<!--- End of Archived Application-Cards --->
 
 </div>
 

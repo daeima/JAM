@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+*{
+    list-style: none;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.wrapper .sidebar{
+    background: $white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100vh;
+    padding: 24px 0;
+    transition: all 0.5s ease;
+}
+
+.wrapper .sidebar .profile{
+    margin-bottom: 32px;
+    text-align: center;
+}
+
+.wrapper .sidebar .profile img{
+    display: block;
+    width: 118px;
+    height: 118px;
+    border-radius: 50%;
+    margin: 0 auto;
+}
+
+.wrapper .sidebar .profile h3{
+    color: rgb(32, 30, 30);
+    margin: 8px;
+    font-size: 24px;
+}
+
+.wrapper .sidebar .profile p{
+    color: rgb(206, 240, 253);
+    font-size: 16px;
+}
+
+.wrapper .sidebar ul li a{
+    display: block;
+    padding: 16px 32px;
+    color: rgb(32, 30, 30);
+    font-size: 16px;
+    position: relative;
+    margin: 0;
+}
+
+.wrapper .sidebar ul li a .icon{
+    color: #1e1f20;
+    width: 32px;
+}
+
+.wrapper .sidebar ul li a:hover,
+.wrapper .sidebar ul li a.active{
+    color: #556870;
+    background:white;
+    text-decoration: none;
+}
+
+.wrapper .sidebar ul hr{
+    border: 1px rgb(88, 83, 83) solid;
+}
+
+
+
+  

@@ -1,23 +1,30 @@
 <div class="container">
 
-<h1 class="text-center">Show Page</h1>
+    <!-- Job application details -->
 
+  <div>
+    <div class="d-flex justify-content-between align-items-center">         <!--  company + favorit + edit job -->
+      <h2>
+        <%= @job_application.company_name %>
 
-  <%= link_to "Edit", edit_job_application_path(@job_application), class:"btn primary-btn mb-3" %>
+        <!--  Favorite -->
 
-  <!--  Favorite -->
-    <% if @job_application.favorite %>
-     <%= link_to "Unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn mb-3"%>
-    <% else %>
-    <%= link_to "Favorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn mb-3"%>
-   <% end %>
+        <% if @job_application.favorite %>
+          <%= link_to  favorite_job_application_path(@job_application), method: :patch, class: "icon-link" do %>
+            <i class="far fa-star"></i>
+          <% end %>
+        <% else %>
+          <%= link_to  favorite_job_application_path(@job_application), method: :patch, class: "icon-link" do %>
+            <i class="fas fa-star" id="favor"></i>
+          <% end %>
+        <% end %>
+      </h2>
+      <%= link_to edit_job_application_path(@job_application), class:"text-decoration-none icon-text" do %>
+        <i class="fas fa-edit"></i> Edit interview</i>
+      <% end %>
+    </div>
 
-   <!-- Job application details -->
-
-<div class="row">
-  <div class="col-8">
-    <h2><%= @job_application.title %> <%= @job_application.favorite ? "⭐" : "" %></h2>
-    <h3><%= @job_application.company_name %></h3>
+    <h3><%= @job_application.title %></h3>
     <p><strong><%= @job_application.level %></strong></p>
     <p> <strong>Job description:</strong>  <%= @job_application.description %></p>
     <p>Status: <%= @job_application.status %></p>
@@ -29,39 +36,36 @@
     <p>Updated on: <%= @job_application.updated_at %></p>
   </div>
 
-</div>
 
-<!-- Interviews -->
+  <!-- Interviews -->
 
-<div class="d-flex justify-content-between align-items-center">
-  <h2 class="mb-0">Interviews</h2>
-  <%= link_to new_job_application_interview_path(@job_application), class:"text-decoration-none icon-text" do %>
-    <i class="far fa-calendar-plus"> Add interview</i>
-  <% end %>
-</div>
-<!-- Interview cards -->
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 class="mb-0">Interviews</h2>
 
+    <%= render 'interview_modal', job_application: @job_application.id %>
 
+  </div>
 
-<%# <div class="accordion" id="accordionExample"> %>
-  <div class="card">
+  <!-- Interview cards -->
+
+  <div class="interview-card" >
     <% @job_application.interviews.each do |interview| %>
       <% interview.contacts.each do  |contact| %>
-        <div class="card-header interview-card" >    <!-- id="headin" -->
-          <h3>
+        <div class="interview-head">                  <!-- Head -->
+          <h3>                                                <!-- Date -->
             <%= interview.start_date.strftime("%A %d %B") %>
           </h3>
 
-          <h3>
+          <h3>                                                 <!-- Time -->
             <%= interview.start_date.strftime("%H.%M - ") %>
             <%= interview.end_time.strftime("%H.%M") %>
           </h3>
 
-          <h3>
+          <h3>                                                <!-- Type -->
             <%= interview.interview_type %>
           </h3>
 
-          <div class="icon-group">
+          <div class="icon-group">                            <!-- Icons interview-->
 
             <!-- Add contact -->
 
@@ -80,49 +84,44 @@
             <% end %>
 
             <!-- More -->
-            <a class="icon-link more" > <!-- data-toggle="collapse" data-target="#collapse" aria-expanded="flase" aria-controls="collapse" -->
+            <a class="icon-link more" href > <!-- data-toggle="collapse" data-target="#collapse" aria-expanded="flase" aria-controls="collapse" -->
               <i class="fas fa-chevron-down"></i>
             </a>
           </div>
         </div>
 
-        <%# <div id="collapse" class="collapse" aria-labelledby="heading" data-parent="#accordionExample"> %>
 
-          <div class="card-body panel">
-            <p class="card-text">Interview type:  </p>
-            <p class="card-text"><%= interview.notes %></p>
-            <br>
+        <div class="interview-panel">                     <!-- Dropdown -->
+          <p>Interview link:  </p>
+          <p><%= interview.notes %></p>
+          <hr>
+          <p><strong>Interview contact</strong></p>
+          <p><%= contact.first_name %> <%= contact.last_name %></p>
+          <p><%=  contact.position %></p>
+          <p><%= contact.email%></p>
+          <p><%= contact.phone%></p>
+          <%= link_to "Linkedin profile", contact.contact_url %>
+          <br>
+          <div class="icon-group">                        <!-- Icons contact-->
+                  <!-- Edit contact -->
+            <%= render 'edit_contact_modal', interview: interview, contact: contact %>
 
-
-
-
-              <p> <strong>Interview contact</strong></p>
-              <p><%= contact.first_name %> <%= contact.last_name %></p>
-              <p><%=  contact.position %></p>
-              <p><%= contact.email%></p>
-              <p><%= contact.phone%></p>
-              <%= link_to "Linkedin profile", contact.contact_url %>
-              <br>
-
-              <%= render 'edit_contact_modal', interview: interview, contact: contact %>
-              <br>
-              <br>
-              <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" },class:'btn primary-btn' %>
+                <!-- Delete contact -->
+            <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" },class:'btn primary-btn' %>
 
           </div>
         </div>
       <% end %>
     <% end %>
   </div>
+
+  <!-- MAP -->
+  <div id="map"
+    style="width:100vh; height:300px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 </div>
 
+
 <br>
-
-<%= link_to "Go back", job_applications_path, class:'primary-btn' %>
-
-<!-- MAP -->
-    <div id="map"
-        class="col-4"
-        style="width: 100%; height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>

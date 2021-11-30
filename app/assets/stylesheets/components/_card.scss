@@ -19,3 +19,29 @@
     display: flex;
     justify-content: space-around;
   }
+
+.interview-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $white;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px $white;
+}
+
+.panel {
+  padding: 0 18px;
+  display: none;
+  background-color: white;
+  overflow: hidden;
+}
+
+.interview-card h3 {
+  margin: 0;
+}
+
+.icon-group {
+
+}

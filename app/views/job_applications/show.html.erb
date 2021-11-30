@@ -42,42 +42,54 @@
 <!-- Interview cards -->
 
 
-<div class="accordion" id="accordionExample">
+
+<%# <div class="accordion" id="accordionExample"> %>
   <div class="card">
     <% @job_application.interviews.each do |interview| %>
       <% interview.contacts.each do  |contact| %>
-        <div class="card-header" id="headingOne">
-          <h3 class="mb-0">Interview</h3>
+        <div class="card-header interview-card" >    <!-- id="headin" -->
+          <h3>
+            <%= interview.start_date.strftime("%A %d %B") %>
+          </h3>
 
-          <!-- Add contact -->
+          <h3>
+            <%= interview.start_date.strftime("%H.%M - ") %>
+            <%= interview.end_time.strftime("%H.%M") %>
+          </h3>
 
-           <%= render 'contact_modal', interview: interview %>
+          <h3>
+            <%= interview.interview_type %>
+          </h3>
 
-          <!-- Edit interview -->
+          <div class="icon-group">
 
-          <%= link_to edit_job_application_interview_path(@job_application, interview), class:'text-decoration-none icon-link' do %>
-            <i class="fas fa-edit"></i>
-          <% end %>
+            <!-- Add contact -->
 
-          <!-- Delete interview -->
+            <%= render 'contact_modal', interview: interview %>
 
-          <%= link_to job_application_interview_path(@job_application, interview), class:'text-decoration-none icon-link', method: :delete, data: { confirm: "Are you sure?" } do %>
-            <i class="fas fa-trash-alt"></i>
-          <% end %>
+            <!-- Edit interview -->
 
-          <!-- More -->
-          <a class="icon-link" data-toggle="collapse" data-target="#collapse" aria-expanded="flase" aria-controls="collapse">
-            <i class="fas fa-chevron-down"></i>
-          </a>
+            <%= link_to edit_job_application_interview_path(@job_application, interview), class:'text-decoration-none icon-link' do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
 
+            <!-- Delete interview -->
+
+            <%= link_to job_application_interview_path(@job_application, interview), class:'text-decoration-none icon-link', method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash-alt"></i>
+            <% end %>
+
+            <!-- More -->
+            <a class="icon-link more" > <!-- data-toggle="collapse" data-target="#collapse" aria-expanded="flase" aria-controls="collapse" -->
+              <i class="fas fa-chevron-down"></i>
+            </a>
+          </div>
         </div>
 
-        <div id="collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+        <%# <div id="collapse" class="collapse" aria-labelledby="heading" data-parent="#accordionExample"> %>
 
-          <div class="card-body">
-            <p class="card-text">Start date: <%= interview.start_date %></p>
-            <p class="card-text">End date: <%= interview.end_time %></p>
-            <p class="card-text">Interview type:  <%= interview.interview_type %></p>
+          <div class="card-body panel">
+            <p class="card-text">Interview type:  </p>
             <p class="card-text"><%= interview.notes %></p>
             <br>
 

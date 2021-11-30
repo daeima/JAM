@@ -1,7 +1,7 @@
 <div class="container">
 
 <h1 class="text-center">Show Page</h1>
-<!-- Job application display -->
+
 
   <%= link_to "Edit", edit_job_application_path(@job_application), class:"btn primary-btn mb-3" %>
 
@@ -11,6 +11,8 @@
     <% else %>
     <%= link_to "Favorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn mb-3"%>
    <% end %>
+
+   <!-- Job application details -->
 
 <div class="row">
   <div class="col-8">
@@ -27,67 +29,66 @@
     <p>Updated on: <%= @job_application.updated_at %></p>
   </div>
 
-
-  <!-- MAP -->
-    <div id="map"
-        class="col-4"
-        style="width: 100%; height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
 </div>
 
+<!-- Interviews -->
 
-<%= link_to "Add interview", new_job_application_interview_path(@job_application), class: "primary-btn"%>
-<br>
-<br>
-<div class="container card-deck">
-<% @job_application.interviews.each do |interview| %>
-  <div class="card bg-light mb-3" style="max-width: 18rem;">
-    <div class="card-header">
-      <h3>Interview</h3>
-      <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
-      <%= link_to "Delete", job_application_interview_path(@job_application, interview), class:'primary-btn', method: :delete, data: { confirm: "Are you sure?" } %>
-    </div>
-    <div class="card-body">
-      <p class="card-text">Start date: <%= interview.start_date %></p>
-      <p class="card-text">End date: <%= interview.end_time %></p>
-      <p class="card-text">Interview type:  <%= interview.interview_type %></p>
-      <p class="card-text"><%= interview.notes %></p>
-      <br>
+<div class="d-flex justify-content-between align-items-center">
+  <h2 class="mb-0">Interviews</h2>
+  <%= link_to new_job_application_interview_path(@job_application), class:"text-decoration-none icon-text" do %>
+    <i class="far fa-calendar-plus"> Add interview</i>
+  <% end %>
+</div>
+<!-- Interview cards -->
 
-      <%= render 'contact_modal', interview: interview %>
 
+<div class="accordion" id="accordionExample">
+  <div class="card">
+    <% @job_application.interviews.each do |interview| %>
       <% interview.contacts.each do  |contact| %>
-        <p> <strong>Interview contact</strong></p>
-        <p><%= contact.first_name %> <%= contact.last_name %></p>
-        <p><%=  contact.position %></p>
-        <p><%= contact.email%></p>
-        <p><%= contact.phone%></p>
-        <%= link_to "Linkedin profile", contact.contact_url %>
-        <br>
+        <div cclass="card-header" id="headingOne">
+          <h3 class="mb-0">Interview</h3>
+          <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
+          <%= link_to "Delete", job_application_interview_path(@job_application, interview), class:'primary-btn', method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+          <div class="card-body">
+            <p class="card-text">Start date: <%= interview.start_date %></p>
+            <p class="card-text">End date: <%= interview.end_time %></p>
+            <p class="card-text">Interview type:  <%= interview.interview_type %></p>
+            <p class="card-text"><%= interview.notes %></p>
+            <br>
 
-        <%= render 'edit_contact_modal', interview: interview, contact: contact %>
-        <br>
-        <br>
-        <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" },class:'btn primary-btn' %>
+            <%= render 'contact_modal', interview: interview %>
+
+
+              <p> <strong>Interview contact</strong></p>
+              <p><%= contact.first_name %> <%= contact.last_name %></p>
+              <p><%=  contact.position %></p>
+              <p><%= contact.email%></p>
+              <p><%= contact.phone%></p>
+              <%= link_to "Linkedin profile", contact.contact_url %>
+              <br>
+
+              <%= render 'edit_contact_modal', interview: interview, contact: contact %>
+              <br>
+              <br>
+              <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" },class:'btn primary-btn' %>
+
+          </div>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
-<% end %>
 </div>
 
 <br>
 
 <%= link_to "Go back", job_applications_path, class:'primary-btn' %>
 
-
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-
-<br><br>
-</div>
-
+<!-- MAP -->
+    <div id="map"
+        class="col-4"
+        style="width: 100%; height: 600px;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>

@@ -3,11 +3,12 @@
 <br>
 <br>
 
-<div class="tab-content" id="pills-tabContent">
+
+<%# <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
    <div class="tableDashboard">
     <%= link_to "New Job Application", new_job_application_path, class:"primary-btn" %>
-  <br>
+  <%# <br>
   <br>
   <br>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -18,17 +19,29 @@
       <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Archived</a>
     </li>
   </ul>
-  <div class="tab-content" id="pills-tabContent">
+  <div class="tab-content" id="pills-tabContent"> %>
+
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     <div class="tableDashboard">
 
+<h2 class="subheaderApplications">See all of your Active Applications</h2>
+
+<div class="row d-flex filterStretch">
+      <%= link_to "See All", job_applications_path( params: {filter: ""}), class: "circlePurpleFilter"  %>
+      <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "circleGreenFilter"  %>
+      <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "circlePurpleFilter"  %>
+      <%#= link_to "Unanswerd", job_applications_path( params: {filter: "Unanswerd"}), class: "primary-btn"  %>
+      <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "circleYellowFilter"  %>
+      <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "circleRedFilter"  %>
+    </div>
+  <br>
 <!--- Reference Application-Cards --->
           <div class="tableContainer tableCardExample">
             <li class="logoIndex logoExample"></li>
-            <li class="applicationCardCompanyNameExample"><%= "Company Name" %></li>
-            <li class="applicationCardTitleExample"><%= "Title" %></li>
-            <li class="applicationCardLevelExample"><%= "Level" %></li>
-            <li class="circleExample"><%= "Status" %></li>
+            <li class="applicationCardCompanyNameExample"><h3>Company Name</h3></li>
+            <li class="applicationCardTitle"><h3>Title</h3></li>
+            <li class="applicationCardLevel"><h3>Level</h3></li>
+            <li class="circleExample"><h3>Status</h3></li>
             <i class="fas fa-archive whiteout"></i>
             <i class="fas fa-info-circle whiteout"></i>
           </div>
@@ -70,14 +83,14 @@
 
 <!--- Reference Application-Cards --->
     <div class="tableContainer tableCardExample">
-            <li class="logoIndex logoExample">Company Logo</li>
-            <li class="applicationCardCompanyNameExample"><%= "Company Name" %></li>
-            <li class="applicationCardTitleExample"><%= "Title" %></li>
-            <li class="applicationCardLevelExample"><%= "Level" %></li>
-            <li class="circleExample"><%= "Status" %></li>
-            <i class="fas fa-archive"></i>
-            <i class="fas fa-info-circle"></i>
-    </div>
+            <li class="logoIndex logoExample"></li>
+            <li class="applicationCardCompanyNameExample"><h3>Company Name</h3></li>
+            <li class="applicationCardTitle"><h3>Title</h3></li>
+            <li class="applicationCardLevel"><h3>Level</h3></li>
+            <li class="circleExample"><h3>Status</h3></li>
+            <i class="fas fa-archive whiteout"></i>
+            <i class="fas fa-info-circle whiteout"></i>
+          </div>
 <!--- End of Reference Application-Cards --->
 
     <% archived_jobs = @job_applications.where(archive: true)  %>
@@ -106,7 +119,7 @@
         <% end %>
     </div>
   </div>
-</div>
+
 
 <!--- End of Archived Application-Cards --->
 

@@ -11,16 +11,16 @@
 
         <% if @job_application.favorite %>
           <%= link_to  favorite_job_application_path(@job_application), method: :patch, class: "icon-link" do %>
-            <i class="far fa-star"></i>
+            <i class="fas fa-star" id="favor"></i>
           <% end %>
         <% else %>
           <%= link_to  favorite_job_application_path(@job_application), method: :patch, class: "icon-link" do %>
-            <i class="fas fa-star" id="favor"></i>
+            <i class="far fa-star"></i>
           <% end %>
         <% end %>
       </h2>
       <%= link_to edit_job_application_path(@job_application), class:"text-decoration-none icon-text" do %>
-        <i class="fas fa-edit"></i> Edit interview</i>
+        <i class="fas fa-edit"></i> Edit application</i>
       <% end %>
     </div>
 

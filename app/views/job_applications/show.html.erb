@@ -46,12 +46,36 @@
   <div class="card">
     <% @job_application.interviews.each do |interview| %>
       <% interview.contacts.each do  |contact| %>
-        <div cclass="card-header" id="headingOne">
+        <div class="card-header" id="headingOne">
           <h3 class="mb-0">Interview</h3>
-          <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
-          <%= link_to "Delete", job_application_interview_path(@job_application, interview), class:'primary-btn', method: :delete, data: { confirm: "Are you sure?" } %>
+
+          <!-- Add contact -->
+
+          <a class="icon-link" data-toggle="modal" data-target="#contactModel-<%= interview.id %>">
+            <i class="fas fa-user-plus"></i>
+          </a>
+
+          <!-- Edit interview -->
+
+          <%= link_to edit_job_application_interview_path(@job_application, interview), class:'text-decoration-none icon-link' do %>
+            <i class="fas fa-edit"></i>
+          <% end %>
+
+          <!-- Delete interview -->
+
+          <%= link_to job_application_interview_path(@job_application, interview), class:'text-decoration-none icon-link', method: :delete, data: { confirm: "Are you sure?" } do %>
+            <i class="fas fa-trash-alt"></i>
+          <% end %>
+
+          <!-- More -->
+          <a class="icon-link" data-toggle="collapse" data-target="#collapse" aria-expanded="flase" aria-controls="collapse">
+            <i class="fas fa-chevron-down"></i>
+          </a>
+
         </div>
-        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+
+        <div id="collapse" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+
           <div class="card-body">
             <p class="card-text">Start date: <%= interview.start_date %></p>
             <p class="card-text">End date: <%= interview.end_time %></p>

@@ -1,3 +1,8 @@
+.centerHeadline{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 .displayingRightIndex{
   margin-right: 40px;
   margin-top: 60px;
@@ -223,7 +228,7 @@
   margin-left: 20px;
   margin-right: 50px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .subheaderApplications {
@@ -232,4 +237,11 @@
 
 .starColorYellow {
   color: $dark-yellow;
+}
+
+.hr {
+  width:100%;
+  height:1px;
+  background: #fff;
+  margin-bottom: 200px;
 }

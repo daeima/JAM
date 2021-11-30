@@ -1,6 +1,9 @@
 <div class="container displayingRightIndex">
-  <h1 class="text-center">Your Dashbord</h1>
-  <p class="text-center">You added <%= @job_applications.all.length %> applications.</p>
+  <div class="centerHeadline">
+  <h1 class="text-left">Your Dashbord</h1>
+  <h2 class="text-right">Date</h2>
+  </div>
+  <p class="text-left">You added <%= @job_applications.all.length %> applications.</p>
 
   <!--- Implementing Statistics (styling needed) --->
   <div class="row containerStatisticCards">
@@ -61,6 +64,7 @@
   </div>
   <!--- End of Statistics --->
 
+<div class="block_1"></div> <hr />
 
 <!--- Favourite Applications--->
 <h2>Your favorite Jobs:</h2>
@@ -81,7 +85,7 @@
             <% elsif job_application.status == "Offer"%>
             <li class="circleYellow"><%= job_application.status %></li>
             <% end %>
-            <li><i class="fas fa-star starColorYellow"></i></li>
+            <i class="fas fa-star starColorYellow"></i>
             <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
               <i class="fas fa-archive"></i>
             <% end %>
@@ -92,6 +96,8 @@
         <% end %>
 
 <!--- End of Favourite Applications--->
+
+<div class="block_1"></div> <hr />
 
   <!--- Search Bar (styling needed)--->
 <div data-controller="refresh-list">

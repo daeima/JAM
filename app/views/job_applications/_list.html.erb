@@ -26,7 +26,7 @@
 
 <h2 class="subheaderApplications">See all of your Active Applications</h2>
 
-<div class="row d-flex filterStretch">
+<div class="row filterStretch">
       <%= link_to "See All", job_applications_path( params: {filter: ""}), class: "circlePurpleFilter"  %>
       <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "circleGreenFilter"  %>
       <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "circlePurpleFilter"  %>
@@ -42,6 +42,7 @@
             <li class="applicationCardTitle"><h3>Title</h3></li>
             <li class="applicationCardLevel"><h3>Level</h3></li>
             <li class="circleExample"><h3>Status</h3></li>
+            <i class="far fa-star whiteout"></i>
             <i class="fas fa-archive whiteout"></i>
             <i class="fas fa-info-circle whiteout"></i>
           </div>
@@ -49,29 +50,35 @@
 
 <!--- Active Application-Cards --->
     <% unarchived_jobs = @job_applications.where(archive: false) %>
+
         <% unarchived_jobs.each do |job_application| %>
-          <div class="tableContainer tableCard">
+          <%= link_to job_application_path(job_application), class:"tableContainer tableCard text-decoration-none" do %>
             <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
             <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
             <li class="applicationCardTitle"><%= job_application.title %></li>
             <li class="applicationCardLevel"><%= job_application.level %></li>
-            <% if job_application.status == "Pending" %>
-            <li class="circlePurple"><%= job_application.status %></li>
-            <% elsif job_application.status == "In process"%>
-            <li class="circleGreen"><%= job_application.status %></li>
-            <% elsif job_application.status == "Rejected"%>
-            <li class="circleRed"><%= job_application.status %></li>
-            <% elsif job_application.status == "Offer"%>
-            <li class="circleYellow"><%= job_application.status %></li>
-            <% end %>
-            <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
-              <i class="fas fa-archive"></i>
-            <% end %>
-            <%= link_to job_application_path(job_application) do %>
-             <i class="fas fa-info-circle"></i>
-            <% end %>
-          </div>
+              <% if job_application.status == "Pending" %>
+              <li class="circlePurple"><%= job_application.status %></li>
+              <% elsif job_application.status == "In process"%>
+              <li class="circleGreen"><%= job_application.status %></li>
+              <% elsif job_application.status == "Rejected"%>
+              <li class="circleRed"><%= job_application.status %></li>
+              <% elsif job_application.status == "Offer"%>
+              <li class="circleYellow"><%= job_application.status %></li>
+              <% end %>
+              <%= link_to favorite_job_application_path(job_application), method: :patch do %>
+              <i class="far fa-star starColorYellow"></i>
+              <% end %>
+              <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
+                <i class="fas fa-archive"></i>
+              <% end %>
+              <%= link_to job_application_path(job_application) do %>
+              <i class="fas fa-info-circle"></i>
+              <% end %>
+
+          <% end %>
         <% end %>
+      </div>
     </div>
   </div>
 

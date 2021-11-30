@@ -18,6 +18,7 @@
     <% unarchived_jobs = @job_applications.where(archive: false) %>
         <% unarchived_jobs.each do |job_application| %>
           <div class="tableContainer tableCard">
+            <%= image_tag image_url(job_application.comp_logo) %>
             <li><%= job_application.title %></li>
             <li><%= job_application.company_name %></li>
             <li><%= job_application.level %></li>

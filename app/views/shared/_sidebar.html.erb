@@ -9,37 +9,31 @@
 
             </div>
             <!--menu items-->
-            <ul>
+            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
                 <li>
-                    <a href:<%=link_to new_job_application_path do %>>
+                    <%=link_to new_job_application_path do %>
                       <span class="icon"><i class="fas fa-desktop"></i></span>
                       <span class="item">New application</span>
-                    </a>
                     <% end %>
+
                 </li>
+                   <li class="nav-item">
+                     <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
+                     <span class="icon"><i class="fas fa-check-circle"></i></span>
+                     </span class="item">Active</span></a>
+                 </li>
 
-                 <li>
-                    <a href="">
-                      <span class="icon"><i class="fas fa-archive"></i></span>
-                      <span class="item">Archive</span>
-                    </a>
-                </li>
-
-                  <li>
-                    <a href="#">
-                      <span class="icon"><i class="far fa-check-circle"></i></span>
-                      <span class="item">Active</span>
-                    </a>
-                </li><br>
-
+                 <li class="nav-item">
+                     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">
+                     <span class="item"><i class="fas fa-archive"></i></span>Archived</a>
+                 </li>
                 <hr>
 
                 <li>
-                    <a href:<%=link_to  job_applications_path do %>>
+                    <%=link_to  job_applications_path do %>
                         <span class="icon"><i class="fas fa-home"></i></span>
                         <span class="item">Dashboard</span>
-                    </a>
                     <% end %>
                 </li>
 
@@ -55,12 +49,11 @@
                         <span class="icon"><i class="fas fa-question"></i></span>
                         <span class="item">FAQ</span>
                     </a>
-                </li><br>
-
+                </li>
                   <hr>
 
                  <li>
-                    <a href:<%= link_to destroy_user_session_path do %>>
+                    <a href:<%= link_to destroy_user_session_path do %>
                         <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
                         <span class="item">Log out</span>
                     </a>

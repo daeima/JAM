@@ -13,8 +13,15 @@
   </head>
 
   <body>
+    <div class="d-flex">
+
+      <% unless current_page?("/") || current_page?("/users/sign_in") %>
+        <%= render 'shared/sidebar' %>  
+      <% end %>  
+    </div>
+
     <%= render 'shared/flashes' %>
     <%= yield %>
     <%= render 'shared/footer' %>
-  </body>
+ </body>
 </html>

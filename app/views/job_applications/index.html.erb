@@ -1,118 +1,122 @@
+<div class="container displayingRightIndex">
+  <h1 class="text-center">Your Dashbord</h1>
+  <p class="text-center">You added <%= @job_applications.all.length %> applications.</p>
 
-<h1 class="text-center">This is your Dashboard</h1>
+  <!--- Implementing Statistics (styling needed) --->
+  <div class="row containerStatisticCards">
+    <div class="statisticCardGreen">
+        <div class="spaceStatistic">
+          <p><strong>In Process</strong></p>
+          <i class="fas fa-user-tie"></i>
+        </div>
+      <% if @job_applications.where(status: "In process").length > 1 %>
+        <p class="statisticBottom"><%= @job_applications.where(status: "In process").length %> Applications</p>
+        <% elsif @job_applications.where(status: "In process").length == 1%>
+        <p class="statisticBottom"><%= @job_applications.where(status: "In process").length %> Application</p>
+        <% elsif @job_applications.where(status: "In process").length < 1 %>
+        <p class="statisticBottom">Empty</p>
+      <% end %>
+    </div>
 
-<div class="container">
-<!--- Implementing Statistics (styling needed) --->
-<div class="row containerStatisticCards">
-  <div class="statisticCardGreen">
-      <div class="spaceStatistic">
-        <p><strong>In Process</strong></p>
-        <i class="fas fa-user-tie"></i>
-      </div>
-    <% if @job_applications.where(status: "In process").length > 1 %>
-      <p class="statisticBottom"><%= @job_applications.where(status: "In process").length %> Applications</p>
-      <% elsif @job_applications.where(status: "In process").length == 1%>
-      <p class="statisticBottom"><%= @job_applications.where(status: "In process").length %> Application</p>
-      <% elsif @job_applications.where(status: "In process").length < 1 %>
-      <p class="statisticBottom">Empty</p>
-    <% end %>
+    <div class="statisticCardPurple">
+        <div class="spaceStatistic">
+          <p><strong>Pending</strong></p>
+          <i class="far fa-pause-circle"></i>
+        </div>
+      <% if @job_applications.where(status: "Pending").length > 1 %>
+        <p class="statisticBottom"><%= @job_applications.where(status: "Pending").length %> Applications</p>
+        <% elsif @job_applications.where(status: "Pending").length == 1%>
+        <p class="statisticBottom"><%= @job_applications.where(status: "Pending").length %> Application</p>
+        <% elsif @job_applications.where(status: "Pending").length < 1 %>
+        <p class="statisticBottom">Empty</p>
+      <% end %>
+    </div>
+
+    <div class="statisticCardYellow">
+        <div class="spaceStatistic">
+          <p><strong>Offer</strong></p>
+          <i class="fas fa-coins"></i>
+        </div>
+      <% if @job_applications.where(status: "Offer").length > 1 %>
+        <p class="statisticBottom"><%= @job_applications.where(status: "Offer").length %> Applications</p>
+        <% elsif @job_applications.where(status: "Offer").length == 1%>
+        <p class="statisticBottom"><%= @job_applications.where(status: "Offer").length %> Application</p>
+        <% elsif @job_applications.where(status: "Offer").length < 1 %>
+        <p class="statisticBottom"> Empty</p>
+      <% end %>
+    </div>
+    <div class="statisticCardRed">
+        <div class="spaceStatistic">
+          <p><strong>Rejected</strong></p>
+          <i class="far fa-times-circle"></i>
+        </div>
+      <% if @job_applications.where(status: "Rejected").length > 1 %>
+        <p class="statisticBottom"><%= @job_applications.where(status: "Rejected").length %> Applications</p>
+        <% elsif @job_applications.where(status: "Rejected").length == 1%>
+        <p class="statisticBottom"><%= @job_applications.where(status: "Rejected").length %> Application</p>
+        <% elsif @job_applications.where(status: "Rejected").length < 1 %>
+        <p class="statisticBottom"> Empty</p>
+      <% end %>
+    </div>
   </div>
-
-  <div class="statisticCardPurple">
-      <div class="spaceStatistic">
-        <p><strong>Pending</strong></p>
-        <i class="far fa-pause-circle"></i>
-      </div>
-    <% if @job_applications.where(status: "Pending").length > 1 %>
-      <p class="statisticBottom"><%= @job_applications.where(status: "Pending").length %> Applications</p>
-      <% elsif @job_applications.where(status: "Pending").length == 1%>
-      <p class="statisticBottom"><%= @job_applications.where(status: "Pending").length %> Application</p>
-      <% elsif @job_applications.where(status: "Pending").length < 1 %>
-      <p class="statisticBottom">Empty</p>
-    <% end %>
-  </div>
-
-  <div class="statisticCardYellow">
-      <div class="spaceStatistic">
-        <p><strong>Offer</strong></p>
-        <i class="fas fa-coins"></i>
-      </div>
-    <% if @job_applications.where(status: "Offer").length > 1 %>
-      <p class="statisticBottom"><%= @job_applications.where(status: "Offer").length %> Applications</p>
-      <% elsif @job_applications.where(status: "Offer").length == 1%>
-      <p class="statisticBottom"><%= @job_applications.where(status: "Offer").length %> Application</p>
-      <% elsif @job_applications.where(status: "Offer").length < 1 %>
-      <p class="statisticBottom"> Empty</p>
-    <% end %>
-  </div>
-  <div class="statisticCardRed">
-      <div class="spaceStatistic">
-        <p><strong>Rejected</strong></p>
-        <i class="far fa-times-circle"></i>
-      </div>
-    <% if @job_applications.where(status: "Rejected").length > 1 %>
-      <p class="statisticBottom"><%= @job_applications.where(status: "Rejected").length %> Applications</p>
-      <% elsif @job_applications.where(status: "Rejected").length == 1%>
-      <p class="statisticBottom"><%= @job_applications.where(status: "Rejected").length %> Application</p>
-      <% elsif @job_applications.where(status: "Rejected").length < 1 %>
-      <p class="statisticBottom"> Empty</p>
-    <% end %>
-  </div>
-</div>
-<!--- End of Statistics --->
+  <!--- End of Statistics --->
 
 
-<!--- Start of  of filter buttons --->
+<!--- Favourite Applications--->
+<h2>Your favorite Jobs:</h2>
 
-<div class="text-center">
-   <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "primary-btn"  %>
-   <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "primary-btn"  %>
-   <%#= link_to "Unanswerd", job_applications_path( params: {filter: "Unanswerd"}), class: "primary-btn"  %>
-   <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "primary-btn"  %>
-   <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "primary-btn"  %>
+<% favourite_jobs = @job_applications.where(favorite: true) %>
+        <% favourite_jobs.each do |job_application| %>
+          <div class="tableContainer tableCard">
+            <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
+            <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
+            <li class="applicationCardTitle"><%= job_application.title %></li>
+            <li class="applicationCardLevel"><%= job_application.level %></li>
+            <% if job_application.status == "Pending" %>
+            <li class="circlePurple"><%= job_application.status %></li>
+            <% elsif job_application.status == "In process"%>
+            <li class="circleGreen"><%= job_application.status %></li>
+            <% elsif job_application.status == "Rejected"%>
+            <li class="circleRed"><%= job_application.status %></li>
+            <% elsif job_application.status == "Offer"%>
+            <li class="circleYellow"><%= job_application.status %></li>
+            <% end %>
+            <li><i class="fas fa-star starColorYellow"></i></li>
+            <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
+              <i class="fas fa-archive"></i>
+            <% end %>
+            <%= link_to job_application_path(job_application) do %>
+             <i class="fas fa-info-circle"></i>
+            <% end %>
+          </div>
+        <% end %>
 
-</div>
-<br>
+<!--- End of Favourite Applications--->
 
+  <!--- Search Bar (styling needed)--->
+<div data-controller="refresh-list">
+      <%= form_with url: job_applications_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
+        <%= f.text_field :query,
+                        class: "form-control",
+                        placeholder: 'Search for an Application',
+                        value: params[:query],
+                        data: {
+                          refresh_list_target: 'searchInput',
+                          action: "keyup->refresh-list#update"
+                        } %>
 
-<!--- end of  of filter buttons --->
+      <% end %>
 
-
-
-<!--- Search Bar (styling needed)--->
-
-  <div data-controller="refresh-list">
-    <%= form_with url: job_applications_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
-      <%= f.text_field :query,
-                      class: "form-control",
-                      placeholder: 'Search for an Application',
-                      value: params[:query],
-                      data: {
-                        refresh_list_target: 'searchInput',
-                        action: "keyup->refresh-list#update"
-                      } %>
-
-    <% end %>
     <%= render "list" %>
   </div>
 
-<!--- End of Search Bar --->
-
-
-<!--- Some Cards Independent from Search (styling needed) --->
-
-
-
-<!--- End of Cards --->
+  <!--- End of Search Bar --->
 
 
 
 
-</div>
-
-
-<!--- Chart1 --->
-<div class="container">
-<canvas id="myChart" width="200px" height="100px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
-</div>
+  <!--- Chart1 --->
+  <div class="container">
+  <canvas id="myChart" width="200px" height="100px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
+  </div>
 </div>

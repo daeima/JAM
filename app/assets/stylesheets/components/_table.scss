@@ -1,3 +1,9 @@
+.displayingRightIndex{
+  margin-right: 40px;
+  margin-top: 60px;
+
+}
+
 .tableCard {
   background-color: white;
   padding-left: 20px;
@@ -9,12 +15,28 @@
              -20px -20px 60px #ffffff;
 }
 
+.tableCardExample {
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+  position: sticky;
+  top: 0;
+}
+
 .tableCard:hover {
   transform: scale(1.02);
 }
 
 .logoIndex {
   border-radius: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
 }
 
 .circlePurple {
@@ -24,6 +46,7 @@
   width: 120px;
   justify-content: center;
   align-items: center;
+  color: $light-purple;
 }
 
 
@@ -34,6 +57,7 @@
   width: 120px;
   justify-content: center;
   align-items: center;
+  color: $light-red;
 }
 
 .circleGreen {
@@ -43,6 +67,7 @@
   width: 120px;
   justify-content: center;
   align-items: center;
+  color: $light-aqua;
 }
 
 .circleYellow {
@@ -52,25 +77,159 @@
   width: 120px;
   justify-content: center;
   align-items: center;
+  color: $light-yellow;
 }
 
 .applicationCardTitle {
   display: flex;
-  width: 200px;
+  width: 215px;
   justify-content: center;
   align-items: center;
 }
 
 .applicationCardCompanyName {
   display: flex;
-  width: 200px;
+  width: 215px;
   justify-content: center;
   align-items: center;
 }
 
 .applicationCardLevel {
   display: flex;
+  width: 215px;
+  justify-content: center;
+  align-items: center;
+}
+
+.applicationCardTitleExample{
+  display: flex;
   width: 200px;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+.applicationCardCompanyNameExample {
+  display: flex;
+  width: 215px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.applicationCardLevelExample {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+.circleExample {
+  display: flex;
+  border-radius: 20px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoExample {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.whiteout {
+  color: white !important;
+  background-color: white !important;
+}
+
+.circlePurpleFilter {
+  display: flex;
+  border: 2px solid $light-purple;
+  border-radius: 20px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+  color: $light-purple;
+}
+
+
+.circleRedFilter {
+  display: flex;
+  border: 2px solid $light-red;
+  border-radius: 20px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+  color: $light-red;
+}
+
+.circleGreenFilter {
+  display: flex;
+  border: 2px solid $light-aqua;
+  border-radius: 20px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+  color: $light-aqua;
+}
+
+.circleYellowFilter {
+  display: flex;
+  border: 2px solid $light-yellow;
+  border-radius: 20px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+  color: $light-yellow;
+}
+
+.circlePurpleFilter:hover {
+  background-color: $light-purple;
+  color: white;
+  transition: 0.5s;
+}
+
+.circleRedFilter:hover {
+  background-color: $light-red;
+  color: white;
+  transition: 0.5s;
+}
+
+.circleYellowFilter:hover {
+  background-color: $light-yellow;
+  color: white;
+  transition: 0.5s;
+}
+
+.circleGreenFilter:hover {
+  background-color: $light-aqua;
+  color: white;
+  transition: 0.5s;
+}
+
+.filterStretch {
+  margin-left: 20px;
+  margin-right: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.subheaderApplications {
+  margin-bottom: 50px;
+}
+
+.starColorYellow {
+  color: $dark-yellow;
 }

@@ -14,7 +14,7 @@ body{
 }
 
 .wrapper .sidebar{
-    background: rgb(85, 77, 77);
+    background: rgb(240, 233, 233);
     position: fixed;
     top: 0;
     left: 0;
@@ -38,7 +38,7 @@ body{
 }
 
 .wrapper .sidebar .profile h3{
-    color: #ffffff;
+    color: rgb(32, 30, 30);
     margin: 8px 0 8px;
 }
 
@@ -50,29 +50,27 @@ body{
 .wrapper .sidebar ul li a{
     display: block;
     padding: 16px 32px;
-    border-bottom: 1px solid #10558d;
-    color: rgb(241, 237, 237);
+    color: rgb(32, 30, 30);
     font-size: 16px;
     position: relative;
 }
 
 .wrapper .sidebar ul li a .icon{
-    color: #dee4ec;
+    color: #1e1f20;
     width: 32px;
     display: inline-block;
 }
 
 .wrapper .sidebar ul li a:hover,
 .wrapper .sidebar ul li a.active{
-    color: #3d6577;
+    color: #556870;
 
     background:white;
-    border-right: 2px solid rgb(36, 75, 97);
 }
 
 .wrapper .sidebar ul li a:hover .icon,
 .wrapper .sidebar ul li a.active .icon{
-    color: #0c7db1;
+    color: #556870;
 }
 
 .wrapper .sidebar ul li a:hover:before,

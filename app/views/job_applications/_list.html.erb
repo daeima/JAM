@@ -19,8 +19,8 @@
         <% unarchived_jobs.each do |job_application| %>
           <div class="tableContainer tableCard">
             <%= image_tag image_url(job_application.comp_logo) %>
-            <li><%= job_application.title %></li>
             <li><%= job_application.company_name %></li>
+            <li><%= job_application.title %></li>
             <li><%= job_application.level %></li>
             <li><%= job_application.status %></li>
             <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
@@ -36,8 +36,8 @@
     <% archived_jobs = @job_applications.where(archive: true)  %>
         <% archived_jobs.each do |job_application| %>
           <div class="tableContainer tableCard">
-            <li><%= job_application.title %></li>
             <li><%= job_application.company_name %></li>
+            <li><%= job_application.title %></li>
             <li><%= job_application.level %></li>
             <li><%= job_application.status %></li>
             <%= link_to "Unarchive", unarchive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } %>

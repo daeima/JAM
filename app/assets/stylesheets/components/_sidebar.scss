@@ -15,7 +15,6 @@
     top: 0;
     left: 0;
     width: 200px;
-    height: 100vh;
     padding: 24px 0;
     transition: all 0.5s ease;
 }
@@ -59,18 +58,10 @@
 .wrapper .sidebar ul li a:hover,
 .wrapper .sidebar ul li a.active{
     color: #556870;
-
     background:white;
+    text-decoration: none;
 }
 
-.wrapper .sidebar ul li a:hover .icon,
-.wrapper .sidebar ul li a.active .icon{
-    color: #556870;
-}
 
-.wrapper .sidebar ul li a:hover:before,
-.wrapper .sidebar ul li a.active:before{
-    display: block;
-}
 
   

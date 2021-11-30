@@ -10,12 +10,11 @@
 
             </div>
             <!--menu items-->
-            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+            <ul>
 
                 <li>
-                    <%=link_to new_job_application_path do %>
-                      <span class="icon"><i class="fas fa-desktop"></i></span>
-                      <span class="item">New application</span>
+                    <%= link_to new_job_application_path, class: "icon-text" do %>
+                      <i class="fas fa-plus-square"></i>New application</i>
                     <% end %>
 
                 </li>

@@ -15,7 +15,7 @@
   <body>
     <div class="d-flex">
 
-      <% unless current_page?("/") || current_page?("/users/sign_in") %>
+      <% unless current_page?("/") || current_page?("/users/sign_in") || current_page?("/job_applications/new") %>
         <%= render 'shared/sidebar' %>  
       <% end %>  
     </div>

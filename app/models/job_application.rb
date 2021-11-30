@@ -3,7 +3,7 @@ class JobApplication < ApplicationRecord
   has_many :interviews, dependent: :destroy
 
   scope :filter_by_status, -> (status) { where(status: status) }
-
+  
 
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?

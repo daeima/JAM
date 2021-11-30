@@ -33,7 +33,7 @@ class JobApplicationsController < ApplicationController
 
     elsif params[:filter].present?
       @job_applications = current_user.job_applications.filter_by_status(params[:filter])
-
+      
     end
 
     respond_to do |format|

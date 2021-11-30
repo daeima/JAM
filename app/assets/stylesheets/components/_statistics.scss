@@ -1,0 +1,52 @@
+.statisticCardGreen {
+  background-color: $light-aqua;
+  border-radius: 10px;
+  width: 175px;
+  height: 85px;
+  padding: 10px;
+  box-shadow:  2.5px 2.5px 25px $dark-aqua,
+              -2.5px -2.5px 25px white;
+  margin: 10px;
+  background: linear-gradient(180deg, rgba(204, 249, 243, 0.5) 0%, #27E1D5 97.92%);
+  }
+
+.spaceStatistic {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statisticCardYellow {
+  background-color: $light-yellow;
+  border-radius: 10px;
+  width: 175px;
+  height: 85px;
+  padding: 10px;
+  box-shadow:  2.5px 2.5px 25px $dark-yellow,
+              -2.5px -2.5px 25px white;
+  margin: 10px;
+  background: linear-gradient(180deg, rgba(255, 228, 133, 0.5) 0%, #FFBF81 97.92%);
+  }
+
+.statisticCardRed {
+  background-color: $light-red;
+  border-radius: 10px;
+  width: 175px;
+  height: 85px;
+  padding: 10px;
+  box-shadow:  2.5px 2.5px 25px $dark-red,
+              -2.5px -2.5px 25px white;
+  margin: 10px;
+  background: linear-gradient(180deg, rgba(229, 139, 143, 0.5) 0%, #FF6A72 100%);
+  }
+
+.statisticCardPurple {
+  background-color: $light-purple;
+  border-radius: 10px;
+  width: 175px;
+  height: 85px;
+  padding: 10px;
+  box-shadow:  2.5px 2.5px 25px $dark-purple,
+              -2.5px -2.5px 25px white;
+  margin: 10px;
+  background: linear-gradient(180deg, rgba(214, 217, 253, 0.5) 0%, #999AC6 97.92%);
+  }

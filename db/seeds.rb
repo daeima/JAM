@@ -161,11 +161,7 @@ job9 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2735127563/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=OccagE%2BqAXo7CpLA9Uv6AQ%3D%3D&trk=d_flagship3_search_srp_jobs",
   status: "In process",
   address: "Amsterdam, North Holland, Netherlands",
-<<<<<<< HEAD
-  applied: "2020-11-14 18:00:00",
-=======
   applied: "2020-10-14 18:00:00",
->>>>>>> master
   favorite: true
 )
 
@@ -178,11 +174,7 @@ job10 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2608219067/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=lz9TBanCZlmsRPQb3seOYQ%3D%3D",
   status: "In process",
   address: "Amsterdam, North Holland, Netherlands",
-<<<<<<< HEAD
-  applied: "2020-10-14 18:00:00",
-=======
   applied: "2020-09-14 18:00:00",
->>>>>>> master
   favorite: true
 )
 
@@ -195,11 +187,7 @@ job11 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2791752989/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=1ivUQssQXojjzhUPUvKzuw%3D%3D",
   status: "In process",
   address: "Amsterdam, North Holland, Netherlands",
-<<<<<<< HEAD
-  applied: "2020-11-14 18:00:00"
-=======
   applied: "2020-10-14 18:00:00"
->>>>>>> master
 
 )
 
@@ -213,11 +201,7 @@ job12 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2802934486/?alternateChannel=search&eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=JOB_SEEKER_QUALIFIED&refId=PfsqTqnWGXEaM%2B%2FZt80oLw%3D%3D&trackingId=%2BiNW1CkCWLHqSfModqXGig%3D%3D&trk=flagship3_search_srp_jobs",
   status: "Offer",
   address: "Amsterdam, North Holland, Netherlands",
-<<<<<<< HEAD
-  applied: "2020-10-14 18:00:00"
-=======
   applied: "2020-11-14 18:00:00"
->>>>>>> master
 
 )
 
@@ -231,11 +215,7 @@ job13 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2800791829/?alternateChannel=search&refId=PfsqTqnWGXEaM%2B%2FZt80oLw%3D%3D&trackingId=E1dymHwPyhlXgNw%2BvSJeag%3D%3D&trk=d_flagship3_search_srp_jobs",
   status: "Pending",
   address: "Amsterdam, North Holland, Netherlands",
-<<<<<<< HEAD
-  applied: "2020-10-14 18:00:00"
-=======
   applied: "2020-11-14 18:00:00"
->>>>>>> master
 
 )
 
@@ -263,11 +243,7 @@ job15 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2807825899/?alternateChannel=search&refId=8tfbepi9FFKYPcUXrCLDQA%3D%3D&trackingId=EumvD%2FLeGqPSpV0i99lZrw%3D%3D",
   status: "Pending",
   address: "Amsterdam, North Holland, Netherlands",
-<<<<<<< HEAD
-  applied: "2020-10-14 18:00:00"
-=======
   applied: "2020-11-14 18:00:00"
->>>>>>> master
 
 )
 puts "Creating interview"

@@ -27,8 +27,10 @@
                  </li>
 
                  <li>
-                     <a id="pills-profile-tab"  class="icon-text"  href="#pills-profile" data-toggle="pill" role="tab" aria-controls="pills-profile" aria-selected="false">
-                     <span class="item"><i class="fas fa-archive"></i></span>Archived</a>
+                    <%= link_to job_applications_path( params: {filter: "Archived"}), class: "icon-text" do %>
+                     <span class="icon"><i class="fas fa-archive"></i></span>
+                    <span class="item">Archived</span>
+                    <% end %>
                  </li>
                 <hr>
                 <li>

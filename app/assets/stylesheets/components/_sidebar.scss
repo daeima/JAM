@@ -18,6 +18,8 @@
     height: 100vh;
     padding: 24px 0;
     transition: all 0.5s ease;
+    border-right: 1px solid rgb(202, 195, 195);
+
 }
 
 .wrapper .sidebar .profile{
@@ -60,8 +62,7 @@
 
 .wrapper .sidebar ul li a:hover,
 .wrapper .sidebar ul li a.active{
-    color: #556870;
-    background:white;
+   
     text-decoration: none;
 }
 

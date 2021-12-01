@@ -50,7 +50,8 @@
 
   <!-- Interview cards -->
   <% @job_application.interviews.each do |interview| %>
-    <% interview.contacts.each do  |contact| %>
+
+
       <div class="interview-card" >
         <div class="interview-head">                  <!-- Head -->
           <h3>                                                <!-- Date -->
@@ -100,22 +101,22 @@
           <h3>Notes</h3>
           <p><%= interview.notes %></p>
           <hr>
-
           <h3>Contacts</h3>
-          <div class="d-flex align-items-center ml-3">
-            <div class="contact-card">
-              <div>                                         <!-- Contact Info -->
-                <p><strong><%= contact.first_name %> <%= contact.last_name %><strong></p>
+          <% interview.contacts.each do |contact| %>
+            <div class="d-flex align-items-center">
+              <div class="contact-card">       <!-- Contact Info -->
+
+                <p style="font-weight: 700;"><%= contact.first_name %> <%= contact.last_name %></p>
                 <p><%= contact.position %></p>
                 <p>
                   <i class="fas fa-at"></i>
-                  <%= contact.email.nil? ? contact.email : "-" %>
+                  <%= contact.email.nil? ? contact.email : "" %>
                 </p>
                 <p>
                   <i class="fas fa-phone"></i>
-                  <%= contact.phone.nil? ? contact.phone : "-" %>
-                </p><br>
-                <div class="icon-group">                        <!-- Icons contact-->
+                  <%= contact.phone.nil? ? contact.phone : "" %>
+                </p>
+                      <!-- Icons contact-->
 
                         <!-- Contact link -->
                   <% if contact.contact_url.nil? %>
@@ -137,15 +138,12 @@
                     <i class="fas fa-trash-alt"></i>
                     <span class="tooltiptext">Delete Contact</span>
                   <% end %>
-
-                </div>
               </div>
             </div>
-          </div>
-
+          <% end %>
         </div>
       </div>
-    <% end %>
+
   <% end %>
   <!-- MAP -->
   <div id="map"

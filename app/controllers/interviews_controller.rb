@@ -3,19 +3,21 @@ class InterviewsController < ApplicationController
   def index
     @interviews = Interview.all
   end
-  
+
   def new
     @interview = Interview.new
     @job_application = JobApplication.find(params[:job_application_id])
-    end
+  end
 
   def create
     @interview = Interview.new(interview_params)
-    @interview.job_application = JobApplication.find(params[:job_application_id])
-    if @interview.save!
-        redirect_to job_application_path(@interview.job_application)
-      else
-        render :new
+    @job_application = JobApplication.find(params[:job_application_id])
+    @interview.job_application = @job_application
+
+    if @interview.save
+      redirect_to job_application_path(@interview.job_application)
+    else
+      render :new
     end
   end
 
@@ -31,7 +33,7 @@ class InterviewsController < ApplicationController
     redirect_to job_application_path(@job_application)
   end
 
-  
+
   def destroy
     @job_application = JobApplication.find(params[:job_application_id])
     @interview = Interview.find(params[:id])
@@ -44,13 +46,5 @@ class InterviewsController < ApplicationController
   def interview_params
     params.require(:interview).permit(:notes, :start_date, :end_time, :link, :interview_type, :job_application)
   end
- 
+
 end
-
-
-
-
-
-
-
-

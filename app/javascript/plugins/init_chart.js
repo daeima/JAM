@@ -37,9 +37,8 @@ const initChart = () =>{
               }
           }
       }
-  });
+    });
   }
-
 }
 
 export { initChart }

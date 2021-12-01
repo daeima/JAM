@@ -13,15 +13,19 @@
   </head>
 
   <body>
-    <div class="d-flex">
 
+  <div class="d-flex">
+    <div class="d-flex sidebarWidth">
       <% unless current_page?("/") || current_page?("/users/sign_in") %>
-        <%= render 'shared/sidebar' %>  
-      <% end %>  
+        <%= render 'shared/sidebar' %>
+      <% end %>
     </div>
 
     <%= render 'shared/flashes' %>
+    <div class="contentWidth">
     <%= yield %>
+    </div>
+  </div>
     <%= render 'shared/footer' %>
  </body>
 </html>

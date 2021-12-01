@@ -1,6 +1,7 @@
+  <h2 class="text-right dateTimeDashboard">Date</h2>
 <div class="container displayingRightIndex">
-  <h1 class="text-center">Your Dashbord</h1>
-  <p class="text-center">You added <%= @job_applications.all.length %> applications.</p>
+  <h1 class="text-left">Your Dashbord</h1>
+  <p class="text-left">You added <%= @job_applications.all.length %> applications.</p>
 
   <!--- Implementing Statistics (styling needed) --->
   <div class="row containerStatisticCards">
@@ -61,6 +62,7 @@
   </div>
   <!--- End of Statistics --->
 
+<div class="block_1"></div> <hr />
 
 <!--- Favourite Applications--->
 <h2>Your favorite Jobs:</h2>
@@ -68,7 +70,9 @@
 <% favourite_jobs = @job_applications.where(favorite: true) %>
         <% favourite_jobs.each do |job_application| %>
           <div class="tableContainer tableCard">
+            <%= link_to job_application_path(job_application) do %>
             <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
+          <% end %>
             <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
             <li class="applicationCardTitle"><%= job_application.title %></li>
             <li class="applicationCardLevel"><%= job_application.level %></li>
@@ -81,7 +85,7 @@
             <% elsif job_application.status == "Offer"%>
             <li class="circleYellow"><%= job_application.status %></li>
             <% end %>
-            <li><i class="fas fa-star starColorYellow"></i></li>
+            <i class="fas fa-star starColorYellow"></i>
             <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
               <i class="fas fa-archive"></i>
             <% end %>
@@ -93,20 +97,37 @@
 
 <!--- End of Favourite Applications--->
 
+<div class="block_1"></div> <hr />
+
   <!--- Search Bar (styling needed)--->
-<div data-controller="refresh-list">
-      <%= form_with url: job_applications_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
-        <%= f.text_field :query,
-                        class: "form-control",
-                        placeholder: 'Search for an Application',
-                        value: params[:query],
-                        data: {
-                          refresh_list_target: 'searchInput',
-                          action: "keyup->refresh-list#update"
-                        } %>
+<h2 class="subheaderApplications">See all of your Active Applications</h2>
+<div class="containerHeadSearch">
+  <div data-controller="refresh-list">
+        <%= form_with url: job_applications_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
+          <%= f.text_field :query,
+                          class: "form-control listStylingIndex",
+                          placeholder: 'Search for an Application',
+                          value: params[:query],
+                          data: {
+                            refresh_list_target: 'searchInput',
+                            action: "keyup->refresh-list#update"
+                          } %>
 
-      <% end %>
+        <% end %>
 
+<div>
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="tableDashboard">
+          <div class="row filterStretch">
+              <%= link_to "See All", job_applications_path( params: {filter: ""}), class: "circleBlackFilter"  %>
+              <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "circleGreenFilter"  %>
+              <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "circlePurpleFilter"  %>
+              <%#= link_to "Unanswerd", job_applications_path( params: {filter: "Unanswerd"}), class: "primary-btn"  %>
+              <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "circleYellowFilter"  %>
+              <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "circleRedFilter"  %>
+          </div>
+          <br>
+         </div>
     <%= render "list" %>
   </div>
 

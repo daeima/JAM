@@ -1,7 +1,4 @@
 <div data-refresh-list-target="list">
-   <br>
-   <br>
-   <br>
    <%# <div class="tab-content" id="pills-tabContent">
       <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
        <div class="tableDashboard">
@@ -39,7 +36,6 @@
   </ul>
   <div class="tab-content" id="pills-tabContent"> %>
 
-    <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     <div class="tableDashboard">
 <!--- Reference Application-Cards --->
           <div class="tableContainer tableCardExample">
@@ -56,9 +52,9 @@
             <li class="circleExample">
                <h3>Status</h3>
             </li>
-            <i class="far fa-star whiteout"></i>
-            <i class="fas fa-archive whiteout"></i>
-            <i class="fas fa-info-circle whiteout"></i>
+            <i class="far fa-star whiteout icon-link"></i>
+            <i class="fas fa-archive whiteout icon-link"></i>
+            <i class="fas fa-info-circle whiteout icon-link"></i>
          </div>
          <!--- End of reference Application-Cards --->
 
@@ -81,40 +77,24 @@
             <% elsif job_application.status == "Offer"%>
             <li class="circleYellow"><%= job_application.status %></li>
             <% end %>
-            <i class="fas fa-star starColorYellow"></i>
-            <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
-              <i class="fas fa-archive"></i>
+            <%= link_to favorite_job_application_path(job_application), method: :patch, class:"icon-link" do  %>
+            <i class="far fa-star starColorYellow"></i>
+            <span class="tooltiptext">Favorite</span>
             <% end %>
-            <%= link_to job_application_path(job_application) do %>
+            <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." }, class:"icon-link" do %>
+              <i class="fas fa-archive"></i>
+              <span class="tooltiptext">Archive</span>
+            <% end %>
+            <%= link_to job_application_path(job_application), class:"icon-link" do %>
              <i class="fas fa-info-circle"></i>
+             <span class="tooltiptext">Info</span>
             <% end %>
           </div>
         <% end %>
       </div>
-   </div>
 </div>
 <!--- End of Active Application-Cards --->
 <!--- Archived Application-Cards --->
-<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-   <div class="tableDashboard">
-      <!--- Reference Application-Cards --->
-      <div class="tableContainer tableCardExample">
-         <li class="logoIndex logoExample"></li>
-         <li class="applicationCardCompanyNameExample">
-            <h3>Company Name</h3>
-         </li>
-         <li class="applicationCardTitle">
-            <h3>Title</h3>
-         </li>
-         <li class="applicationCardLevel">
-            <h3>Level</h3>
-         </li>
-         <li class="circleExample">
-            <h3>Status</h3>
-         </li>
-         <i class="fas fa-archive whiteout"></i>
-         <i class="fas fa-info-circle whiteout"></i>
-      </div>
       <!--- End of Reference Application-Cards --->
       <% archived_jobs = @job_applications.where(archive: true)  %>
       <% archived_jobs.each do |job_application| %>
@@ -141,6 +121,5 @@
       </div>
       <% end %>
    </div>
-</div>
 <!--- End of Archived Application-Cards --->
 </div>

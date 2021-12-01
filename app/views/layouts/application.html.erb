@@ -16,7 +16,7 @@
 
   <div class="d-flex">
     <div class="d-flex sidebarWidth">
-      <% unless current_page?("/") || current_page?("/users/sign_in") %>
+      <% unless current_page?("/") || current_page?("/users/sign_in") || current_page?("/job_applications/new") %>
         <%= render 'shared/sidebar' %>
       <% end %>
     </div>
@@ -26,6 +26,5 @@
     <%= yield %>
     </div>
   </div>
-    <%= render 'shared/footer' %>
  </body>
 </html>

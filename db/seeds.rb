@@ -42,7 +42,7 @@ job = JobApplication.create!(
           Ability to find and evaluate multiple solutions to a given problem and apply working fixes",
   link: "https://www.linkedin.com/jobs/view/2669328636/?alternateChannel=search&refId=k5h%2BOrkeVFjfnJp8T%2B4elA%3D%3D&trackingId=3RX0E5imcslCLVAQ0v8BGw%3D%3D",
   address: "Jacob Bontiusplaats 9, Amsterdam, NH 1018LL, NL",
-  applied: "2020-09-14 18:00:00"
+  applied: "2020-11-14 18:00:00"
 )
 
 job2 = JobApplication.create!(
@@ -90,7 +90,7 @@ job4 = JobApplication.create!(
   notes: "Angular, React, jQuery, AngularJS, HTML5 and CSS3 get your blood flowing faster\n
           You don't hide your enthusiasm for Bootstrap, ASP.NET Core, and TypeScript either",
   address: "Seattle, Washington",
-  applied: "2020-10-14 18:00:00",
+  applied: "2020-09-14 18:00:00",
   remote: true
 )
 
@@ -106,7 +106,7 @@ job5 = JobApplication.create!(
   notes: "You know your way around libraries and languages such as React, Vue, Angular, ESNext, TypeScript, Webpack and GSAP;\n
           You have great attention to detail in everything you do",
   address: "Hilversum, North Holland, Netherlands",
-  applied: "2020-10-14 18:00:00"
+  applied: "2020-09-14 18:00:00"
 
 )
 
@@ -120,7 +120,7 @@ job6 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2779383363/?alternateChannel=search&refId=k5h%2BOrkeVFjfnJp8T%2B4elA%3D%3D&trackingId=bC8Wco9R2466Ba06DHnVZA%3D%3D&trk=d_flagship3_search_srp_jobs",
   status: "Pending",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-10-14 18:00:00"
+  applied: "2020-09-14 18:00:00"
 
 )
 
@@ -134,7 +134,7 @@ job7 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2773845008/?alternateChannel=search&eBP=CwEAAAF9TS04ug9_p6mP-lfnrAzYfulNPpAB02ifSC5r-oSnCBMH9iiuwyRitmsBlZJ3wvS-AVq31ZfHjzSDQnRk7hr6z4eW1eWrNRCh5OUEtZGGvIsNTsR5IMr7HzaQnr_12v5yQCdHH3srgeTBF7TPx5CsKxno2syizf-_sAVjg10WeDAeZ0NErsDt-UIAcFhMpAtAYtfep6MUKg7G3_FmH23Ch5S2k05CGE5kfSlMRQp-uRZTWwNs_gHeSPLElir6wwKaDmQAmjqUSi90Is1t0s8InrABb5cEwoJhqMCoC2299sMZU8hku9qrQoe0LVHovLKj8m1R4hHeA4jd2_FG5HzWNxbCTOwGak8Uh0QpGNueKXrB03ERIyWY15WYI-8&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=kLsSjoq%2FMHBqezlpR6dIiA%3D%3D&trackingId=OOTXJSF9YbzOAnLMp11RyA%3D%3D&trk=flagship3_search_srp_jobs",
   status: "Rejected",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-11-14 18:00:00"
+  applied: "2020-10-14 18:00:00"
 
 )
 
@@ -187,7 +187,7 @@ job11 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2791752989/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=1ivUQssQXojjzhUPUvKzuw%3D%3D",
   status: "In process",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-10-14 18:00:00"
+  applied: "2020-11-14 18:00:00"
 
 )
 
@@ -229,7 +229,7 @@ job14 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2810502459/?alternateChannel=search&refId=V%2BuVG99K7CpCCAYbA2RyQQ%3D%3D&trackingId=%2FFYe5LzdWQ4iQ7SmE1R7uQ%3D%3D",
   status: "Pending",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-10-14 18:00:00"
+  applied: "2020-11-14 18:00:00"
 
 )
 
@@ -251,37 +251,56 @@ puts "Creating interview"
 interview1 = Interview.create!(
   job_application: job3,
   start_date: "2021-11-24 14:00:00",
-  end_time: "2021-11-24 15:00:00"
+  end_time: "2021-11-24 15:00:00",
+  interview_type: "Phone",
+  notes: "research company"
 )
 
 interview2 = Interview.create!(
   job_application: job3,
   start_date: "2021-12-01 13:00:00",
-  end_time: "2021-12-01 15:00:00"
+  end_time: "2021-12-01 15:00:00",
+  interview_type: "On site",
+  notes: "Presentation"
+
+
 )
 
 interview3 = Interview.create!(
   job_application: job9,
   start_date: "2021-11-30 14:00:00",
-  end_time: "2021-11-30 15:00:00"
+  end_time: "2021-11-30 15:00:00",
+  interview_type: "Video",
+  notes: "research company"
+
+
 )
 
 interview4 = Interview.create!(
   job_application: job10,
   start_date: "2021-11-26 09:00:00",
-  end_time: "2021-11-26 10:00:00"
+  end_time: "2021-11-26 10:00:00",
+  interview_type: "Phone",
+  notes: "Prepare portfolio"
+
 )
 
 interview5 = Interview.create!(
   job_application: job11,
   start_date: "2021-11-29 14:00:00",
-  end_time: "2021-11-29 15:00:00"
+  end_time: "2021-11-29 15:00:00",
+  interview_type: "Video",
+  notes: "Prepare portfolio"
+
 )
 
 interview6 = Interview.create!(
   job_application: job9,
   start_date: "2021-12-02 11:00:00",
-  end_time: "2021-12-02 12:00:00"
+  end_time: "2021-12-02 12:00:00",
+  interview_type: "Phone",
+  notes: "work on the demo"
+
 )
 
 puts "Creating contact"

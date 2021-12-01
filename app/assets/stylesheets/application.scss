@@ -12,3 +12,12 @@
 @import "components/index";
 @import "pages/index";
 @import "flatpickr/dist/flatpickr";
+
+.sidebar-container { grid-area: sidebar; }
+.yield-container { grid-area: yield;}
+
+.grid-container{
+    display: grid;
+    grid-template-areas: "sidebar yield yield yield yield";
+
+}

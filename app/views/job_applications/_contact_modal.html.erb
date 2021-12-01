@@ -1,7 +1,7 @@
 <!-- Button trigger modal -->
-
 <a class="icon-link" data-toggle="modal" data-target="#contactModel-<%= interview.id %>">
   <i class="fas fa-user-plus"></i>
+  <span class="tooltiptext">Add Contact</span>
 </a>
 
 
@@ -23,7 +23,7 @@
             <%= f.input :email %>
             <%= f.input :phone %>
             <%= f.input :contact_url %>
-            <%= f.submit %>
+            <%= f.submit id:"form-btn" %>
           <% end %>
       </div>
     </div>

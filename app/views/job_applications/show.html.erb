@@ -12,14 +12,16 @@
         <% if @job_application.favorite %>
           <%= link_to  favorite_job_application_path(@job_application), method: :patch, class: "icon-link" do %>
             <i class="fas fa-star" id="favor"></i>
+            <span class="tooltiptext">Like</span>
           <% end %>
         <% else %>
           <%= link_to  favorite_job_application_path(@job_application), method: :patch, class: "icon-link" do %>
             <i class="far fa-star"></i>
+            <span class="tooltiptext">Dislike</span>
           <% end %>
         <% end %>
       </h2>
-      <%= link_to edit_job_application_path(@job_application), class:"text-decoration-none icon-text" do %>
+      <%= link_to edit_job_application_path(@job_application), class:"icon-text text-decoration-none" do %>
         <i class="fas fa-edit"></i> Edit application</i>
       <% end %>
     </div>
@@ -47,10 +49,9 @@
   </div>
 
   <!-- Interview cards -->
-
-  <div class="interview-card" >
-    <% @job_application.interviews.each do |interview| %>
-      <% interview.contacts.each do  |contact| %>
+  <% @job_application.interviews.each do |interview| %>
+    <% interview.contacts.each do  |contact| %>
+      <div class="interview-card" >
         <div class="interview-head">                  <!-- Head -->
           <h3>                                                <!-- Date -->
             <%= interview.start_date.strftime("%A %d %B") %>
@@ -73,48 +74,79 @@
 
             <!-- Edit interview -->
 
-            <%= link_to edit_job_application_interview_path(@job_application, interview), class:'text-decoration-none icon-link' do %>
-              <i class="fas fa-edit"></i>
-            <% end %>
+            <%= render 'edit_interview_modal', job_application: @job_application.id, interview: interview %>
 
             <!-- Delete interview -->
 
             <%= link_to job_application_interview_path(@job_application, interview), class:'text-decoration-none icon-link', method: :delete, data: { confirm: "Are you sure?" } do %>
               <i class="fas fa-trash-alt"></i>
+              <span class="tooltiptext">Delete Interview</span>
             <% end %>
 
             <!-- More -->
-            <a class="icon-link more" href > <!-- data-toggle="collapse" data-target="#collapse" aria-expanded="flase" aria-controls="collapse" -->
+            <a class="icon-link more">
               <i class="fas fa-chevron-down"></i>
+              <span class="tooltiptext">Show more</span>
             </a>
           </div>
         </div>
 
 
         <div class="interview-panel">                     <!-- Dropdown -->
-          <p>Interview link:  </p>
+          <hr>
+          <h3>URL</h3>
+          <%= link_to interview.link %>
+          <hr>
+          <h3>Notes</h3>
           <p><%= interview.notes %></p>
           <hr>
-          <p><strong>Interview contact</strong></p>
-          <p><%= contact.first_name %> <%= contact.last_name %></p>
-          <p><%=  contact.position %></p>
-          <p><%= contact.email%></p>
-          <p><%= contact.phone%></p>
-          <%= link_to "Linkedin profile", contact.contact_url %>
-          <br>
-          <div class="icon-group">                        <!-- Icons contact-->
-                  <!-- Edit contact -->
-            <%= render 'edit_contact_modal', interview: interview, contact: contact %>
 
-                <!-- Delete contact -->
-            <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" },class:'btn primary-btn' %>
+          <h3>Contacts</h3>
+          <div class="d-flex align-items-center ml-3">
+            <div class="contact-card">
+              <div>                                         <!-- Contact Info -->
+                <p><strong><%= contact.first_name %> <%= contact.last_name %><strong></p>
+                <p><%= contact.position %></p>
+                <p>
+                  <i class="fas fa-at"></i>
+                  <%= contact.email.nil? ? contact.email : "-" %>
+                </p>
+                <p>
+                  <i class="fas fa-phone"></i>
+                  <%= contact.phone.nil? ? contact.phone : "-" %>
+                </p><br>
+                <div class="icon-group">                        <!-- Icons contact-->
 
+                        <!-- Contact link -->
+                  <% if contact.contact_url.nil? %>
+                    <i class="far fa-user icon-link"><span class="tooltiptext">No contact Link</span></i>
+
+                  <% else %>
+                    <%= link_to contact.contact_url, class:'text-decoration-none icon-link'  do %>
+                      <i class="fas fa-user"></i>
+                      <span class="tooltiptext">Contact Link</span>
+                    <% end %>
+
+                  <% end %>
+
+                        <!-- Edit contact -->
+                  <%= render 'edit_contact_modal', interview: interview, contact: contact %>
+
+                      <!-- Delete contact -->
+                  <%= link_to interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" },class:'text-decoration-none icon-link' do %>
+                    <i class="fas fa-trash-alt"></i>
+                    <span class="tooltiptext">Delete Contact</span>
+                  <% end %>
+
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
 
+        </div>
+      </div>
+    <% end %>
+  <% end %>
   <!-- MAP -->
   <div id="map"
     style="width:100vh; height:300px;"

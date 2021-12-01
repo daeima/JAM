@@ -9,7 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 import { initFlatpickr } from "../plugins/flatpickr";
 import { initMapbox } from '../plugins/init_mapbox';
-import { initToggle } from "../plugins/init_homepage";
+// import { initToggle } from "../plugins/init_homepage";
 import { drop } from "../plugins/interview_card_dropdown"
 
 // Uncomment to copy all static images under ../images to the output folder and reference

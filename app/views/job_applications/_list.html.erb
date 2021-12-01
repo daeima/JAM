@@ -41,17 +41,6 @@
 
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     <div class="tableDashboard">
-
-<h2 class="subheaderApplications">See all of your Active Applications</h2>
-
-<div class="row d-flex filterStretch">
-      <%= link_to "See All", job_applications_path( params: {filter: ""}), class: "circlePurpleFilter"  %>
-      <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "circleGreenFilter"  %>
-      <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "circlePurpleFilter"  %>
-      <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "circleYellowFilter"  %>
-      <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "circleRedFilter"  %>
-    </div>
-  <br>
 <!--- Reference Application-Cards --->
           <div class="tableContainer tableCardExample">
             <li class="logoIndex logoExample"></li>
@@ -76,33 +65,31 @@
          <!--- Active Application-Cards --->
          <% unarchived_jobs = @job_applications.where(archive: false, favorite: false) %>
          <% unarchived_jobs.each do |job_application| %>
-         <div class="tableContainer tableCard text-decoration-none">
-         <%= link_to job_application_path(job_application) do %>
+         <div class="tableContainer tableCard">
+            <%= link_to job_application_path(job_application) do %>
             <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
           <% end %>
-         <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
-         <li class="applicationCardTitle"><%= job_application.title %></li>
-         <li class="applicationCardLevel"><%= job_application.level %></li>
-         <% if job_application.status == "Pending" %>
-         <li class="circlePurple"><%= job_application.status %></li>
-         <% elsif job_application.status == "In process"%>
-         <li class="circleGreen"><%= job_application.status %></li>
-         <% elsif job_application.status == "Rejected"%>
-         <li class="circleRed"><%= job_application.status %></li>
-         <% elsif job_application.status == "Offer"%>
-         <li class="circleYellow"><%= job_application.status %></li>
-         <% end %>
-         <%= link_to favorite_job_application_path(job_application), method: :patch do %>
-         <i class="far fa-star starColorYellow"></i>
-         <% end %>
-         <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
-         <i class="fas fa-archive"></i>
-         <% end %>
-         <%= link_to job_application_path(job_application) do %>
-         <i class="fas fa-info-circle"></i>
-        <% end %>
+            <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
+            <li class="applicationCardTitle"><%= job_application.title %></li>
+            <li class="applicationCardLevel"><%= job_application.level %></li>
+            <% if job_application.status == "Pending" %>
+            <li class="circlePurple"><%= job_application.status %></li>
+            <% elsif job_application.status == "In process"%>
+            <li class="circleGreen"><%= job_application.status %></li>
+            <% elsif job_application.status == "Rejected"%>
+            <li class="circleRed"><%= job_application.status %></li>
+            <% elsif job_application.status == "Offer"%>
+            <li class="circleYellow"><%= job_application.status %></li>
+            <% end %>
+            <i class="fas fa-star starColorYellow"></i>
+            <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
+              <i class="fas fa-archive"></i>
+            <% end %>
+            <%= link_to job_application_path(job_application) do %>
+             <i class="fas fa-info-circle"></i>
+            <% end %>
           </div>
-       <% end %>
+        <% end %>
       </div>
    </div>
 </div>

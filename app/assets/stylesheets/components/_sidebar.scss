@@ -17,8 +17,8 @@
     height: 100vh;
     padding: 24px 0;
     transition: all 0.5s ease;
-    border-right: 1px solid rgb(202, 195, 195);
-    
+    border-right: 1px solid $border-blue;
+
 
 }
 .wrapper .sidebar .logo{
@@ -26,7 +26,7 @@
     width:70px;
     margin-top: -28px;
     margin-bottom: 16px;
-    
+
 }
 
 .wrapper .sidebar .profile{
@@ -44,36 +44,32 @@
 }
 
 .wrapper .sidebar .profile h3{
-    color: rgb(32, 30, 30);
+    color: $font-black;
     font-size: 24px;
-    
+
 }
 .wrapper .sidebar ul li a{
     display: block;
     padding: 16px 32px;
-    color: rgb(32, 30, 30);
+    color: $font-black;
     font-size: 16px;
     position: relative;
     margin: 0;
 }
 
 .wrapper .sidebar ul li a .icon{
-    color: #1e1f20;
+    color: $font-black;
     width: 32px;
 }
 
 .wrapper .sidebar ul li a:hover,
 .wrapper .sidebar ul li a.active{
-   
+
     text-decoration: none;
 }
 
 .wrapper .sidebar ul hr{
-    border: 1px rgb(202, 195, 195) solid;
+    border: 1px $border-blue solid;
     margin-top: -8px;
     margin-bottom: 4px;
 }
-
-
-
-  

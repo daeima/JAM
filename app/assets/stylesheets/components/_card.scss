@@ -19,3 +19,37 @@
     display: flex;
     justify-content: space-around;
   }
+
+.interview-card {
+  background-color: $white;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px $white;
+}
+
+.interview-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.interview-head h3 {
+  margin: 0;
+}
+
+.interview-panel {
+  padding: 0 18px;
+  display: none;
+  background-color: $white;
+  border-radius: 0 0 10px 10px;
+}
+
+.contact-card {
+  border-radius: 10px;
+  box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px $white;
+  padding: 10px;
+  height: 200px;
+}

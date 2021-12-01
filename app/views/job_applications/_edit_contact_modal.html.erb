@@ -1,7 +1,8 @@
 <!-- Button trigger modal -->
-<button type="button" class="btn primary-btn" data-toggle="modal" data-target="#contactModelEdit-<%= interview.id %>">
-  Edit contact
-</button>
+<a class="icon-link" data-toggle="modal" data-target="#contactEditModel-<%= interview.id %>">
+  <i class="fas fa-edit"></i>
+  <span class="tooltiptext">Edit Contact</span>
+</a>
 
 <!-- Modal -->
 <div class="modal fade" id="contactModelEdit-<%= interview.id %>" tabindex="-1" aria-labelledby="contactModelEdit-<%= interview.id %>Label" aria-hidden="true">
@@ -21,7 +22,7 @@
             <%= f.input :email %>
             <%= f.input :phone %>
             <%= f.input :contact_url %>
-            <%= f.submit %>
+            <%= f.submit id:"form-btn" %>
           <% end %>
       </div>
     </div>

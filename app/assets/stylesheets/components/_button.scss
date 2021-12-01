@@ -11,6 +11,21 @@
     text-decoration: none;
 }
 
+
+#form-btn {
+  width: 15rem;
+  height: 2rem;
+  border: 1px solid $light-gray;
+  border-radius: 2rem;
+  transition: .3s ease;
+  color: $light-gray;
+
+  &:hover {
+    color: $font-black;
+    border: 1px solid $font-black;
+  }
+}
+
 .icon-text {
   display:inline-block;
   text-decoration: none;
@@ -42,4 +57,54 @@
   left:0%;
   display: block !important;
   z-index: 1;
+}
+
+.icon-link {
+  display:inline-block;
+  text-decoration:none;
+  color:$light-gray;
+  position:relative;
+  transition:all 0.5s;
+  // font-size:16px;
+  margin:20px;
+  height:100%;
+}
+.icon-link:hover {
+  color:$font-black;
+}
+.tooltiptext {
+  font-size: small;
+  font-weight: 700;
+}
+
+.icon-link .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: $font-black;
+  color: $white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 100%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* Fade in tooltip - takes 1 second to go from 0% to 100% opac: */
+  opacity: 0;
+  transition: opacity 1s
+}
+
+.icon-link:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+#favor {
+  color: $light-yellow;
+}
+
+#favor:hover {
+  color:$dark-yellow
 }

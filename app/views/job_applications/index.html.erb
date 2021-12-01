@@ -1,7 +1,8 @@
-  <h2 class="text-right dateTimeDashboard">Date</h2>
+
+<h6 class="text-right dateTimeDashboard"><%= Date.today.strftime("%a, %d %B %Y") %></h6>
 <div class="container displayingRightIndex">
-  <h1 class="text-left">Your Dashbord</h1>
-  <p class="text-left">You added <%= @job_applications.all.length %> applications.</p>
+  <h1 class="text-left subheaderApplications">Your Dashbord</h1>
+  <p class="text-left subheaderApplicationsPara">You added <%= @job_applications.all.length %> applications.</p>
 
   <!--- Implementing Statistics (styling needed) --->
   <div class="row containerStatisticCards">
@@ -65,7 +66,7 @@
 <div class="block_1"></div> <hr />
 
 <!--- Favourite Applications--->
-<h2>Your favorite Jobs:</h2>
+<h2 class="subheaderApplications">Your favorite Jobs:</h2>
 
 <% favourite_jobs = @job_applications.where(favorite: true) %>
         <% favourite_jobs.each do |job_application| %>
@@ -85,7 +86,10 @@
             <% elsif job_application.status == "Offer"%>
             <li class="circleYellow"><%= job_application.status %></li>
             <% end %>
+            <%= link_to favorite_job_application_path(job_application), method: :patch, class:"icon-link" do  %>
             <i class="fas fa-star starColorYellow"></i>
+            <span class="tooltiptext">Unfavorite</span>
+            <% end %>
             <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." }, class: "icon-link" do %>
               <i class="fas fa-archive"></i>
               <span class="tooltiptext">Archive</span>
@@ -103,7 +107,7 @@
 
   <!--- Search Bar (styling needed)--->
 <h2 class="subheaderApplications">See all of your Active Applications</h2>
-<div class="containerHeadSearch">
+<div>
   <div data-controller="refresh-list">
         <%= form_with url: job_applications_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
           <%= f.text_field :query,
@@ -117,9 +121,8 @@
 
         <% end %>
 
+  <div class="tableDashboard">
 <div>
-  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-        <div class="tableDashboard">
           <div class="row filterStretch">
               <%= link_to "See All", job_applications_path( params: {filter: ""}), class: "circleBlackFilter"  %>
               <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "circleGreenFilter"  %>
@@ -130,7 +133,6 @@
           <br>
          </div>
     <%= render "list" %>
-  </div>
 
   <!--- End of Search Bar --->
 

@@ -22,11 +22,11 @@
          <!--- Reference Application-Cards --->
 
 
-<%# <div class="tab-content" id="pills-tabContent">
+ <div class="tab-content" id="pills-tabContent">
   <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
    <div class="tableDashboard">
     <%= link_to "New Job Application", new_job_application_path, class:"primary-btn" %>
-  <%# <br>
+   <br>
   <br>
   <br>
   <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -37,23 +37,11 @@
       <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Archived</a>
     </li>
   </ul>
-  <div class="tab-content" id="pills-tabContent"> %>
+  <div class="tab-content" id="pills-tabContent"> 
 
     <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
     <div class="tableDashboard">
 
-<h2 class="subheaderApplications">See all of your Active Applications</h2>
-
-<div class="row d-flex filterStretch">
-      <%= link_to "See All", job_applications_path( params: {filter: ""}), class: "circlePurpleFilter"  %>
-      <%= link_to "In process", job_applications_path( params: {filter: "In process"}), class: "circleGreenFilter"  %>
-      <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "circlePurpleFilter"  %>
-      <%= link_to "Offer", job_applications_path( params: {filter: "Offer"}), class: "circleYellowFilter"  %>
-      <%= link_to "Rejected", job_applications_path( params: {filter: "Rejected"}), class: "circleRedFilter"  %>
-      <%= link_to "Archived", job_applications_path( params: {filter: "Archived"}), class: "circleRedFilter"  %>
-
-    </div>
-  <br>
 <!--- Reference Application-Cards --->
           <div class="tableContainer tableCardExample">
             <li class="logoIndex logoExample"></li>

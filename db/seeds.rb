@@ -291,7 +291,7 @@ contact1 = Contact.create!(
   first_name: "Erik",
   last_name: "Seveke",
   position: "CEO at SimpledCard",
-  contact_url: "linkedin.com/in/seveke"
+  contact_url: "https://www.linkedin.com/in/seveke"
 )
 
 contact2 = Contact.create!(
@@ -299,7 +299,7 @@ contact2 = Contact.create!(
   first_name: "Anne-Marije",
   last_name: "Huijboom",
   position: "Culture&Talent",
-  email: "https://www.linkedin.com/in/anne-marije-huijboom-a29b32b6/"
+  contact_url: "https://www.linkedin.com/in/anne-marije-huijboom-a29b32b6/"
 )
 
 conatct3 = Contact.create!(

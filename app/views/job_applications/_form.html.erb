@@ -1,32 +1,17 @@
-<div class="parent-container d-flex">
-    <div class="container">
-        <div class="row">
-            <div class="col p-5">
-                <h1 class="text-center mt-5">New application</h1>
-                   <%= simple_form_for(@job_application) do |f| %>
-                      <%= f.input :title %>
-                      <%= f.input :level %>
-                      <%= f.input :company_name %>
-                      <%= f.input :address %>
-                      <%= f.input :description %>
-                      <%= f.input :status, as: :select, collection: ["Pending", "In process", "Offer", "Rejected"]%>
-                      <%= f.input :notes %>
-                      <%= f.input :remote %>
-                      <%= f.input :favorite %>
-                      <%= f.input :archive %>
-                      <%= f.input :applied, as: :string, required: false, input_html: {class: "datepicker"} %>
-                      <%= f.submit class: "primary-btn" %>
-                   <% end %>
 
-            </div>
-        </div>
-    </div>
+<%= simple_form_for(@job_application) do |f| %>
+    <%= f.input :title %>
+    <%= f.input :level %>
+    <%= f.input :company_name %>
+    <%= f.input :address %>
+    <%= f.input :description %>
+    <%= f.input :status, as: :select, collection: ["Pending", "In process", "Offer", "Rejected"]%>
+    <%= f.input :notes %>
+    <%= f.input :remote %>
+    <%= f.input :favorite %>
+    <%= f.input :archive %>
+    <%= f.input :applied, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.submit class: "primary-btn" %>
+<% end %>
 
-    <div class="container">
-        <div class="row">
-            <div class="col p-5">
-              <img src="https://media.istockphoto.com/photos/paid-digital-device-internet-wireless-searching-concept-picture-id478810638?s=2048x2048" class="img-new">
-            </div>
-        </div>
-    </div>
-</div>
+ 

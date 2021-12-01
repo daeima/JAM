@@ -1,21 +1,32 @@
 <div class="container">
 
-<h1 class="text-center">Show Page</h1>
-<!-- Job application display -->
+    <!-- Job application details -->
 
-  <%= link_to "Edit", edit_job_application_path(@job_application), class:"btn primary-btn mb-3" %>
+  <div>
+    <div class="d-flex justify-content-between align-items-center">         <!--  company + favorit + edit job -->
+      <h2>
+        <%= @job_application.company_name %>
 
-  <!--  Favorite -->
-    <% if @job_application.favorite %>
-     <%= link_to "Unfavorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn mb-3"%>
-    <% else %>
-    <%= link_to "Favorite",  favorite_job_application_path(@job_application), method: :patch, class: "btn primary-btn mb-3"%>
-   <% end %>
+        <!--  Favorite -->
 
-<div class="row">
-  <div class="col-8">
-    <h2><%= @job_application.title %> <%= @job_application.favorite ? "⭐" : "" %></h2>
-    <h3><%= @job_application.company_name %></h3>
+        <% if @job_application.favorite %>
+          <%= link_to  favorite_job_application_path(@job_application), method: :patch, class: "icon-link" do %>
+            <i class="fas fa-star" id="favor"></i>
+            <span class="tooltiptext">Like</span>
+          <% end %>
+        <% else %>
+          <%= link_to  favorite_job_application_path(@job_application), method: :patch, class: "icon-link" do %>
+            <i class="far fa-star"></i>
+            <span class="tooltiptext">Dislike</span>
+          <% end %>
+        <% end %>
+      </h2>
+      <%= link_to edit_job_application_path(@job_application), class:"icon-text text-decoration-none" do %>
+        <i class="fas fa-edit"></i> Edit application</i>
+      <% end %>
+    </div>
+
+    <h3><%= @job_application.title %></h3>
     <p><strong><%= @job_application.level %></strong></p>
     <p> <strong>Job description:</strong>  <%= @job_application.description %></p>
     <p>Status: <%= @job_application.status %></p>
@@ -28,65 +39,121 @@
   </div>
 
 
-  <!-- MAP -->
-    <div id="map"
-        class="col-4"
-        style="width: 100%; height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <!-- Interviews -->
 
-</div>
+  <div class="d-flex justify-content-between align-items-center">
+    <h2 class="mb-0">Interviews</h2>
 
+    <%= render 'interview_modal', job_application: @job_application.id %>
 
-<%= link_to "Add interview", new_job_application_interview_path(@job_application), class: "primary-btn"%>
-<br>
-<br>
-<div class="container card-deck">
-<% @job_application.interviews.each do |interview| %>
-  <div class="card bg-light mb-3" style="max-width: 18rem;">
-    <div class="card-header">
-      <h3>Interview</h3>
-      <%= link_to "Edit", edit_job_application_interview_path(@job_application, interview), class:'primary-btn' %>
-      <%= link_to "Delete", job_application_interview_path(@job_application, interview), class:'primary-btn', method: :delete, data: { confirm: "Are you sure?" } %>
-    </div>
-    <div class="card-body">
-      <p class="card-text">Start date: <%= interview.start_date %></p>
-      <p class="card-text">End date: <%= interview.end_time %></p>
-      <p class="card-text">Interview type:  <%= interview.interview_type %></p>
-      <p class="card-text"><%= interview.notes %></p>
-      <br>
-
-      <%= render 'contact_modal', interview: interview %>
-
-      <% interview.contacts.each do  |contact| %>
-        <p> <strong>Interview contact</strong></p>
-        <p><%= contact.first_name %> <%= contact.last_name %></p>
-        <p><%=  contact.position %></p>
-        <p><%= contact.email%></p>
-        <p><%= contact.phone%></p>
-        <%= link_to "Linkedin profile", contact.contact_url %>
-        <br>
-
-        <%= render 'edit_contact_modal', interview: interview, contact: contact %>
-        <br>
-        <br>
-        <%= link_to "Delete Contact", interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" },class:'btn primary-btn' %>
-      <% end %>
-    </div>
   </div>
-<% end %>
+
+  <!-- Interview cards -->
+  <% @job_application.interviews.each do |interview| %>
+    <% interview.contacts.each do  |contact| %>
+      <div class="interview-card" >
+        <div class="interview-head">                  <!-- Head -->
+          <h3>                                                <!-- Date -->
+            <%= interview.start_date.strftime("%A %d %B") %>
+          </h3>
+
+          <h3>                                                 <!-- Time -->
+            <%= interview.start_date.strftime("%H.%M - ") %>
+            <%= interview.end_time.strftime("%H.%M") %>
+          </h3>
+
+          <h3>                                                <!-- Type -->
+            <%= interview.interview_type %>
+          </h3>
+
+          <div class="icon-group">                            <!-- Icons interview-->
+
+            <!-- Add contact -->
+
+            <%= render 'contact_modal', interview: interview %>
+
+            <!-- Edit interview -->
+
+            <%= render 'edit_interview_modal', job_application: @job_application.id, interview: interview %>
+
+            <!-- Delete interview -->
+
+            <%= link_to job_application_interview_path(@job_application, interview), class:'text-decoration-none icon-link', method: :delete, data: { confirm: "Are you sure?" } do %>
+              <i class="fas fa-trash-alt"></i>
+              <span class="tooltiptext">Delete Interview</span>
+            <% end %>
+
+            <!-- More -->
+            <a class="icon-link more">
+              <i class="fas fa-chevron-down"></i>
+              <span class="tooltiptext">Show more</span>
+            </a>
+          </div>
+        </div>
+
+
+        <div class="interview-panel">                     <!-- Dropdown -->
+          <hr>
+          <h3>URL</h3>
+          <%= link_to interview.link %>
+          <hr>
+          <h3>Notes</h3>
+          <p><%= interview.notes %></p>
+          <hr>
+
+          <h3>Contacts</h3>
+          <div class="d-flex align-items-center ml-3">
+            <div class="contact-card">
+              <div>                                         <!-- Contact Info -->
+                <p><strong><%= contact.first_name %> <%= contact.last_name %><strong></p>
+                <p><%= contact.position %></p>
+                <p>
+                  <i class="fas fa-at"></i>
+                  <%= contact.email.nil? ? contact.email : "-" %>
+                </p>
+                <p>
+                  <i class="fas fa-phone"></i>
+                  <%= contact.phone.nil? ? contact.phone : "-" %>
+                </p><br>
+                <div class="icon-group">                        <!-- Icons contact-->
+
+                        <!-- Contact link -->
+                  <% if contact.contact_url.nil? %>
+                    <i class="far fa-user icon-link"><span class="tooltiptext">No contact Link</span></i>
+
+                  <% else %>
+                    <%= link_to contact.contact_url, class:'text-decoration-none icon-link'  do %>
+                      <i class="fas fa-user"></i>
+                      <span class="tooltiptext">Contact Link</span>
+                    <% end %>
+
+                  <% end %>
+
+                        <!-- Edit contact -->
+                  <%= render 'edit_contact_modal', interview: interview, contact: contact %>
+
+                      <!-- Delete contact -->
+                  <%= link_to interview_contact_path(interview, contact), method: :delete, data: { confirm: "Are you sure?" },class:'text-decoration-none icon-link' do %>
+                    <i class="fas fa-trash-alt"></i>
+                    <span class="tooltiptext">Delete Contact</span>
+                  <% end %>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  <!-- MAP -->
+  <div id="map"
+    style="width:100vh; height:300px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+
 </div>
+
 
 <br>
-
-<%= link_to "Go back", job_applications_path, class:'primary-btn' %>
-
-<div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-
-<br><br>
-</div>
-

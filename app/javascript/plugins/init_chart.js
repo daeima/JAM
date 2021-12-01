@@ -11,6 +11,7 @@ const initChart = () =>{
           datasets: [{
               label: 'Job applications',
               data: JSON.parse(ctx.canvas.dataset.data),
+              lineTension: 0.4,
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
                   'rgba(54, 162, 235, 0.2)',

@@ -89,7 +89,7 @@
 
 .applicationCardCompanyName {
   display: flex;
-  width: 215px;
+  width: 241px;
   justify-content: center;
   align-items: center;
 }
@@ -114,7 +114,7 @@
 
 .applicationCardCompanyNameExample {
   display: flex;
-  width: 215px;
+  width: 243px;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
@@ -242,6 +242,9 @@
 .subheaderApplications {
   margin-top: 50px;
   margin-left: 40px;
+}
+.subheaderApplicationsPara {
+  margin-left: 45px;
 }
 
 .starColorYellow {

@@ -32,7 +32,8 @@ class JobApplicationsController < ApplicationController
     @job_applications = @job_applications.where(sql_query, query: "%#{params[:query]}%")
 
     elsif params[:filter].present?
-      @job_applications = current_user.job_applications.filter_by_status(params[:filter])   
+      @job_applications = current_user.job_applications.filter_by_status(params[:filter])
+      
     end
 
     
@@ -88,6 +89,7 @@ class JobApplicationsController < ApplicationController
   def archive
     @job_application = JobApplication.find(params[:id])
     @job_application.archive = true
+    @job_application.status = "Archived"
     @job_application.save
     redirect_to job_applications_path
   end

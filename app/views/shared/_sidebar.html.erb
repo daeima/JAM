@@ -38,11 +38,21 @@
                     <% end %>
                 </li>
                 <li>
-                    <a  class="icon-text" href="#">
+                        <%= link_to "Pending", job_applications_path( params: {filter: "Pending"}), class: "circlePurpleFilter"  %>
                         <span class="icon"><i class="fas fa-user-alt"></i></span>
                         <span class="item">Profile</span>
+                    
+                </li>
+
+                 <li>
+                    <a  class="icon-text" href="#">
+                        <span class="icon"><i class="fas fa-user-alt"></i></span>
+                        <span class="item">Pending</span>
                     </a>
                 </li>
+
+
+
                 <li>
                     <a  class="icon-text" href="#">
                         <span class="icon"><i class="fas fa-question"></i></span>

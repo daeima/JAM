@@ -21,9 +21,10 @@
                 </li>
                     
                  <li>
-                     <a id="pills-home-tab" class="icon-text" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">
-                     <span class="icon"><i class="fas fa-check-circle"></i></span>
-                     </span class="item">Active</span></a>
+                    <%= link_to job_applications_path( params: {filter: "In process"}), class: "icon-text" do %>
+                      <span class="icon"><i class="fas fa-check-circle"></i></span>
+                      </span class="item">Active</span>
+                     <% end %>
                  </li>
 
                  <li>

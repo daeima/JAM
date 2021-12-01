@@ -32,9 +32,11 @@ class JobApplicationsController < ApplicationController
     @job_applications = @job_applications.where(sql_query, query: "%#{params[:query]}%")
 
     elsif params[:filter].present?
-      @job_applications = current_user.job_applications.filter_by_status(params[:filter])
-
+      @job_applications = current_user.job_applications.filter_by_status(params[:filter])   
     end
+
+    
+    
 
     respond_to do |format|
       format.html # Follow regular flow of Rails

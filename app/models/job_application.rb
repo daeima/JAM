@@ -3,6 +3,7 @@ class JobApplication < ApplicationRecord
   has_many :interviews, dependent: :destroy
 
   scope :filter_by_status, -> (status) { where(status: status) }
+  scope :filter_by_archive, -> (archive) { where(archive: true) }
 
 
   geocoded_by :address

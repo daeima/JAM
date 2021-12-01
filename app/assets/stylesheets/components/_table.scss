@@ -3,11 +3,6 @@
   align-items: center;
   justify-content: space-between;
 }
-.displayingRightIndex{
-  margin-right: 40px;
-  margin-top: 60px;
-
-}
 
 .tableCard {
   background-color: white;
@@ -169,7 +164,15 @@
   color: $light-purple;
 }
 
-
+.circleBlackFilter{
+  display: flex;
+  border: 2px solid $gray;
+  border-radius: 20px;
+  width: 120px;
+  justify-content: center;
+  align-items: center;
+  color: $gray;
+}
 .circleRedFilter {
   display: flex;
   border: 2px solid $light-red;
@@ -224,6 +227,11 @@
   transition: 0.5s;
 }
 
+.circleBlackFilter:hover {
+  background-color: $gray;
+  color: white;
+  transition: 0.5s;
+}
 .filterStretch {
   margin-left: 20px;
   margin-right: 50px;
@@ -232,7 +240,8 @@
 }
 
 .subheaderApplications {
-  margin-bottom: 50px;
+  margin-top: 50px;
+  margin-left: 40px;
 }
 
 .starColorYellow {
@@ -244,4 +253,9 @@
   height:1px;
   background: #fff;
   margin-bottom: 200px;
+}
+
+.dateTimeDashboard {
+  margin-top: 20px;
+  margin-right: 20px;
 }

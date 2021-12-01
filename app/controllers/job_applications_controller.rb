@@ -5,19 +5,9 @@ class JobApplicationsController < ApplicationController
     @job_application_count = JobApplication.group_by_month(:applied, format: "%b").count
 
     @data_keys = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-      'July',
-      'August',
       'September',
       'October',
-      'November',
-      'December'
-
+      'November'
     ]
 
     @data_values = @job_application_count.values

@@ -13,15 +13,17 @@
   </head>
 
   <body>
-    <div class="d-flex">
-
-      <% unless current_page?("/") || current_page?("/users/sign_in") || current_page?("/job_applications/new") %>
-        <%= render 'shared/sidebar' %>  
-      <% end %>  
+    <div class="grid-container">
+      <div class="d-flex sidebar-container">
+          <% unless current_page?("/") || current_page?("/users/sign_in") || current_page?("/job_applications/new") %>
+            <%= render 'shared/sidebar' %>  
+          <% end %>  
+      </div>
+      <div class="yield-container">
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+        <%= render 'shared/footer' %>
+      </div>
     </div>
-
-    <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= render 'shared/footer' %>
  </body>
 </html>

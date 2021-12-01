@@ -9,7 +9,7 @@ const initChart = () =>{
         datasets: [{
             label: 'Job applications',
             data: JSON.parse(ctx.canvas.dataset.data),
-            lineTension: 0.5,
+            lineTension: 0.4,
             backgroundColor: [
                 'rgba(118, 231, 208, 1)',
                 'rgba(208, 67, 74, 1)',

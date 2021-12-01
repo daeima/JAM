@@ -86,11 +86,14 @@
             <li class="circleYellow"><%= job_application.status %></li>
             <% end %>
             <i class="fas fa-star starColorYellow"></i>
-            <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." } do %>
+              class: "icon-link"
+            <%= link_to archive_job_application_path(job_application), method: :patch, data: { confirm: "Sure to archive? Your Application will disappear from your Dashboard." }, class: "icon-link" do %>
               <i class="fas fa-archive"></i>
+              <span class="tooltiptext">Archive</span>
             <% end %>
-            <%= link_to job_application_path(job_application) do %>
+            <%= link_to job_application_path(job_application), class: "icon-link" do %>
              <i class="fas fa-info-circle"></i>
+             <span class="tooltiptext">Info</span>
             <% end %>
           </div>
         <% end %>

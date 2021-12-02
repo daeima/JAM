@@ -15,7 +15,8 @@ class JobApplicationsController < ApplicationController
     @data_keys = [
       'September',
       'October',
-      'November'
+      'November',
+      'December'
     ]
 
     @data_values = @job_application_count.values

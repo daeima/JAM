@@ -5,7 +5,7 @@
   <div>
     <div class="d-flex justify-content-between align-items-center">         <!--  company + favorit + edit job -->
       <h1>
-        <%= image_tag image_url(@job_application.comp_logo), class:"logoIndex" %>
+        <img src="<%=@job_application.comp_logo%>" alt="comp logo" class="logoIndex">
         <%= @job_application.company_name %>
 
         <!--  Favorite -->

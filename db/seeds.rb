@@ -19,7 +19,7 @@ puts "Creating user"
 user = User.create!(
   email: "user@user.com",
   password: "password",
-  first_name: "John",
+  first_name: "Cristina",
   last_name: "Wick"
 )
 
@@ -132,7 +132,7 @@ job7 = JobApplication.create!(
   level: "Entry",
   description: "The Marketing Messaging team is looking for an experienced backend developer to help us on a mission to increase value for our customers via personalized communication via a right channel, e.g. email, push notifications, etc., at the right time with the right message. This is an opportunity to make a large impact on millions of our subscribers on a daily basis as well as innovate our infrastructure while working with great people in our team. B.responsible",
   link: "https://www.linkedin.com/jobs/view/2773845008/?alternateChannel=search&eBP=CwEAAAF9TS04ug9_p6mP-lfnrAzYfulNPpAB02ifSC5r-oSnCBMH9iiuwyRitmsBlZJ3wvS-AVq31ZfHjzSDQnRk7hr6z4eW1eWrNRCh5OUEtZGGvIsNTsR5IMr7HzaQnr_12v5yQCdHH3srgeTBF7TPx5CsKxno2syizf-_sAVjg10WeDAeZ0NErsDt-UIAcFhMpAtAYtfep6MUKg7G3_FmH23Ch5S2k05CGE5kfSlMRQp-uRZTWwNs_gHeSPLElir6wwKaDmQAmjqUSi90Is1t0s8InrABb5cEwoJhqMCoC2299sMZU8hku9qrQoe0LVHovLKj8m1R4hHeA4jd2_FG5HzWNxbCTOwGak8Uh0QpGNueKXrB03ERIyWY15WYI-8&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=kLsSjoq%2FMHBqezlpR6dIiA%3D%3D&trackingId=OOTXJSF9YbzOAnLMp11RyA%3D%3D&trk=flagship3_search_srp_jobs",
-  status: "Rejected",
+  status: "In process",
   address: "Amsterdam, North Holland, Netherlands",
   applied: "2020-10-14 18:00:00"
 

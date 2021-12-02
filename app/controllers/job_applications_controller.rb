@@ -70,13 +70,13 @@ class JobApplicationsController < ApplicationController
   def update
     @job_application = JobApplication.find(params[:id])
     @job_application.update(job_application_params)
-
     redirect_to job_application_path(@job_application)
   end
 
   def archive
     @job_application = JobApplication.find(params[:id])
     @job_application.archive = true
+    #@job_application.archive = !@job_application.archive
     @job_application.status = "Archived"
     @job_application.save
     redirect_to job_applications_path

@@ -64,6 +64,7 @@ job2 = JobApplication.create!(
 job3 = JobApplication.create!(
   user: user,
   title: "Frontend Developer",
+  level: "Entry level",
   company_name: "Hadrian",
   comp_logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQENV4fe-dpr_g/company-logo_100_100/0/1628354830626?e=1646265600&v=beta&t=LEFqycNthEdf5g__hMnMjnqUvAWECig92nxnE64awfk",
   description: "We don't have any hard requirements, as we welcome talented people from all walks of life. We’re looking for fast-learners who are excited about our mission and keen to get stuck in.",
@@ -141,7 +142,6 @@ job7 = JobApplication.create!(
 job8 = JobApplication.create!(
   user: user,
   title: "Backend Developer focused on Go",
-
   company_name: "Bloomreach",
   comp_logo: "https://media-exp1.licdn.com/dms/image/C560BAQGkRJWk0eX3Ug/company-logo_100_100/0/1631655277891?e=1646265600&v=beta&t=LdpVFid617GAmlMRBH7YObijXq6HWqUKBanB0K9V_t0",
   level: "Entry",
@@ -156,6 +156,7 @@ job8 = JobApplication.create!(
 job9 = JobApplication.create!(
   user: user,
   title: "Frontend Developer",
+  level: "Entry level",
   company_name: "SimpledCard",
   comp_logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQFBPgeeMUtURA/company-logo_100_100/0/1519883904303?e=1646265600&v=beta&t=AdIgYLArkoCVV2_20sDi7sJXu1dwL_2ORsLpDcdGx0o",
   description: "We are looking for someone for whom software development is a passion, not just a job. You not only write code, but you also craft and run a product. You are open to change and have the ability to learn and cooperate with others. You are pragmatic and proactive, and you do what needs to be done: building and running the system. Last but not least, you understand the importance of automation in testing, tooling, and operations.",
@@ -169,6 +170,7 @@ job9 = JobApplication.create!(
 job10 = JobApplication.create!(
   user: user,
   title: "Frontend Developer",
+  level: "Entry level",
   company_name: "Capte",
   comp_logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQG6YYbyAbYqsQ/company-logo_100_100/0/1631878842464?e=1646265600&v=beta&t=q_sQrBNts-eiI0CXGl3yBnY15Po5EeuC1vJumR7pAL0",
   description: "Work in a software development team creating new features and improvements for our cloud-based platform. Our platform is 5 years in development, throughout this time we collected a lot of input from the customers which we are looking to implement to make it more customer friendly.",
@@ -182,6 +184,7 @@ job10 = JobApplication.create!(
 job11 = JobApplication.create!(
   user: user,
   title: "Frontend Developer",
+  level: "Entry level",
   company_name: "Poki",
   comp_logo: "https://media-exp1.licdn.com/dms/image/C560BAQFRB_tjylkwNA/company-logo_100_100/0/1519905686977?e=1646265600&v=beta&t=JNtFBDoruCoWxzNvLIMaH1Av3BObX0u-1YsbTFHHZNA",
   description: "As our Front-End Developer, you have an excellent feel for design and are able to implement this yourself using the latest front-end web technologies. Your implementations work on all browser types and are fully responsive. You will be joining our agile development team.",
@@ -247,6 +250,83 @@ job15 = JobApplication.create!(
   applied: "2021-11-14 18:00:00"
 
 )
+
+job16 = JobApplication.create!(
+  user: user,
+  title: "Back-end Developer",
+  company_name: "Peaks",
+  comp_logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQGyvqck4Np74Q/company-logo_100_100/0/1567430632646?e=1646265600&v=beta&t=5oofIhwSVelf-NT9RoiQxbJk9q_xJVbsR8GZm7mxWWI",
+  level: "Senior",
+  description: "You will team up with our product owners, mobile developers, user experience experts and marketeers to deliver new concepts to further increase our customer satisfaction. For that reason, it is important that you are comfortable and confident in giving your opinion to your fellow colleagues. You will have a central role in building our micro-services architecture and blend new features and ambitious ideas with our technology assets. You will create highly available and resilient systems and will not rest until your code runs in production without issues.",
+  link: "https://nl.linkedin.com/jobs/view/back-end-developer-at-peaks-2812767952?refId=69pbiQddqUW9pkjDmDN%2F0A%3D%3D&trackingId=ehNBeV6Dg1r6mrkOo4XfQQ%3D%3D&trk=public_jobs_topcard-title",
+  status: "Pending",
+  address: " The Randstad, Netherlands",
+  applied: "2021-12-02 18:00:00"
+
+)
+
+job17 = JobApplication.create!(
+  user: user,
+  title: "Back End Developer, Startup, Eindhoven",
+  company_name: "Precedence ",
+  comp_logo: "https://media-exp1.licdn.com/dms/image/C4E0BAQGaqfTiZTr4ZQ/company-logo_100_100/0/1519904226715?e=1646265600&v=beta&t=ACj8zst6dHqygTJPkLKaIuilw3wyfmF7WDek9KKwlb8",
+  level: "Entry",
+  description: "We are looking for a Back-end Engineer who is passionate about his/her work. You will take ownership of the implementation of new features that form the backbone of our business analytics toolkit. You work closely with the team to ensure our services are the best they can be.
+    This is an important role in a small and efficient team, where you will have influence and responsibility for technical and product roadmaps. You should be proactive, detail-oriented and be comfortable tackling complex problems.",
+  link: "https://nl.linkedin.com/jobs/view/back-end-developer-startup-eindhoven-at-precedence-2823344281?refId=ypf%2BqaqP0gIyKWxp2ix0OA%3D%3D&trackingId=qxYfllw%2F%2BZs%2Bg8qTQEGShQ%3D%3D&trk=public_jobs_topcard-title",
+  status: "Pending",
+  address: " Eindhoven, North Brabant, Netherlands",
+  applied: "2021-10-01 18:00:00"
+
+)
+
+job18 = JobApplication.create!(
+  user: user,
+  title: "Back End Developer",
+  company_name: "Maaind",
+  comp_logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQGAYWZAzz0q6A/company-logo_100_100/0/1604674680924?e=1646265600&v=beta&t=I5y63dVuxdzjVAdkxY_L48xZGdMFZBjg17w-mHAndbk",
+  level: "Senior",
+  description: "We are looking to hire an experienced (3-7 years) backend engineer with at minimum the following expertise and exposure:
+  -High familiarity with Python, being able to demonstrate and show prior Python projects you've worked on. You need to know more than how to write basic functions or classes and be able to write decorators, type hints, docstrings, tests, etc.
+  -Some cloud infrastructure, especially AWS (and ideally also Azure)
+  -ML pipeline experience, including understanding model size and model performance issues",
+  link: "https://nl.linkedin.com/jobs/view/back-end-developer-at-maaind-2818418754?refId=hUrfGsofxFNJdwN%2Bkjp1Jw%3D%3D&trackingId=JZ5kFAceDLzq9Og%2FB6kavA%3D%3D&trk=public_jobs_topcard-title",
+  status: "Pending",
+  address: " Eindhoven, North Brabant, Netherlands",
+  applied: "2021-09-22 18:00:00"
+
+)
+
+job19 = JobApplication.create!(
+  user: user,
+  title: "Front-End Developer, Veghel ",
+  company_name: "Jumbo",
+  comp_logo: "https://static-exp1.licdn.com/sc/h/9a9u41thxt325ucfh5z8ga4m8",
+  level: "Mid-Senior level",
+  description: "We are looking for senior front-end developers with a passion for their craft, who care about the quality of the code and the products they create. You enjoy working in a Scrum-based team. You do not wait for things to happen, you make things happen. You have a passion for software development and love sharing it with your colleagues.",
+  link: "https://nl.linkedin.com/jobs/view/front-end-developer-veghel-at-jumbo-2823366922?refId=SOCNCC8x18RiTwG2BeoGgg%3D%3D&trackingId=8g0jBiJ3HfNu9tfnKc3iYg%3D%3D&trk=public_jobs_topcard-title",
+  status: "Pending",
+  address: " Veghel, North Brabant, Netherlands",
+  applied: "2021-11-22 18:00:00"
+
+)
+
+job20 = JobApplication.create!(
+  user: user,
+  title: "Frontend Engineer",
+  company_name: "Lemonade",
+  comp_logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQHnPV8dBNy7ag/company-logo_100_100/0/1547372866268?e=1646265600&v=beta&t=GC3xg2bN6cVxbB0cO-uwgHrXTgz_A-G70FQBvQ8NZYE",
+  level: "Entry level",
+  description: "We're looking for a pixel-perfect frontend engineer who's passionate about creating well-crafted UI/UX and excels at execution. If you're a true tech geek, creative thinker, and a CSS pro, read on.
+  The ideal candidate thinks about coding as craftsmanship, has an academic background in software engineering, and wants to learn how to build incredible software at record speeds. We only use Macs, we're obsessed with React, and we are passionate about automation, AI, and bots.",
+  link: "https://nl.linkedin.com/jobs/view/frontend-engineer-at-lemonade-2798296006?refId=4SJE1LCWyrlEISV7FduL8A%3D%3D&trackingId=efRtlS14II8w9TPWyQNgxQ%3D%3D&trk=public_jobs_topcard-title",
+  status: "Pending",
+  address: " Amsterdam, North Holland, Netherlands",
+  applied: "2021-12-01 18:00:00"
+
+)
+
+
 puts "Creating interview"
 
 interview1 = Interview.create!(
@@ -304,6 +384,42 @@ interview6 = Interview.create!(
 
 )
 
+interview7 = Interview.create!(
+  job_application: job19,
+  start_date: "2021-12-07 14:00:00",
+  end_time: "2021-12-07 15:00:00",
+  interview_type: "Video",
+  notes: "Presentation"
+
+)
+
+interview8 = Interview.create!(
+  job_application: job10,
+  start_date: "2021-12-04 14:00:00",
+  end_time: "2021-12-04 15:00:00",
+  interview_type: "Video",
+  notes: "work on the demo"
+
+)
+
+interview9 = Interview.create!(
+  job_application: job11,
+  start_date: "2021-12-10 10:00:00",
+  end_time: "2021-12-10 11:00:00",
+  interview_type: "Video",
+  notes: "Presentation"
+
+)
+
+interview10 = Interview.create!(
+  job_application: job14,
+  start_date: "2021-12-10 09:00:00",
+  end_time: "2021-12-10 11:00:00",
+  interview_type: "On site",
+  notes: "Prepare portfolio"
+
+)
+
 puts "Creating contact"
 
 contact1 = Contact.create!(
@@ -348,6 +464,38 @@ conatct5 = Contact.create!(
 
 conatct6 = Contact.create!(
   interview: interview1,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  position: Faker::Job.position,
+  email: Faker::Internet.email
+)
+
+conatct7 = Contact.create!(
+  interview: interview10,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  position: Faker::Job.position,
+  email: Faker::Internet.email
+)
+
+conatct8 = Contact.create!(
+  interview: interview8,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  position: Faker::Job.position,
+  email: Faker::Internet.email
+)
+
+conatct9 = Contact.create!(
+  interview: interview6,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  position: Faker::Job.position,
+  email: Faker::Internet.email
+)
+
+conatct10 = Contact.create!(
+  interview: interview2,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   position: Faker::Job.position,

@@ -5,6 +5,13 @@
   list-style-type: none;
   margin: 30px;
 }
+.tableContainerHome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: 30px 30px 30px 0px;
+}
 
 .containerStatisticCards {
   display: flex;
@@ -25,10 +32,18 @@
 height: 100vh;
 }
 
-#goToBottomHome {
-  scroll-behavior: smooth;
+.containerContentHomeBelow {
+  padding-bottom: 25px;
+  margin-left: 100px;
 }
 
-.buttonHomePage {
-  margin-bottom: 70px;
+.containerAboutUs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.containertextAboutUs {
+  flex-direction: column;
+  align-items: left;
 }

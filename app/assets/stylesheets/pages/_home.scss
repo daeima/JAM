@@ -1,10 +1,10 @@
 .landingpageImage {
-  width: 60vw;
+  width: 50vw;
   margin: -3rem;
 }
 
 .headerHome {
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
 .paragraphHome {
@@ -97,4 +97,164 @@ polygon {
   display: flex;
   align-items: right;
   margin-top: 20px;
+}
+
+.applicationCardCompanyNameHome {
+  display: flex;
+  width: 500px;
+  justify-content: center;
+  align-items: center;
+}
+
+.applicationCardCompanyNameHomeCircle {
+  display: flex;
+  width: 250px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.tableCardHome {
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+  height: 100px;
+  width: 72vw;
+}
+
+.circleRedFull {
+  display: flex;
+  border: 2px solid $light-red;
+  border-radius: 20px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-color: $light-red;
+}
+
+.checkHome {
+  color: $dark-green;
+  height: 50px;
+  width: 50px;
+  border: 1px solid $dark-green;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.textCardHome {
+  margin: 0px !important;
+}
+
+#goToBottomHome {
+  scroll-behavior: smooth;
+}
+
+.buttonHomePage {
+  margin-bottom: 70px;
+  border-radius: 20px;
+  height: 65px;
+  width: 225px;
+  font-weight: bold;
+  padding-top: 18px;
+}
+
+.subheaderApplicationsTwo {
+  margin-top: 70px;
+  text-decoration: underline;
+}
+.subheaderApplicationsTwoJAM {
+  text-decoration: underline;
+}
+
+.tableCardHomeEnd {
+  background-color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 10px;
+  box-shadow:  20px 20px 60px #d9d9d9,
+             -20px -20px 60px #ffffff;
+  height: 100px;
+  margin-bottom: 70px !important;
+  width: 72vw;
+}
+
+.buttonNavbar {
+  border: 1px solid $gray;
+  padding: 10px;
+  width: 75px;
+  height: 50px;
+  justify-content: center;
+  align-content: center;
+  border-radius: 10px;
+  color: $gray;
+  text-decoration: none;
+}
+
+.buttonNavbar:hover {
+  background-color: $light-gray;
+}
+
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+
+.changeBackgroundNavbar {
+  background-color: $light-blue;
+}
+
+.starPosition {
+  position: absolute;
+  top: 130.5rem;
+  left: 68.75rem;
+}
+
+.archivePosition {
+  position: absolute;
+    top: 122.5rem;
+    left: 69rem;
+}
+
+.infoPosition {
+  position: absolute;
+  top: 114.5rem;
+  left: 70rem;
+}
+
+.plusPosition {
+  position: absolute;
+  left: 69rem;
+  top: 139rem;
+}
+
+
+.aboutusPic {
+  height: 65vh;
+  width: 500px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: 100px;
+}
+
+.paragraphAboutUs {
+  width: 500px;
+  margin-left: 100px;
+  text-align: left;
 }

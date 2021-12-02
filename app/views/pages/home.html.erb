@@ -1,3 +1,4 @@
+<%= render 'shared/navbar' %>
 <div class="text-center containerHome">
 <h1 class="headerHome">JAM - Your Job Application Manager</h1>
 <p class="paragraphHome">Don't get overwhelmed by a stack of applications.
@@ -20,11 +21,68 @@ JAM helps you stay on top of things, no matter how many applications you have.
 <% end %>
 </div>
 
+<div style="height: 100vh;">
+<h2 class="subheaderApplicationsTwo">About Us</h2>
+<br>
+<br>
+<br>
+<br>
+<div class="containerAboutUs">
+<div class="containertextAboutUs">
+<h2>This is us</h2>
+<br>
+<p class="paragraphAboutUs">All of us are sometimes messy, can't keep track of things, or get easily overwhelmed when applying for jobs with many companies at once. So are we. That's why we came up with the idea of JAM. A job application manager that makes it easy to keep track of all applications and be prepared for a callback from HR or People at any time. JAM was founded at LeWagon's Fall 2021 web development bootcamp in Amsterdam, the Netherlands (Batch #744). </p>
+</div>
+<%= image_tag("aboutus.jpg", class:"aboutusPic") %>
+</div>
+<br>
+</div>
+
 <section id="goToBottomHome">
-<div class="containerItemsBelow subheaderApplications">
-<h2>How it works:</h2>
-<div class="tableContainer tableCard">
-<%= image_tag ("landing.png"), class:"logoIndex" %>
-</div>
-</div>
+  <div class="containerContentHomeBelow">
+    <h2 class="subheaderApplicationsTwoJAM">How JAM works:</h2>
+    <div class="tableContainerHome tableCardHome">
+      <div class="fas fa-check checkHome"></div>
+      <li class="applicationCardCompanyNameHomeCircle circleRedFull"><p class="textCardHome"><strong>ENTERING AN APPLICATION</strong></p></li>
+      <li class="applicationCardCompanyNameHome"><p class="textCardHome">Enter all of your applications you want to keep track of. They will be stored in your personalized Dashboard. You just have to open up an account, and the best thing: <strong>JAM is FREE.</strong></p></li>
+    </div>
+    <div class="tableContainerHome tableCardHome">
+      <div class="fas fa-check checkHome"></div>
+      <li class="applicationCardCompanyNameHomeCircle circleRedFull"><p class="textCardHome"><strong>FILTERING</strong></p></li>
+      <li class="applicationCardCompanyNameHome"><p class="textCardHome">Only want to see Applications which were rejected? We don't want you to feel bad, but if you really want to, just use our status filters. </p></li>
+    </div>
+    <div class="tableContainerHome tableCardHome">
+      <div class="fas fa-check checkHome"></div>
+      <li class="applicationCardCompanyNameHomeCircle circleRedFull"><p class="textCardHome"><strong>SEARCHING</strong></p></li>
+      <li class="applicationCardCompanyNameHome"><p class="textCardHome">HR is calling but you can't find the job? No worries, type the company name in our searchbar and you will find it!</p></li>
+    </div>
+    <div class="tableContainerHome tableCardHome">
+      <div class="fas fa-check checkHome"></div>
+      <li class="applicationCardCompanyNameHomeCircle circleRedFull"><p class="textCardHome"><strong>ADDING DETAILS</strong></p></li>
+      <li class="applicationCardCompanyNameHome"><p class="textCardHome">You got an invitation for an interview? Or did someone reply whose contact information you want to save? You can easily add those information.</p></li>
+    </div>
+    <div class="tableContainerHome tableCardHomeEnd">
+      <div class="fas fa-check checkHome"></div>
+      <li class="applicationCardCompanyNameHomeCircle circleRedFull"><p class="textCardHome"><strong>THIS IS JAM</strong></p></li>
+      <li class="applicationCardCompanyNameHome"><p class="textCardHome">We can all be messy and easily lose track of things. That's why we created JAM to make your job search process as easy as possible.</p></li>
+    </div>
+  </div>
+  <i class="far fa-star starPosition fa-4x"></i>
+  <i class="fas fa-archive archivePosition fa-4x"></i>
+  <i class="fas fa-info infoPosition fa-4x"></i>
+  <i class="fas fa-user-plus plusPosition fa-4x"></i>
+  <br>
+  <br>
 </section>
+<div class="footer">
+  <div class="footer-links">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+  </div>
+  <div class="footer-copyright">
+    JAM 2021 ©
+  </div>
+</div>

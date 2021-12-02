@@ -22,7 +22,8 @@
 
 .interview-card {
   background-color: $white;
-  margin: 10px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   border-radius: 10px;
   box-shadow:  20px 20px 60px #d9d9d9,
              -20px -20px 60px $white;
@@ -46,10 +47,23 @@
   border-radius: 0 0 10px 10px;
 }
 
+.cards-contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
 .contact-card {
   border-radius: 10px;
-  box-shadow:  20px 20px 60px #d9d9d9,
-             -20px -20px 60px $white;
-  padding: 10px;
-  height: 200px;
+  border: 1px solid $border-blue;
+  padding: 20px;
+  height: 280px;
+  width: 240px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+}
+
+.email {
+  height: 55px ;
 }

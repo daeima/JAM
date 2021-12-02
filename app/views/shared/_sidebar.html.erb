@@ -2,77 +2,73 @@
 
      <!--Top menu -->
         <div class="sidebar">
-        <!--Logo--> 
-             <%= link_to root_path do %>
-               <%= image_tag "JAM_logo.png", class: "logo" %>
-             <% end %>
+
            <!--profile image & text-->
             <div class="profile">
-                <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80" alt="profile_picture">
-                <h3>Welcome back, <%= current_user.first_name if current_user.present? %></h3>
+                <img src="https://kitt.lewagon.com/placeholder/users/daeima" alt="profile_picture">
+                <h3 class="my-4">Welcome back, <%= current_user.first_name if current_user.present? %></h3>
             </div>
             <!--menu items-->
             <ul>
 
                 <li>
                     <%= link_to new_job_application_path, class: "icon-text" do %>
-                      <i class="fas fa-plus-square"></i>New application</i>
+                      <i class="fas fa-plus-square"></i> New application</i>
                     <% end %>
                 </li>
-                    
+
                  <li>
                     <%= link_to job_applications_path( params: {filter: "In process"}), class: "icon-text" do %>
                       <span class="icon"><i class="fas fa-check-circle"></i></span>
-                      </span class="item">Active</span>
+                      </span class="item"> Active</span>
                      <% end %>
                  </li>
 
                  <li>
                     <%= link_to job_applications_path( params: {filter: "Archived"}), class: "icon-text" do %>
                      <span class="icon"><i class="fas fa-archive"></i></span>
-                    <span class="item">Archived</span>
+                    <span class="item"> Archived</span>
                     <% end %>
                  </li>
+                 <br>
                 <hr>
                 <li>
                     <%=link_to  job_applications_path, class:"icon-text" do %>
                         <span class="icon"><i class="fas fa-home"></i></span>
-                        <span class="item">Dashboard</span>
+                        <span class="item"> Dashboard</span>
                     <% end %>
                 </li>
 
                 <li>
-                    <a  class="icon-text" href="#">
+                    <a class="icon-text" href="#">
                     <span class="icon"><i class="fas fa-user-alt"></i></span>
-                    <span class="item">Profile</span> 
+                    <span class="item"> Profile</span>
                     <a>
                 </li>
 
                 <li>
-                    <a  class="icon-text" href="#">
+                    <a class="icon-text" href="#">
                         <span class="icon"><i class="fas fa-question"></i></span>
                         <span class="item">FAQ</span>
                     </a>
                 </li>
+                <br>
                   <hr>
                  <li>
                     <%= link_to destroy_user_session_path, method: :delete, class:"icon-text" do %>
                         <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
                         <span class="item">Log out</span>
-                    
+
                     <% end %>
                 </li>
-                
+
+
+                        <!--Logo-->
+                  <%= link_to root_path do %>
+                    <%= image_tag "JAM_logo.png", class: "logo" %>
+                  <% end %>
+
+
             </ul>
         </div>
     </div>
-
-
-  
-
-
-
-
-
-
-

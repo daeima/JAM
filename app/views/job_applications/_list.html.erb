@@ -64,8 +64,8 @@
          <% unarchived_jobs = @job_applications.where(archive: false, favorite: false) %>
          <% @job_applications.each do |job_application| %>
          <div class="tableContainer tableCard">
-            <%= link_to job_application_path(job_application) do %>
-            <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
+          <%= link_to job_application_path(job_application) do %>
+            <img src="<%=job_application.comp_logo%>" alt="comp logo" class="logoIndex">
           <% end %>
             <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
             <li class="applicationCardTitle"><%= job_application.title %></li>
@@ -101,25 +101,27 @@
       <% archived_jobs = @job_applications.where(archive: true)  %>
       <% archived_jobs.each do |job_application| %>
       <div class="tableContainer tableCard">
-         <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
-         <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
-         <li class="applicationCardTitle"><%= job_application.title %></li>
-         <li class="applicationCardLevel"><%= job_application.level %></li>
-         <% if job_application.status == "Pending" %>
-         <li class="circlePurple"><%= job_application.status %></li>
-         <% elsif job_application.status == "In process"%>
-         <li class="circleGreen"><%= job_application.status %></li>
-         <% elsif job_application.status == "Rejected"%>
-         <li class="circleRed"><%= job_application.status %></li>
-         <% elsif job_application.status == "Offer"%>
-         <li class="circleYellow"><%= job_application.status %></li>
-         <% end %>
-         <%= link_to unarchive_job_application_path(job_application), method: :patch, data: { confirm: "Unarchive?" } do %>
-         <i class="fas fa-undo"></i>
-         <% end %>
-         <%= link_to job_application_path(job_application) do %>
-         <i class="fas fa-info-circle"></i>
-         <% end %>
+        <img src="<%=job_application.comp_logo%>" alt="comp logo" class="logoIndex">
+          <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
+          <li class="applicationCardTitle"><%= job_application.title %></li>
+          <li class="applicationCardLevel"><%= job_application.level %></li>
+        <% if job_application.status == "Pending" %>
+          <li class="circlePurple"><%= job_application.status %></li>
+        <% elsif job_application.status == "In process"%>
+          <li class="circleGreen"><%= job_application.status %></li>
+        <% elsif job_application.status == "Rejected"%>
+          <li class="circleRed"><%= job_application.status %></li>
+        <% elsif job_application.status == "Offer"%>
+          <li class="circleYellow"><%= job_application.status %></li>
+        <% end %>
+        <%= link_to unarchive_job_application_path(job_application), method: :patch, data: { confirm: "Unarchive?" }, class:"icon-link" do %>
+          <i class="fas fa-undo"></i>
+          <span class="tooltiptext">Unarchive</span>
+        <% end %>
+        <%= link_to job_application_path(job_application), class:"icon-link" do %>
+          <i class="fas fa-info-circle"></i>
+          <span class="tooltiptext">Unarchive</span>
+        <% end %>
       </div>
       <% end %>
    </div>

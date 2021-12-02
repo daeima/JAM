@@ -4,7 +4,7 @@
 
   <div>
     <div class="d-flex justify-content-between align-items-center">         <!--  company + favorit + edit job -->
-      <h2>
+      <h1>
         <%= image_tag image_url(@job_application.comp_logo), class:"logoIndex" %>
         <%= @job_application.company_name %>
 
@@ -20,13 +20,22 @@
             <span class="tooltiptext">Add to Favourite</span>
           <% end %>
         <% end %>
-      </h2>
-      <%= link_to edit_job_application_path(@job_application), class:"icon-text text-decoration-none" do %>
-        <i class="fas fa-edit"></i> Edit application</i>
-      <% end %>
+      </h1>
+      <div>
+        <%= link_to @job_application.link, class:"icon-text text-decoration-none" do %>
+          <i class="fas fa-link"></i>
+          <span>Job link</span>
+        <% end %>
+                             <!-- Edit -->
+        <%= link_to edit_job_application_path(@job_application), class:"icon-text text-decoration-none" do %>
+          <i class="fas fa-edit"></i> Edit application</i>
+        <% end %>
+      </div>
+
+
     </div>
     <div class="d-flex align-items-center">
-      <h3 class="mb-0 mr-5"><%= @job_application.title %></h3>
+      <h2 class="mb-0 mr-5"><%= @job_application.title %></h2>
       <!-- Status -->
       <span>
         <% if @job_application.status == "Pending" %>
@@ -39,13 +48,20 @@
           <li class="circleYellow"><%= @job_application.status %></li>
         <% end %>
       </span>
-    </div>
-    <p><%= @job_application.remote ? "Remote" : "On site" %> | <%= @job_application.level %> | Address: <%= @job_application.address %> | Applied on: <%= @job_application.applied.strftime("%A %d %B") %></p>
-    <%= link_to "Job link", @job_application.link, class:"mb-4"%>
-    <p> <strong>Job description:</strong>  <%= @job_application.description %></p>
 
-    <p>Notes: <%= @job_application.notes %></p>
-    <p>Last updated on: <%= @job_application.updated_at.strftime("%A %d %B") %></p>
+    </div>
+    <h5 class="my-4"><%= @job_application.remote ? "Remote" : "On site" %> | <%= @job_application.level %> | <%= @job_application.address %> | Applied on: <%= @job_application.applied.strftime("  %d %B") %></h5>
+
+    <div>
+      <h3>Description</h3>
+      <p><%= @job_application.description %></p>
+    </div>
+    <div>
+      <h3>Notes</h3>
+      <p><%= @job_application.notes %></p>
+    </div>
+    <p class="text-muted text-right">Last updated on: <%= @job_application.updated_at.strftime("%A %d %B") %></p>
+
   </div>
 
 
@@ -150,12 +166,12 @@
     </div>
   <% end %>
   <!-- MAP -->
-  <div id="map"
-    style="width:100vh; height:300px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  <h3 class="my-4">Location</h3>
+  <div class="d-flex justify-content-center">
+    <div id="map"
+         style="width:100vh; height:300px;"
+         data-markers="<%= @markers.to_json %>"
+         data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+  </div>
 
 </div>
-
-
-<br>

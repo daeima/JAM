@@ -58,7 +58,7 @@ job2 = JobApplication.create!(
           Experience with Git(hub). CI/CD knowledge is a plus",
   link: "https://www.linkedin.com/jobs/view/2791724535/?alternateChannel=smljob&eBP=CwEAAAF9TOBpRQkjVp8E7zpi3VMnAsa0giprRAnTWhGepwy8__MxlFNL6xdxf5haUe69FgEH6VZ5DWkpbq0aRIdf6xQNxETjnb4SpC5FWQESCxRzjpi3UDZerh5hXFZikLb5vEcyp-7F9EXNSbN02Gg-oPVt7WxRj_YSEek-pTfSvus3XhcbWG_jrS5xMOC2Xb4wyr0CScFYhcktLjBGh-UsJSshScX6xrI8CIzt1jy1_WcGf09xhGO8MC52cx9YmAC7l_NCnM7K--a0Rdtxm5F05lTUAHk4mJdIEkYiNNnXN9FSgo3a0lrnfgmVvMnKJAVmNiXThw-qtqgD-vVcpU7eSIqj_71-j83IBNwHs2M1wGy6gDK-Cozz0oGQI8h0efrorRbSeHg1vKp35KPvPS49&refId=2prPSJZ7K4%2FWoAwqBgriCw%3D%3D&trackingId=RqyAA4X%2BTuR0RhVLCiZChQ%3D%3D",
   address: "Herengracht 458, Amsterdam, North Holland 1017 CA, NL",
-  applied: "2020-09-14 18:00:00"
+  applied: "2020-10-14 18:00:00"
 )
 
 job3 = JobApplication.create!(
@@ -106,7 +106,7 @@ job5 = JobApplication.create!(
   notes: "You know your way around libraries and languages such as React, Vue, Angular, ESNext, TypeScript, Webpack and GSAP;\n
           You have great attention to detail in everything you do",
   address: "Hilversum, North Holland, Netherlands",
-  applied: "2020-09-14 18:00:00"
+  applied: "2020-10-14 18:00:00"
 
 )
 
@@ -120,7 +120,7 @@ job6 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2779383363/?alternateChannel=search&refId=k5h%2BOrkeVFjfnJp8T%2B4elA%3D%3D&trackingId=bC8Wco9R2466Ba06DHnVZA%3D%3D&trk=d_flagship3_search_srp_jobs",
   status: "Pending",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-09-14 18:00:00"
+  applied: "2020-10-14 18:00:00"
 
 )
 
@@ -134,7 +134,7 @@ job7 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2773845008/?alternateChannel=search&eBP=CwEAAAF9TS04ug9_p6mP-lfnrAzYfulNPpAB02ifSC5r-oSnCBMH9iiuwyRitmsBlZJ3wvS-AVq31ZfHjzSDQnRk7hr6z4eW1eWrNRCh5OUEtZGGvIsNTsR5IMr7HzaQnr_12v5yQCdHH3srgeTBF7TPx5CsKxno2syizf-_sAVjg10WeDAeZ0NErsDt-UIAcFhMpAtAYtfep6MUKg7G3_FmH23Ch5S2k05CGE5kfSlMRQp-uRZTWwNs_gHeSPLElir6wwKaDmQAmjqUSi90Is1t0s8InrABb5cEwoJhqMCoC2299sMZU8hku9qrQoe0LVHovLKj8m1R4hHeA4jd2_FG5HzWNxbCTOwGak8Uh0QpGNueKXrB03ERIyWY15WYI-8&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=kLsSjoq%2FMHBqezlpR6dIiA%3D%3D&trackingId=OOTXJSF9YbzOAnLMp11RyA%3D%3D&trk=flagship3_search_srp_jobs",
   status: "In process",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-10-14 18:00:00"
+  applied: "2020-11-14 18:00:00"
 
 )
 
@@ -174,7 +174,7 @@ job10 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2608219067/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=lz9TBanCZlmsRPQb3seOYQ%3D%3D",
   status: "In process",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-09-14 18:00:00",
+  applied: "2020-11-14 18:00:00",
   favorite: true
 )
 
@@ -201,7 +201,7 @@ job12 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2802934486/?alternateChannel=search&eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=JOB_SEEKER_QUALIFIED&refId=PfsqTqnWGXEaM%2B%2FZt80oLw%3D%3D&trackingId=%2BiNW1CkCWLHqSfModqXGig%3D%3D&trk=flagship3_search_srp_jobs",
   status: "Offer",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-11-14 18:00:00"
+  applied: "2020-10-14 18:00:00"
 
 )
 
@@ -229,7 +229,7 @@ job14 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2810502459/?alternateChannel=search&refId=V%2BuVG99K7CpCCAYbA2RyQQ%3D%3D&trackingId=%2FFYe5LzdWQ4iQ7SmE1R7uQ%3D%3D",
   status: "Pending",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-11-14 18:00:00"
+  applied: "2020-10-14 18:00:00"
 
 )
 

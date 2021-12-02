@@ -2,7 +2,10 @@
 
      <!--Top menu -->
         <div class="sidebar">
-
+                  <!--Logo-->
+                  <%= link_to root_path do %>
+                    <%= image_tag "JAM_logo.png", class: "logo" %>
+                  <% end %>
            <!--profile image & text-->
             <div class="profile">
                 <img src="https://kitt.lewagon.com/placeholder/users/daeima" alt="profile_picture">
@@ -61,14 +64,6 @@
 
                     <% end %>
                 </li>
-
-
-                        <!--Logo-->
-                  <%= link_to root_path do %>
-                    <%= image_tag "JAM_logo.png", class: "logo" %>
-                  <% end %>
-
-
             </ul>
         </div>
     </div>

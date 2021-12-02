@@ -15,7 +15,8 @@
 }
 
 .containerHeadSearch {
-  display: flex;
-  justify-content: space-around;
-  position: relative;
+  display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
 }

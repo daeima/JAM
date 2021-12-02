@@ -1,8 +1,8 @@
 
-<h6 class="text-right dateTimeDashboard"><%= Date.today.strftime("%a, %d %B %Y") %></h6>
+<p class="text-right dateTimeDashboard"><%= Date.today.strftime("%a, %d %B %Y") %></p>
 <div class="container displayingRightIndex">
-  <h1 class="text-left subheaderApplications">Your Dashbord</h1>
-  <p class="text-left subheaderApplicationsPara">You added <%= @job_applications.all.length %> applications.</p>
+  <h1 class="text-left subheaderApplications">This is your JAM!</h1>
+  <h4 class="text-left subheaderApplicationsPara">You have <%= @total %> applications.</h4>
 
   <!--- Implementing Statistics (styling needed) --->
   <div class="row containerStatisticCards">
@@ -11,11 +11,11 @@
           <p><strong>In Process</strong></p>
           <i class="fas fa-user-tie"></i>
         </div>
-      <% if @job_applications.where(status: "In process").length > 1 %>
-        <p class="statisticBottom"><%= @job_applications.where(status: "In process").length %> Applications</p>
-        <% elsif @job_applications.where(status: "In process").length == 1%>
-        <p class="statisticBottom"><%= @job_applications.where(status: "In process").length %> Application</p>
-        <% elsif @job_applications.where(status: "In process").length < 1 %>
+      <% if @in_process > 1 %>
+        <p class="statisticBottom"><%= @in_process %> Applications</p>
+        <% elsif @in_process == 1%>
+        <p class="statisticBottom"><%= @in_process %> Application</p>
+        <% elsif @in_process < 1 %>
         <p class="statisticBottom">Empty</p>
       <% end %>
     </div>
@@ -25,11 +25,11 @@
           <p><strong>Pending</strong></p>
           <i class="far fa-pause-circle"></i>
         </div>
-      <% if @job_applications.where(status: "Pending").length > 1 %>
-        <p class="statisticBottom"><%= @job_applications.where(status: "Pending").length %> Applications</p>
-        <% elsif @job_applications.where(status: "Pending").length == 1%>
-        <p class="statisticBottom"><%= @job_applications.where(status: "Pending").length %> Application</p>
-        <% elsif @job_applications.where(status: "Pending").length < 1 %>
+      <% if @pending > 1 %>
+        <p class="statisticBottom"><%=@pending %> Applications</p>
+      <% elsif @pending == 1%>
+        <p class="statisticBottom"><%=@pending %> Application</p>
+      <% elsif @pending < 1 %>
         <p class="statisticBottom">Empty</p>
       <% end %>
     </div>
@@ -39,11 +39,11 @@
           <p><strong>Offer</strong></p>
           <i class="fas fa-coins"></i>
         </div>
-      <% if @job_applications.where(status: "Offer").length > 1 %>
-        <p class="statisticBottom"><%= @job_applications.where(status: "Offer").length %> Applications</p>
-        <% elsif @job_applications.where(status: "Offer").length == 1%>
-        <p class="statisticBottom"><%= @job_applications.where(status: "Offer").length %> Application</p>
-        <% elsif @job_applications.where(status: "Offer").length < 1 %>
+      <% if @offer > 1 %>
+        <p class="statisticBottom"><%= @offer %> Applications</p>
+        <% elsif @offer == 1%>
+        <p class="statisticBottom"><%= @offer %> Application</p>
+        <% elsif @offer < 1 %>
         <p class="statisticBottom"> Empty</p>
       <% end %>
     </div>
@@ -52,11 +52,11 @@
           <p><strong>Rejected</strong></p>
           <i class="far fa-times-circle"></i>
         </div>
-      <% if @job_applications.where(status: "Rejected").length > 1 %>
-        <p class="statisticBottom"><%= @job_applications.where(status: "Rejected").length %> Applications</p>
-        <% elsif @job_applications.where(status: "Rejected").length == 1%>
-        <p class="statisticBottom"><%= @job_applications.where(status: "Rejected").length %> Application</p>
-        <% elsif @job_applications.where(status: "Rejected").length < 1 %>
+      <% if @rejected > 1 %>
+        <p class="statisticBottom"><%= @rejected %> Applications</p>
+        <% elsif @rejected == 1%>
+        <p class="statisticBottom"><%= @rejected %> Application</p>
+        <% elsif @rejected < 1 %>
         <p class="statisticBottom"> Empty</p>
       <% end %>
     </div>
@@ -66,10 +66,9 @@
 <div class="block_1"></div> <hr />
 
 <!--- Favourite Applications--->
-<h2 class="subheaderApplications">Your favorite Jobs:</h2>
+<h2 class="subheaderApplications">Dream Jobs:</h2>
 
-<% favourite_jobs = @job_applications.where(favorite: true) %>
-        <% favourite_jobs.each do |job_application| %>
+        <% @favorites.each do |job_application| %>
           <div class="tableContainer tableCard">
             <%= link_to job_application_path(job_application) do %>
             <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>

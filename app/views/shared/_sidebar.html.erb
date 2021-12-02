@@ -2,14 +2,11 @@
 
      <!--Top menu -->
         <div class="sidebar">
-        <!--Logo-->
-             <%= link_to root_path do %>
-               <%= image_tag "JAM_logo.png", class: "logo" %>
-             <% end %>
+
            <!--profile image & text-->
             <div class="profile">
                 <img src="https://kitt.lewagon.com/placeholder/users/daeima" alt="profile_picture">
-                <h3>Welcome back, <%= current_user.first_name if current_user.present? %></h3>
+                <h3 class="my-4">Welcome back, <%= current_user.first_name if current_user.present? %></h3>
             </div>
             <!--menu items-->
             <ul>
@@ -64,6 +61,13 @@
 
                     <% end %>
                 </li>
+
+
+                        <!--Logo-->
+                  <%= link_to root_path do %>
+                    <%= image_tag "JAM_logo.png", class: "logo" %>
+                  <% end %>
+
 
             </ul>
         </div>

@@ -3,6 +3,14 @@ class JobApplicationsController < ApplicationController
   def index
     @job_applications = JobApplication.order(title: :desc)
     @job_application_count = JobApplication.group_by_month(:applied, format: "%b").count
+    @favorites = JobApplication.where(favorite: true)
+
+    @total = JobApplication.all.count
+
+    @pending = JobApplication.where(status: "Pending").length
+    @in_process = JobApplication.where(status: "In process").length
+    @offer = JobApplication.where(status: "Offer").length
+    @rejected = JobApplication.where(status: "Rejected").length
 
     @data_keys = [
       'September',
@@ -11,7 +19,7 @@ class JobApplicationsController < ApplicationController
     ]
 
     @data_values = @job_application_count.values
-    
+
     if params[:query].present?
       sql_query = " \
         job_applications.title ILIKE :query \
@@ -23,10 +31,10 @@ class JobApplicationsController < ApplicationController
 
     elsif params[:filter].present?
       @job_applications = current_user.job_applications.filter_by_status(params[:filter])
-      
+
     end
 
-    
+
     respond_to do |format|
       format.html # Follow regular flow of Rails
       format.text { render partial: 'list.html', locals: { JobApplications: @job_applications } }

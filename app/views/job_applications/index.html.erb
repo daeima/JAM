@@ -1,6 +1,5 @@
-
-<p class="text-right dateTimeDashboard"><%= Date.today.strftime("%a, %d %B %Y") %></p>
 <div class="container displayingRightIndex">
+  <p class="text-right dateTimeDashboard"><%= Date.today.strftime("%a, %d %B %Y") %></p>
   <h1 class="text-left subheaderApplications">This is your JAM!</h1>
   <h4 class="text-left subheaderApplicationsPara">You have <%= @total %> applications.</h4>
 
@@ -60,13 +59,15 @@
         <p class="statisticBottom"> Empty</p>
       <% end %>
     </div>
+
+
   </div>
   <!--- End of Statistics --->
 
 <div class="block_1"></div> <hr />
 
 <!--- Favourite Applications--->
-<h2 class="subheaderApplications">Dream Jobs:</h2>
+<h2 class="subheaderApplications">Dream Jobs</h2>
 
         <% @favorites.each do |job_application| %>
           <div class="tableContainer tableCard">
@@ -80,7 +81,7 @@
             <li class="circlePurple"><%= job_application.status %></li>
             <% elsif job_application.status == "In process"%>
             <li class="circleGreen"><%= job_application.status %></li>
-            <% elsif job_application.status == "Rejected"%>
+            <% elsif job_application.status == "Rejected" || job_application.status == "Archived" %>
             <li class="circleRed"><%= job_application.status %></li>
             <% elsif job_application.status == "Offer"%>
             <li class="circleYellow"><%= job_application.status %></li>
@@ -100,16 +101,26 @@
           </div>
         <% end %>
 
+
+
 <!--- End of Favourite Applications--->
 
 <div class="block_1"></div> <hr />
 
+  <h2 class="subheaderApplications">Your progress</h2>
+
+  <div class="container py-2">
+    <canvas id="myChart" width="200px" height="40px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
+  </div>
+
+
+<div class="block_1"></div> <hr/>
   <!--- Search Bar (styling needed)--->
 
 <div>
   <div data-controller="refresh-list">
     <div class="d-flex containerHeadSearch">
-    <h2 class="subheaderApplicationsOne">See all of your Active Applications</h2>
+    <h2 class="subheaderApplicationsOne">All Applications</h2>
         <%= form_with url: job_applications_path, method: :get, html: { class: 'mb-5', data: { refresh_list_target: 'form' } } do |f| %>
           <%= f.text_field :query,
                           class: "form-control listStylingIndex",
@@ -141,7 +152,5 @@
 
 
   <!--- Chart1 --->
-  <div class="container">
-  <canvas id="myChart" width="200px" height="100px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>
-  </div>
+
 </div>

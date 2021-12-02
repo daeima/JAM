@@ -42,7 +42,7 @@ job = JobApplication.create!(
           Ability to find and evaluate multiple solutions to a given problem and apply working fixes",
   link: "https://www.linkedin.com/jobs/view/2669328636/?alternateChannel=search&refId=k5h%2BOrkeVFjfnJp8T%2B4elA%3D%3D&trackingId=3RX0E5imcslCLVAQ0v8BGw%3D%3D",
   address: "Jacob Bontiusplaats 9, Amsterdam, NH 1018LL, NL",
-  applied: "2020-11-14 18:00:00"
+  applied: "2021-11-14 18:00:00"
 )
 
 job2 = JobApplication.create!(
@@ -58,12 +58,13 @@ job2 = JobApplication.create!(
           Experience with Git(hub). CI/CD knowledge is a plus",
   link: "https://www.linkedin.com/jobs/view/2791724535/?alternateChannel=smljob&eBP=CwEAAAF9TOBpRQkjVp8E7zpi3VMnAsa0giprRAnTWhGepwy8__MxlFNL6xdxf5haUe69FgEH6VZ5DWkpbq0aRIdf6xQNxETjnb4SpC5FWQESCxRzjpi3UDZerh5hXFZikLb5vEcyp-7F9EXNSbN02Gg-oPVt7WxRj_YSEek-pTfSvus3XhcbWG_jrS5xMOC2Xb4wyr0CScFYhcktLjBGh-UsJSshScX6xrI8CIzt1jy1_WcGf09xhGO8MC52cx9YmAC7l_NCnM7K--a0Rdtxm5F05lTUAHk4mJdIEkYiNNnXN9FSgo3a0lrnfgmVvMnKJAVmNiXThw-qtqgD-vVcpU7eSIqj_71-j83IBNwHs2M1wGy6gDK-Cozz0oGQI8h0efrorRbSeHg1vKp35KPvPS49&refId=2prPSJZ7K4%2FWoAwqBgriCw%3D%3D&trackingId=RqyAA4X%2BTuR0RhVLCiZChQ%3D%3D",
   address: "Herengracht 458, Amsterdam, North Holland 1017 CA, NL",
-  applied: "2020-09-14 18:00:00"
+  applied: "2021-09-14 18:00:00"
 )
 
 job3 = JobApplication.create!(
   user: user,
   title: "Frontend Developer",
+  level: "Entry level",
   company_name: "Hadrian",
   comp_logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQENV4fe-dpr_g/company-logo_100_100/0/1628354830626?e=1646265600&v=beta&t=LEFqycNthEdf5g__hMnMjnqUvAWECig92nxnE64awfk",
   description: "We don't have any hard requirements, as we welcome talented people from all walks of life. We’re looking for fast-learners who are excited about our mission and keen to get stuck in.",
@@ -74,7 +75,7 @@ job3 = JobApplication.create!(
   notes: "HTML5, Javascript and CSS;\n
           React;\n
           Styled-components and SCSS",
-  applied: "2020-09-14 18:00:00",
+  applied: "2021-09-14 18:00:00",
   favorite: true
 )
 
@@ -90,7 +91,7 @@ job4 = JobApplication.create!(
   notes: "Angular, React, jQuery, AngularJS, HTML5 and CSS3 get your blood flowing faster\n
           You don't hide your enthusiasm for Bootstrap, ASP.NET Core, and TypeScript either",
   address: "Seattle, Washington",
-  applied: "2020-09-14 18:00:00",
+  applied: "2021-09-14 18:00:00",
   remote: true
 )
 
@@ -106,7 +107,7 @@ job5 = JobApplication.create!(
   notes: "You know your way around libraries and languages such as React, Vue, Angular, ESNext, TypeScript, Webpack and GSAP;\n
           You have great attention to detail in everything you do",
   address: "Hilversum, North Holland, Netherlands",
-  applied: "2020-09-14 18:00:00"
+  applied: "2021-09-14 18:00:00"
 
 )
 
@@ -120,7 +121,7 @@ job6 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2779383363/?alternateChannel=search&refId=k5h%2BOrkeVFjfnJp8T%2B4elA%3D%3D&trackingId=bC8Wco9R2466Ba06DHnVZA%3D%3D&trk=d_flagship3_search_srp_jobs",
   status: "Pending",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-09-14 18:00:00"
+  applied: "2021-09-14 18:00:00"
 
 )
 
@@ -134,7 +135,7 @@ job7 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2773845008/?alternateChannel=search&eBP=CwEAAAF9TS04ug9_p6mP-lfnrAzYfulNPpAB02ifSC5r-oSnCBMH9iiuwyRitmsBlZJ3wvS-AVq31ZfHjzSDQnRk7hr6z4eW1eWrNRCh5OUEtZGGvIsNTsR5IMr7HzaQnr_12v5yQCdHH3srgeTBF7TPx5CsKxno2syizf-_sAVjg10WeDAeZ0NErsDt-UIAcFhMpAtAYtfep6MUKg7G3_FmH23Ch5S2k05CGE5kfSlMRQp-uRZTWwNs_gHeSPLElir6wwKaDmQAmjqUSi90Is1t0s8InrABb5cEwoJhqMCoC2299sMZU8hku9qrQoe0LVHovLKj8m1R4hHeA4jd2_FG5HzWNxbCTOwGak8Uh0QpGNueKXrB03ERIyWY15WYI-8&recommendedFlavor=ACTIVELY_HIRING_COMPANY&refId=kLsSjoq%2FMHBqezlpR6dIiA%3D%3D&trackingId=OOTXJSF9YbzOAnLMp11RyA%3D%3D&trk=flagship3_search_srp_jobs",
   status: "In process",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-10-14 18:00:00"
+  applied: "2021-10-14 18:00:00"
 
 )
 
@@ -148,46 +149,49 @@ job8 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2771409107/?alternateChannel=search&refId=kLsSjoq%2FMHBqezlpR6dIiA%3D%3D&trackingId=IL9G9Bg9O33ct9qptneDYQ%3D%3D",
   status: "Rejected",
   address: "Amsterdam, Netherlands",
-  applied: "2020-11-14 18:00:00",
+  applied: "2021-11-14 18:00:00",
   remote: true
 )
 
 job9 = JobApplication.create!(
   user: user,
   title: "Frontend Developer",
+  level: "Entry level",
   company_name: "SimpledCard",
   comp_logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQFBPgeeMUtURA/company-logo_100_100/0/1519883904303?e=1646265600&v=beta&t=AdIgYLArkoCVV2_20sDi7sJXu1dwL_2ORsLpDcdGx0o",
   description: "We are looking for someone for whom software development is a passion, not just a job. You not only write code, but you also craft and run a product. You are open to change and have the ability to learn and cooperate with others. You are pragmatic and proactive, and you do what needs to be done: building and running the system. Last but not least, you understand the importance of automation in testing, tooling, and operations.",
   link: "https://www.linkedin.com/jobs/view/2735127563/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=OccagE%2BqAXo7CpLA9Uv6AQ%3D%3D&trk=d_flagship3_search_srp_jobs",
   status: "In process",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-10-14 18:00:00",
+  applied: "2021-10-14 18:00:00",
   favorite: true
 )
 
 job10 = JobApplication.create!(
   user: user,
   title: "Frontend Developer",
+  level: "Entry level",
   company_name: "Capte",
   comp_logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQG6YYbyAbYqsQ/company-logo_100_100/0/1631878842464?e=1646265600&v=beta&t=q_sQrBNts-eiI0CXGl3yBnY15Po5EeuC1vJumR7pAL0",
   description: "Work in a software development team creating new features and improvements for our cloud-based platform. Our platform is 5 years in development, throughout this time we collected a lot of input from the customers which we are looking to implement to make it more customer friendly.",
   link: "https://www.linkedin.com/jobs/view/2608219067/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=lz9TBanCZlmsRPQb3seOYQ%3D%3D",
   status: "In process",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-11-14 18:00:00",
+  applied: "2021-11-14 18:00:00",
   favorite: true
 )
 
 job11 = JobApplication.create!(
   user: user,
   title: "Frontend Developer",
+  level: "Entry level",
   company_name: "Poki",
   comp_logo: "https://media-exp1.licdn.com/dms/image/C560BAQFRB_tjylkwNA/company-logo_100_100/0/1519905686977?e=1646265600&v=beta&t=JNtFBDoruCoWxzNvLIMaH1Av3BObX0u-1YsbTFHHZNA",
   description: "As our Front-End Developer, you have an excellent feel for design and are able to implement this yourself using the latest front-end web technologies. Your implementations work on all browser types and are fully responsive. You will be joining our agile development team.",
   link: "https://www.linkedin.com/jobs/view/2791752989/?alternateChannel=search&refId=0Y6i8OyIzRoOZ4zckaZMTg%3D%3D&trackingId=1ivUQssQXojjzhUPUvKzuw%3D%3D",
   status: "In process",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-11-14 18:00:00"
+  applied: "2021-11-14 18:00:00"
 
 )
 
@@ -201,7 +205,7 @@ job12 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2802934486/?alternateChannel=search&eBP=JOB_SEARCH_ORGANIC&recommendedFlavor=JOB_SEEKER_QUALIFIED&refId=PfsqTqnWGXEaM%2B%2FZt80oLw%3D%3D&trackingId=%2BiNW1CkCWLHqSfModqXGig%3D%3D&trk=flagship3_search_srp_jobs",
   status: "Offer",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-10-14 18:00:00"
+  applied: "2021-10-14 18:00:00"
 
 )
 
@@ -215,7 +219,7 @@ job13 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2800791829/?alternateChannel=search&refId=PfsqTqnWGXEaM%2B%2FZt80oLw%3D%3D&trackingId=E1dymHwPyhlXgNw%2BvSJeag%3D%3D&trk=d_flagship3_search_srp_jobs",
   status: "Pending",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-11-14 18:00:00"
+  applied: "2021-11-14 18:00:00"
 
 )
 
@@ -229,7 +233,7 @@ job14 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2810502459/?alternateChannel=search&refId=V%2BuVG99K7CpCCAYbA2RyQQ%3D%3D&trackingId=%2FFYe5LzdWQ4iQ7SmE1R7uQ%3D%3D",
   status: "Pending",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-11-14 18:00:00"
+  applied: "2021-11-14 18:00:00"
 
 )
 
@@ -243,9 +247,86 @@ job15 = JobApplication.create!(
   link: "https://www.linkedin.com/jobs/view/2807825899/?alternateChannel=search&refId=8tfbepi9FFKYPcUXrCLDQA%3D%3D&trackingId=EumvD%2FLeGqPSpV0i99lZrw%3D%3D",
   status: "Pending",
   address: "Amsterdam, North Holland, Netherlands",
-  applied: "2020-11-14 18:00:00"
+  applied: "2021-11-14 18:00:00"
 
 )
+
+job16 = JobApplication.create!(
+  user: user,
+  title: "Back-end Developer",
+  company_name: "Peaks",
+  comp_logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQGyvqck4Np74Q/company-logo_100_100/0/1567430632646?e=1646265600&v=beta&t=5oofIhwSVelf-NT9RoiQxbJk9q_xJVbsR8GZm7mxWWI",
+  level: "Senior",
+  description: "You will team up with our product owners, mobile developers, user experience experts and marketeers to deliver new concepts to further increase our customer satisfaction. For that reason, it is important that you are comfortable and confident in giving your opinion to your fellow colleagues. You will have a central role in building our micro-services architecture and blend new features and ambitious ideas with our technology assets. You will create highly available and resilient systems and will not rest until your code runs in production without issues.",
+  link: "https://nl.linkedin.com/jobs/view/back-end-developer-at-peaks-2812767952?refId=69pbiQddqUW9pkjDmDN%2F0A%3D%3D&trackingId=ehNBeV6Dg1r6mrkOo4XfQQ%3D%3D&trk=public_jobs_topcard-title",
+  status: "Pending",
+  address: " The Randstad, Netherlands",
+  applied: "2021-12-02 18:00:00"
+
+)
+
+job17 = JobApplication.create!(
+  user: user,
+  title: "Back End Developer, Startup, Eindhoven",
+  company_name: "Precedence ",
+  comp_logo: "https://media-exp1.licdn.com/dms/image/C4E0BAQGaqfTiZTr4ZQ/company-logo_100_100/0/1519904226715?e=1646265600&v=beta&t=ACj8zst6dHqygTJPkLKaIuilw3wyfmF7WDek9KKwlb8",
+  level: "Entry",
+  description: "We are looking for a Back-end Engineer who is passionate about his/her work. You will take ownership of the implementation of new features that form the backbone of our business analytics toolkit. You work closely with the team to ensure our services are the best they can be.
+    This is an important role in a small and efficient team, where you will have influence and responsibility for technical and product roadmaps. You should be proactive, detail-oriented and be comfortable tackling complex problems.",
+  link: "https://nl.linkedin.com/jobs/view/back-end-developer-startup-eindhoven-at-precedence-2823344281?refId=ypf%2BqaqP0gIyKWxp2ix0OA%3D%3D&trackingId=qxYfllw%2F%2BZs%2Bg8qTQEGShQ%3D%3D&trk=public_jobs_topcard-title",
+  status: "Pending",
+  address: " Eindhoven, North Brabant, Netherlands",
+  applied: "2021-10-01 18:00:00"
+
+)
+
+job18 = JobApplication.create!(
+  user: user,
+  title: "Back End Developer",
+  company_name: "Maaind",
+  comp_logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQGAYWZAzz0q6A/company-logo_100_100/0/1604674680924?e=1646265600&v=beta&t=I5y63dVuxdzjVAdkxY_L48xZGdMFZBjg17w-mHAndbk",
+  level: "Senior",
+  description: "We are looking to hire an experienced (3-7 years) backend engineer with at minimum the following expertise and exposure:
+  -High familiarity with Python, being able to demonstrate and show prior Python projects you've worked on. You need to know more than how to write basic functions or classes and be able to write decorators, type hints, docstrings, tests, etc.
+  -Some cloud infrastructure, especially AWS (and ideally also Azure)
+  -ML pipeline experience, including understanding model size and model performance issues",
+  link: "https://nl.linkedin.com/jobs/view/back-end-developer-at-maaind-2818418754?refId=hUrfGsofxFNJdwN%2Bkjp1Jw%3D%3D&trackingId=JZ5kFAceDLzq9Og%2FB6kavA%3D%3D&trk=public_jobs_topcard-title",
+  status: "Pending",
+  address: " Eindhoven, North Brabant, Netherlands",
+  applied: "2021-09-22 18:00:00"
+
+)
+
+job19 = JobApplication.create!(
+  user: user,
+  title: "Front-End Developer, Veghel ",
+  company_name: "Jumbo",
+  comp_logo: "https://static-exp1.licdn.com/sc/h/9a9u41thxt325ucfh5z8ga4m8",
+  level: "Mid-Senior level",
+  description: "We are looking for senior front-end developers with a passion for their craft, who care about the quality of the code and the products they create. You enjoy working in a Scrum-based team. You do not wait for things to happen, you make things happen. You have a passion for software development and love sharing it with your colleagues.",
+  link: "https://nl.linkedin.com/jobs/view/front-end-developer-veghel-at-jumbo-2823366922?refId=SOCNCC8x18RiTwG2BeoGgg%3D%3D&trackingId=8g0jBiJ3HfNu9tfnKc3iYg%3D%3D&trk=public_jobs_topcard-title",
+  status: "Pending",
+  address: " Veghel, North Brabant, Netherlands",
+  applied: "2021-11-22 18:00:00"
+
+)
+
+job20 = JobApplication.create!(
+  user: user,
+  title: "Frontend Engineer",
+  company_name: "Lemonade",
+  comp_logo: "https://media-exp1.licdn.com/dms/image/C4D0BAQHnPV8dBNy7ag/company-logo_100_100/0/1547372866268?e=1646265600&v=beta&t=GC3xg2bN6cVxbB0cO-uwgHrXTgz_A-G70FQBvQ8NZYE",
+  level: "Entry level",
+  description: "We're looking for a pixel-perfect frontend engineer who's passionate about creating well-crafted UI/UX and excels at execution. If you're a true tech geek, creative thinker, and a CSS pro, read on.
+  The ideal candidate thinks about coding as craftsmanship, has an academic background in software engineering, and wants to learn how to build incredible software at record speeds. We only use Macs, we're obsessed with React, and we are passionate about automation, AI, and bots.",
+  link: "https://nl.linkedin.com/jobs/view/frontend-engineer-at-lemonade-2798296006?refId=4SJE1LCWyrlEISV7FduL8A%3D%3D&trackingId=efRtlS14II8w9TPWyQNgxQ%3D%3D&trk=public_jobs_topcard-title",
+  status: "Pending",
+  address: " Amsterdam, North Holland, Netherlands",
+  applied: "2021-12-01 18:00:00"
+
+)
+
+
 puts "Creating interview"
 
 interview1 = Interview.create!(
@@ -303,6 +384,42 @@ interview6 = Interview.create!(
 
 )
 
+interview7 = Interview.create!(
+  job_application: job19,
+  start_date: "2021-12-07 14:00:00",
+  end_time: "2021-12-07 15:00:00",
+  interview_type: "Video",
+  notes: "Presentation"
+
+)
+
+interview8 = Interview.create!(
+  job_application: job10,
+  start_date: "2021-12-04 14:00:00",
+  end_time: "2021-12-04 15:00:00",
+  interview_type: "Video",
+  notes: "work on the demo"
+
+)
+
+interview9 = Interview.create!(
+  job_application: job11,
+  start_date: "2021-12-10 10:00:00",
+  end_time: "2021-12-10 11:00:00",
+  interview_type: "Video",
+  notes: "Presentation"
+
+)
+
+interview10 = Interview.create!(
+  job_application: job14,
+  start_date: "2021-12-10 09:00:00",
+  end_time: "2021-12-10 11:00:00",
+  interview_type: "On site",
+  notes: "Prepare portfolio"
+
+)
+
 puts "Creating contact"
 
 contact1 = Contact.create!(
@@ -347,6 +464,38 @@ conatct5 = Contact.create!(
 
 conatct6 = Contact.create!(
   interview: interview1,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  position: Faker::Job.position,
+  email: Faker::Internet.email
+)
+
+conatct7 = Contact.create!(
+  interview: interview10,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  position: Faker::Job.position,
+  email: Faker::Internet.email
+)
+
+conatct8 = Contact.create!(
+  interview: interview8,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  position: Faker::Job.position,
+  email: Faker::Internet.email
+)
+
+conatct9 = Contact.create!(
+  interview: interview6,
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  position: Faker::Job.position,
+  email: Faker::Internet.email
+)
+
+conatct10 = Contact.create!(
+  interview: interview2,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   position: Faker::Job.position,

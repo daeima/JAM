@@ -15,7 +15,8 @@ class JobApplicationsController < ApplicationController
     @data_keys = [
       'September',
       'October',
-      'November'
+      'November',
+      'December'
     ]
 
     @data_values = @job_application_count.values
@@ -83,8 +84,7 @@ class JobApplicationsController < ApplicationController
 
   def archive
     @job_application = JobApplication.find(params[:id])
-    @job_application.archive = true
-    #@job_application.archive = !@job_application.archive
+    @job_application.archive = !@job_application.archive
     @job_application.status = "Archived"
     @job_application.save
     redirect_to job_applications_path
@@ -93,6 +93,7 @@ class JobApplicationsController < ApplicationController
   def unarchive
     @job_application = JobApplication.find(params[:id])
     @job_application.archive = false
+    @job_application.status = "Pending"
     @job_application.save
     redirect_to job_applications_path
   end

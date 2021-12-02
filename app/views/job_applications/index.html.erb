@@ -80,7 +80,7 @@
             <li class="circlePurple"><%= job_application.status %></li>
             <% elsif job_application.status == "In process"%>
             <li class="circleGreen"><%= job_application.status %></li>
-            <% elsif job_application.status == "Rejected"%>
+            <% elsif job_application.status == "Rejected" || job_application.status == "Archived" %>
             <li class="circleRed"><%= job_application.status %></li>
             <% elsif job_application.status == "Offer"%>
             <li class="circleYellow"><%= job_application.status %></li>

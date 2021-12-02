@@ -166,12 +166,12 @@
 
 .circleBlackFilter{
   display: flex;
-  border: 2px solid $gray;
+  border: 2px solid #4b4d50;
   border-radius: 20px;
   width: 120px;
   justify-content: center;
   align-items: center;
-  color: $gray;
+  color: #4b4d50;
 }
 .circleRedFilter {
   display: flex;
@@ -228,7 +228,7 @@
 }
 
 .circleBlackFilter:hover {
-  background-color: $gray;
+  background-color: #4b4d50;
   color: white;
   transition: 0.5s;
 }

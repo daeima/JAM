@@ -72,7 +72,7 @@
         <% @favorites.each do |job_application| %>
           <div class="tableContainer tableCard">
             <%= link_to job_application_path(job_application) do %>
-            <%= image_tag image_url(job_application.comp_logo), class:"logoIndex" %>
+             <img src="<%=job_application.comp_logo%>" alt="comp logo" class="logoIndex">
           <% end %>
             <li class="applicationCardCompanyName"><%= job_application.company_name %></li>
             <li class="applicationCardTitle"><%= job_application.title %></li>

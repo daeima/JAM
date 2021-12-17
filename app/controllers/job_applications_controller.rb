@@ -1,22 +1,30 @@
 class JobApplicationsController < ApplicationController
-
   def index
-    @job_applications = JobApplication.order(title: :desc)
-    @job_application_count = JobApplication.group_by_month(:applied, format: "%b").count
-    @favorites = JobApplication.where(favorite: true)
+    @job_applications = current_user.job_applications
+    @job_applications_order = @job_applications.order(title: :desc)
+    @job_application_count = @job_applications.group_by_month(:applied, format: "%b").count
+    @favorites = @job_applications.where(favorite: true)
 
-    @total = JobApplication.all.count
+    @total = @job_applications.count
 
-    @pending = JobApplication.where(status: "Pending").length
-    @in_process = JobApplication.where(status: "In process").length
-    @offer = JobApplication.where(status: "Offer").length
-    @rejected = JobApplication.where(status: "Rejected").length
+    @pending = @job_applications.where(status: "Pending").length
+    @in_process = @job_applications.where(status: "In process").length
+    @offer = @job_applications.where(status: "Offer").length
+    @rejected = @job_applications.where(status: "Rejected").length
 
     @data_keys = [
-      'September',
-      'October',
-      'November',
-      'December'
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec'
     ]
 
     @data_values = @job_application_count.values
@@ -27,14 +35,10 @@ class JobApplicationsController < ApplicationController
         OR job_applications.company_name ILIKE :query \
         OR job_applications.level ILIKE :query \
       "
-
-    @job_applications = @job_applications.where(sql_query, query: "%#{params[:query]}%")
-
+      @job_applications = @job_applications.where(sql_query, query: "%#{params[:query]}%")
     elsif params[:filter].present?
       @job_applications = current_user.job_applications.filter_by_status(params[:filter])
-
     end
-
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
@@ -50,7 +54,6 @@ class JobApplicationsController < ApplicationController
     @job_application = JobApplication.find(params[:id])
     @interview = Interview.new(id: @job_application)
 
-
     @markers = [{
       lat: @job_application.latitude,
       lng: @job_application.longitude
@@ -58,7 +61,7 @@ class JobApplicationsController < ApplicationController
   end
 
   def new
-    @job_application = JobApplication.new()
+    @job_application = JobApplication.new
   end
 
   def create
@@ -110,9 +113,5 @@ class JobApplicationsController < ApplicationController
   def job_application_params
     params.require(:job_application).permit(:title, :level, :company_name, :comp_logo, :description, :status, :link, :notes, :address, :remote, :archive,:favorite, :applied, :user, :created_at, :updated_at)
   end
-
-
-
-
 
 end

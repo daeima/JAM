@@ -34,7 +34,7 @@
   <div class="d-flex">
   <% end %>
 
-      <% unless current_page?("/") || current_page?("/users/sign_in") %>
+      <% unless current_page?("/") || current_page?("/users/sign_in") || current_page?("/users/sign_up") %>
       <div class="d-flex sidebarWidth">
         <%= render 'shared/sidebar' %>
       <% end %>
